@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/sponsors/page": "app/sponsors/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/events/page": "app/events/page.js",
+  "/info/page": "app/info/page.js",
+  "/about/page": "app/about/page.js",
+  "/team/page": "app/team/page.js"
+}
