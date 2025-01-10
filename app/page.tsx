@@ -48,7 +48,7 @@ export default function Home() {
                   <h2 className="text-2xl font-bold">Code 4 Hope</h2>
                 </div>
                 <p className="text-gray-500 md:text-lg">
-                  Code 4 Hope is fiscally sponsored by The Hope Foundation (it is a hack club), a 501(c)(3) nonprofit. We host hackathons every 2-3 months on various topics and categories for charitable organizations. Students from all over the world can participate regardless of their level of experience to show their skills and contribute to innovation while making an impact.
+                  Code 4 Hope is fiscally sponsored by The Hack Foundation (d.b.a. Hack Club), a 501(c)(3) nonprofit. We host hackathons every 2-3 months on various topics and categories for charitable organizations. Our hackathons aim to allow students with a passion for coding and any level of experience to show their skills and contribute to innovation while making an impact.
                 </p>
               </div>
               <div className="md:w-1/2 aspect-video overflow-hidden rounded-xl">
