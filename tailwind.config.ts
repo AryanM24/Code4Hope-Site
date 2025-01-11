@@ -13,6 +13,8 @@ const config: Config = {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+			titleSectionBackground: {
+				  DEFAULT: 'hsl(var(--title-section-background))', foreground: 'hsl(var(--title-section-foreground))'},
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

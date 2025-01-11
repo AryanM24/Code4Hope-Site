@@ -35,7 +35,7 @@ export default function Home() {
       <ScrollReveal>
       <section id="about" className="w-full py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="border-2 border-[#826CB8] shadow-md rounded-xl p-6 bg-white">
+          <div className="border-2 border-[#826CB8] shadow-md rounded-xl p-6 bg-background">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="md:w-1/2">
                 <div className="flex items-center space-x-4 mb-4">
@@ -56,7 +56,7 @@ export default function Home() {
                   alt="About Image"
                   className="object-cover w-full h-full"
                   height="300"
-                  src="/placeholder.svg"
+                  src="https://code4hope.net/assets/images/header/hero-image.png"
                   width="600"
                 />
               </div>
@@ -141,11 +141,11 @@ export default function Home() {
               </Button>
               <div className="flex overflow-hidden">
                 {/* Placeholder sponsors */}
-                {[1, 2, 3, 4].map((index) => (
+                {["https://brandergroup.net/wp-content/uploads/2023/12/ISP-Carriers-Nord-1200x900.png", "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/892/highres/Logo_%281%29.png", "https://cdn.mos.cms.futurecdn.net/mfRWxBbBCSEL9rtoYmxDiR.jpg", "https://web-summit-avenger.imgix.net/production/logos/original/7a7b2abcb3b7e15a1c643880b90cc2beb1ab68be.png?ixlib=rb-3.4.0&auto=format&fit=fill&fill=solid&fill-color=white",].map((index) => (
                   <div key={index} className="flex-none w-1/4 px-4">
                     <div className="bg-gray-200 aspect-video rounded-lg overflow-hidden">
                       <Image
-                        src={`/placeholder.svg?text=Sponsor${index}`}
+                        src={index}
                         alt={`Sponsor ${index}`}
                         width={300}
                         height={169}
@@ -178,8 +178,8 @@ export default function Home() {
             <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Workshop Image"
+                  src="https://img.youtube.com/vi/aZquJC9YlXA/sddefault.jpg"
+                  alt="Build Your Best Projects Faster with Refact.ai"
                   width={400}
                   height={225}
                   className="object-cover w-full h-full"
@@ -239,13 +239,7 @@ export default function Home() {
             <div className="flex justify-between items-start gap-4">
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <Image
-                    src="/placeholder.svg?height=40&width=120"
-                    alt="Code4Hope Logo"
-                    width={120}
-                    height={40}
-                    className="h-10"
-                  />
+
                   <h2 className="text-2xl font-bold">Follow Our Socials</h2>
                 </div>
                 <p className="text-gray-600 max-w-[600px]">

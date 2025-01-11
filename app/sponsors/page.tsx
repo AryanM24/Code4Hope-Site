@@ -7,13 +7,25 @@ const sponsors = [
   {
     name: "Nord Security",
     description: "World-leading cybersecurity tools for people and global businesses.",
-    logo: "/placeholder.svg",
+    logo: "https://brandergroup.net/wp-content/uploads/2023/12/ISP-Carriers-Nord-1200x900.png",
     devpostLink: "#"
   },
   {
     name: "Flatlogic",
     description: "Business Software: AI Solutions at Speed",
-    logo: "/placeholder.svg",
+    logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/892/highres/Logo_%281%29.png",
+    devpostLink: "#"
+  },
+  {
+    name: "Desmos",
+    description: "Business Software: AI Solutions at Speed",
+    logo: "https://cdn.mos.cms.futurecdn.net/mfRWxBbBCSEL9rtoYmxDiR.jpg",
+    devpostLink: "#"
+  },
+  {
+    name: "Refact.ai",
+    description: "Business Software: AI Solutions at Speed",
+    logo: "https://web-summit-avenger.imgix.net/production/logos/original/7a7b2abcb3b7e15a1c643880b90cc2beb1ab68be.png?ixlib=rb-3.4.0&auto=format&fit=fill&fill=solid&fill-color=white",
     devpostLink: "#"
   }
 ]
@@ -23,7 +35,7 @@ export default function SponsorsPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <section className="py-12 md:py-16 lg:py-20 bg-titleSectionBackground">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl font-bold mb-4">Our Superstar Sponsors</h1>
               <p className="text-gray-600 max-w-3xl">

@@ -10,7 +10,7 @@ export default function InfoPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <ScrollReveal>
-          <section className="w-full py-12 md:py-16 lg:py-20 bg-gray-50">
+          <section className="w-full py-12 md:py-16 lg:py-20 bg-titleSectionBackground">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl font-bold mb-4">Information and Updates</h1>
               <p className="text-gray-500 text-xl">
@@ -25,7 +25,7 @@ export default function InfoPage() {
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <MerchSection />
-                <div className="border rounded-lg p-8 bg-white">
+                <div className="border rounded-lg p-8 bg-card">
                   <div className="flex flex-col items-center gap-6">
                     <Image
                       src="/placeholder.svg?text=Spotlight+Event"

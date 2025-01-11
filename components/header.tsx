@@ -14,9 +14,30 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
+import {Switch} from "@/components/ui/switch";
+import {useState} from "react";
 
 export function Header() {
   const router = useRouter()
+
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  // if (localStorage.getItem('theme') === 'dark') {
+  //   setDarkMode(true)
+  //   document.documentElement.classList.add('dark');
+  // }
+  const toggleSwitch = () => {
+    const root = document.documentElement;
+
+    if (!darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark"); // Save the user's preference
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light"); // Save the user's preference
+    }
+    setDarkMode(previousState => !previousState);}
 
   const scrollToSection = (sectionId: string) => {
     router.push('/')
@@ -33,9 +54,9 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
             <Image
-                src="/placeholder.svg?height=40&width=120"
+                src="https://code4hope.net/assets/images/white_logo_horizontal.PNG"
                 alt="Code4Hope Logo"
-                width={120}
+                width={154}
                 height={40}
                 className="h-10"
             />
@@ -55,6 +76,7 @@ export function Header() {
                 <Link href="/events">Events</Link>
                 <Link href="/gallery">Gallery</Link>
                 <Link href="/info">Info</Link>
+
               </nav>
             </SheetContent>
           </Sheet>
@@ -62,14 +84,16 @@ export function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     Home
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     About
                   </NavigationMenuLink>
                 </Link>
@@ -80,13 +104,16 @@ export function Header() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-48 p-2">
-                    <button onClick={() => scrollToSection('about')} className="block w-full text-left p-2 hover:bg-accent rounded-md">
+                    <button onClick={() => scrollToSection('about')}
+                            className="block w-full text-left p-2 hover:bg-accent rounded-md">
                       About
                     </button>
-                    <button onClick={() => scrollToSection('events')} className="block w-full text-left p-2 hover:bg-accent rounded-md">
+                    <button onClick={() => scrollToSection('events')}
+                            className="block w-full text-left p-2 hover:bg-accent rounded-md">
                       Upcoming Events
                     </button>
-                    <button onClick={() => scrollToSection('workshops')} className="block w-full text-left p-2 hover:bg-accent rounded-md">
+                    <button onClick={() => scrollToSection('workshops')}
+                            className="block w-full text-left p-2 hover:bg-accent rounded-md">
                       Recent Workshops
                     </button>
                   </div>
@@ -94,39 +121,54 @@ export function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/team" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     Team
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/sponsors" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     Sponsors
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/events" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     Events
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/gallery" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     Gallery
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/info" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
+                  <NavigationMenuLink
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20">
                     Info
                   </NavigationMenuLink>
                 </Link>
+
               </NavigationMenuItem>
+              {/*Switch button for dark mode*/}
+              {/*<NavigationMenuItem>*/}
+              {/*  <Switch*/}
+              {/*      checked={darkMode}*/}
+              {/*      onCheckedChange={toggleSwitch}*/}
+
+              {/*  />*/}
+              {/*</NavigationMenuItem>*/}
+
             </NavigationMenuList>
           </NavigationMenu>
         </div>

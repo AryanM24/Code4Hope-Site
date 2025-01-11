@@ -9,10 +9,10 @@ export function Footer() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <Image
-                src="/placeholder.svg?height=40&width=120"
+                src="https://code4hope.net/assets/images/white_logo_horizontal.PNG"
                 alt="Code4Hope Logo"
-                width={120}
-                height={40}
+                width={154}
+                height={38}
                 className="h-10"
             />
             <div className="flex flex-col items-center">

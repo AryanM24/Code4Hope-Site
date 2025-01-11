@@ -9,7 +9,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <section className="py-12 md:py-16 lg:py-20 bg-titleSectionBackground">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl font-bold mb-4">About Us</h1>
               <p className="text-gray-600 max-w-3xl text-xl">
@@ -20,7 +20,7 @@ export default function AboutPage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-white">
+          <section className="py-12 md:py-16 lg:py-20 bg-background">
             <div className="container mx-auto px-4">
               <ContentSection
                 title="Our Organization"

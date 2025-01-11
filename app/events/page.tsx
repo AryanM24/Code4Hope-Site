@@ -13,8 +13,8 @@ const events = [
   {
     name: "ImpactX'24",
     description: "Hosted in December of 2024, ImpactX was C4H's debut hackathon, with over 130+ participants and 25k+ in prizes",
-    logo: "/placeholder.svg",
-    devpostLink: "#"
+    logo: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/071/021/datas/original.png",
+    devpostLink: "https://impactx-code4hope.devpost.com/"
   },
   {
     name: "ImpactX'24",
@@ -29,7 +29,7 @@ export default function EventsPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <ScrollReveal>
-          <section className="w-full py-12 md:py-16 lg:py-20 bg-gray-50">
+          <section className="w-full py-12 md:py-16 lg:py-20 bg-titleSectionBackground">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl font-bold mb-4">Events</h1>
               <p className="text-gray-500 text-xl">
