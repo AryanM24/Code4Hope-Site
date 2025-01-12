@@ -57,8 +57,8 @@ export function Header() {
             <Image
                 src={white_logo}
                 alt="Code4Hope Logo"
-                width={40}
-                height={40}
+                width={80}
+                height={80}
                 className="h-10"
             />
           </Link>
