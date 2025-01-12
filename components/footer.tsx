@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { YoutubeIcon, InstagramIcon } from 'lucide-react'
 import { TiktokIcon } from "@/components/icons"
-import white_logo from "@/components/assets/images/white_logo_horizontal.png";
+import white_logo from "@/components/assets/images/white_logo_no_text.png";
 
 export function Footer() {
   return (
