@@ -3,6 +3,8 @@ import { FAQSection } from "@/components/faq-section"
 import { JoinSection } from "@/components/join-section"
 import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
+import about_img3 from "@/components/assets/images/about/about-img1.jpg";
+import about_img1 from "@/components/assets/images/header/hero-image.png";
 
 export default function AboutPage() {
   return (
@@ -25,7 +27,7 @@ export default function AboutPage() {
               <ContentSection
                 title="Our Organization"
                 content="Code4Hope is a not-for-profit organization dedicated to empowering students to leverage technology for social good. Our mission is to unite technology and creativity to drive social change, fostering a global community of young innovators addressing real-world challenges. Through our regular hackathons, we create opportunities for students to develop their skills while making a meaningful impact."
-                imageSrc="/placeholder.svg"
+                imageSrc={about_img1}
                 imageAlt="Students collaborating at a Code4Hope hackathon"
               />
               <ContentSection
@@ -38,7 +40,7 @@ export default function AboutPage() {
               <ContentSection
                 title="Operations"
                 content="The Operations team is the backbone of Code4Hope's technical infrastructure. This dedicated subteam manages web development, ensures seamless hackathon experiences, and implements automation solutions to streamline our organization's processes. From maintaining our digital presence to developing innovative tools for outreach projects, the Operations team plays a crucial role in advancing our mission."
-                imageSrc="/placeholder.svg"
+                imageSrc={about_img3}
                 imageAlt="Code4Hope operations team at work"
               />
             </div>

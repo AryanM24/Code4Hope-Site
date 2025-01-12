@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Footer } from "@/components/footer"
+import SponsorCarousel from "@/components/sponsor-slider-home";
+import hero_image from "@/components/assets/images/header/hero-image.png";
+import blog1 from "@/components/assets/images/blog/1.jpg";
+import blog2 from "@/components/assets/images/blog/2.jpg";
+import blog3 from "@/components/assets/images/blog/3.jpg";
+import impactX from "@/components/assets/images/event/ImpactX.png";
 
 export default function Home() {
+
   return (
     <main className="flex min-h-screen flex-col items-center">
       {/* Hero Section */}
@@ -56,7 +62,7 @@ export default function Home() {
                   alt="About Image"
                   className="object-cover w-full h-full"
                   height="300"
-                  src="https://code4hope.net/assets/images/header/hero-image.png"
+                  src={hero_image}
                   width="600"
                 />
               </div>
@@ -101,7 +107,7 @@ export default function Home() {
             <Card className="p-0">
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src={impactX}
                   alt="Event Image"
                   width={400}
                   height={225}
@@ -132,32 +138,33 @@ export default function Home() {
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Sponsors provide our hackathons with funding so that young developers who participate can receive awards, prizes, and workshops that can help them further develop their skills.
             </p>
-            <Button variant="outline" className="rounded-full">See more...</Button>
+            <Button variant="outline" className="rounded-full" >See more...</Button>
           </div>
           <div className="relative mt-12">
             <div className="container mx-auto px-4 md:px-6 relative">
-              <Button variant="outline" size="icon" className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10">
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
+              {/*<Button variant="outline" size="icon" className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10">*/}
+              {/*  <ChevronLeft className="h-4 w-4" />*/}
+              {/*</Button>*/}
               <div className="flex overflow-hidden">
                 {/* Placeholder sponsors */}
-                {["https://brandergroup.net/wp-content/uploads/2023/12/ISP-Carriers-Nord-1200x900.png", "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/892/highres/Logo_%281%29.png", "https://cdn.mos.cms.futurecdn.net/mfRWxBbBCSEL9rtoYmxDiR.jpg", "https://web-summit-avenger.imgix.net/production/logos/original/7a7b2abcb3b7e15a1c643880b90cc2beb1ab68be.png?ixlib=rb-3.4.0&auto=format&fit=fill&fill=solid&fill-color=white",].map((index) => (
-                  <div key={index} className="flex-none w-1/4 px-4">
-                    <div className="bg-gray-200 aspect-video rounded-lg overflow-hidden">
-                      <Image
-                        src={index}
-                        alt={`Sponsor ${index}`}
-                        width={300}
-                        height={169}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                ))}
+                <SponsorCarousel></SponsorCarousel>
+                {/*{["https://brandergroup.net/wp-content/uploads/2023/12/ISP-Carriers-Nord-1200x900.png", "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/892/highres/Logo_%281%29.png", "https://cdn.mos.cms.futurecdn.net/mfRWxBbBCSEL9rtoYmxDiR.jpg", "https://web-summit-avenger.imgix.net/production/logos/original/7a7b2abcb3b7e15a1c643880b90cc2beb1ab68be.png?ixlib=rb-3.4.0&auto=format&fit=fill&fill=solid&fill-color=white","https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/869/highres/AoPS_Main_Logo_%281%29.png"].map((index) => (*/}
+                {/*  <div key={index} className="flex-none w-1/4 px-4">*/}
+                {/*    <div className="bg-gray-200 aspect-video rounded-lg overflow-hidden">*/}
+                {/*      <Image*/}
+                {/*        src={index}*/}
+                {/*        alt={`Sponsor ${index}`}*/}
+                {/*        width={300}*/}
+                {/*        height={169}*/}
+                {/*        className="w-full h-full object-cover"*/}
+                {/*      />*/}
+                {/*    </div>*/}
+                {/*  </div>*/}
+                {/*))}*/}
               </div>
-              <Button variant="outline" size="icon" className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">
-                <ChevronRight className="h-4 w-4" />
-              </Button>
+              {/*<Button variant="outline" size="icon" className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">*/}
+              {/*  <ChevronRight className="h-4 w-4" />*/}
+              {/*</Button>*/}
             </div>
           </div>
         </div>
@@ -178,7 +185,7 @@ export default function Home() {
             <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="https://img.youtube.com/vi/aZquJC9YlXA/sddefault.jpg"
+                  src={blog1}
                   alt="Build Your Best Projects Faster with Refact.ai"
                   width={400}
                   height={225}
@@ -195,7 +202,7 @@ export default function Home() {
             <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src={blog2}
                   alt="Workshop Image"
                   width={400}
                   height={225}
@@ -212,7 +219,7 @@ export default function Home() {
             <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src={blog3}
                   alt="Workshop Image"
                   width={400}
                   height={225}
@@ -247,22 +254,22 @@ export default function Home() {
                 </p>
               </div>
               <div className="grid grid-cols-3 gap-4">
-                <Link href="#" className="bg-black rounded-full p-2 hover:opacity-80">
+                <Link href="https://www.instagram.com/code4hope_/" className="bg-black rounded-full p-2 hover:opacity-80">
                   <InstagramIcon className="h-6 w-6 text-white" />
                 </Link>
-                <Link href="#" className="bg-black rounded-full p-2 hover:opacity-80">
+                <Link href="https://discord.gg/7ssCZx8Hme" className="bg-black rounded-full p-2 hover:opacity-80">
                   <DiscordIcon className="h-6 w-6 text-white" />
                 </Link>
-                <Link href="#" className="bg-black rounded-full p-2 hover:opacity-80">
+                <Link href="https://www.tiktok.com/@code4hopeofficial" className="bg-black rounded-full p-2 hover:opacity-80">
                   <TiktokIcon className="h-6 w-6 text-white" />
                 </Link>
-                <Link href="#" className="bg-black rounded-full p-2 hover:opacity-80">
+                <Link href="https://x.com/Code4Hope_" className="bg-black rounded-full p-2 hover:opacity-80">
                   <TwitterIcon className="h-6 w-6 text-white" />
                 </Link>
-                <Link href="#" className="bg-black rounded-full p-2 hover:opacity-80">
+                <Link href="https://github.com/AryanM24/code4hope" className="bg-black rounded-full p-2 hover:opacity-80">
                   <GithubIcon className="h-6 w-6 text-white" />
                 </Link>
-                <Link href="#" className="bg-black rounded-full p-2 hover:opacity-80">
+                <Link href="https://x.com/Code4Hope_" className="bg-black rounded-full p-2 hover:opacity-80">
                   <XIcon className="h-6 w-6 text-white" />
                 </Link>
               </div>

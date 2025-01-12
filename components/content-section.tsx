@@ -1,10 +1,10 @@
-import Image from "next/image"
+import Image, {StaticImageData} from "next/image"
 import { cn } from "@/lib/utils"
 
 interface ContentSectionProps {
   title: string
   content: string
-  imageSrc: string
+  imageSrc: StaticImageData
   imageAlt: string
   reversed?: boolean
 }

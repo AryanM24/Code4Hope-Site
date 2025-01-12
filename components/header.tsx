@@ -16,6 +16,7 @@ import Image from "next/image"
 import { useRouter } from 'next/navigation'
 import {Switch} from "@/components/ui/switch";
 import {useState} from "react";
+import white_logo from "@/components/assets/images/white_logo_horizontal.png";
 
 export function Header() {
   const router = useRouter()
@@ -54,7 +55,7 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
             <Image
-                src="https://code4hope.net/assets/images/white_logo_horizontal.PNG"
+                src={white_logo}
                 alt="Code4Hope Logo"
                 width={154}
                 height={40}

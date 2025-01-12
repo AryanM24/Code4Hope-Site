@@ -15,9 +15,10 @@ interface Sponsor {
 
 interface SponsorSliderProps {
   sponsors: Sponsor[]
+  multiImage: boolean
 }
 
-export function SponsorSlider({ sponsors }: SponsorSliderProps) {
+export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [shake, setShake] = useState(false)
 
@@ -41,6 +42,19 @@ export function SponsorSlider({ sponsors }: SponsorSliderProps) {
       return () => clearTimeout(timer)
     }
   }, [shake])
+
+  const getImages = (add:boolean, amount:number) =>  {
+    console.log("hahaha")
+    if (add ? currentIndex + amount > sponsors.length : currentIndex - amount < 0) {
+      if (add) {
+        return currentIndex + amount - sponsors.length
+      } else {
+        return currentIndex - amount + sponsors.length
+      }
+    } else {
+      return add ? currentIndex +amount : currentIndex -amount
+    }
+  }
 
   const shakeVariants = {
     shake: {
@@ -66,13 +80,40 @@ export function SponsorSlider({ sponsors }: SponsorSliderProps) {
       >
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="aspect-square w-full max-w-[400px] mx-auto">
-            <Image
-              src={sponsors[currentIndex].logo}
-              alt={`${sponsors[currentIndex].name} logo`}
-              width={400}
-              height={400}
-              className="w-full h-full object-contain"
+            {multiImage ? <div>
+              <Image
+                  src={sponsors[getImages(false, 1)].logo}
+                  alt={`${sponsors[getImages(false, 1)].name} logo`}
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-contain"
+              />
+              <Image
+                  src={sponsors[currentIndex].logo}
+                  alt={`${sponsors[currentIndex].name} logo`}
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-contain"
+              /><Image
+                src={sponsors[getImages(true, 1)].logo}
+                alt={`${sponsors[getImages(true, 1)].name} logo`}
+                width={400}
+                height={400}
+                className="w-full h-full object-contain"
+            /><Image
+                src={sponsors[getImages(true, 2)].logo}
+                alt={`${sponsors[getImages(true, 2)].name} logo`}
+                width={400}
+                height={400}
+                className="w-full h-full object-contain"
             />
+            </div> : <Image
+                src={sponsors[currentIndex].logo}
+                alt={`${sponsors[currentIndex].name} logo`}
+                width={400}
+                height={400}
+                className="w-full h-full object-contain"
+            />}
           </div>
           <div className="space-y-4">
             <h3 className="text-3xl font-bold">{sponsors[currentIndex].name}</h3>

@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { YoutubeIcon, InstagramIcon } from 'lucide-react'
 import { TiktokIcon } from "@/components/icons"
+import white_logo from "@/components/assets/images/white_logo_horizontal.png";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <Image
-                src="https://code4hope.net/assets/images/white_logo_horizontal.PNG"
+                src={white_logo}
                 alt="Code4Hope Logo"
                 width={154}
                 height={38}

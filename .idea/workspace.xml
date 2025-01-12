@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a5c217-abc4-4128-a77d-a301dd5d9b40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/events/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/events/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/info/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/info/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sponsors/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/sponsors/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/team/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/team/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-    </list>
+    <list default="true" id="63a5c217-abc4-4128-a77d-a301dd5d9b40" name="Changes" comment="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +106,17 @@
       <workItem from="1736605494587" duration="4232000" />
       <workItem from="1736625941417" duration="495000" />
       <workItem from="1736628352953" duration="439000" />
+      <workItem from="1736628858993" duration="274000" />
     </task>
+    <task id="LOCAL-00001" summary="Added images(a few are still left). Created dark mode switch button, commented the code rn">
+      <option name="closed" value="true" />
+      <created>1736629133501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736629133501</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,5 +132,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
   </component>
 </project>

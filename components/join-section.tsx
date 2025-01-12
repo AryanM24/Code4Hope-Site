@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function JoinSection() {
@@ -7,13 +6,7 @@ export function JoinSection() {
       <div className="flex flex-col md:flex-row items-start justify-between gap-8">
         <div className="space-y-4">
           <div className="flex items-center gap-4">
-            <Image
-              src="/placeholder.svg"
-              alt="Code4Hope Logo"
-              width={120}
-              height={40}
-              className="h-10"
-            />
+
             <h2 className="text-2xl font-bold">Interested in joining Code4Hope?</h2>
           </div>
           <p className="text-gray-600 max-w-[600px]">
