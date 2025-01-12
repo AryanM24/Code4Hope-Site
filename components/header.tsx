@@ -16,7 +16,7 @@ import Image from "next/image"
 import { useRouter } from 'next/navigation'
 import {Switch} from "@/components/ui/switch";
 import {useState} from "react";
-import white_logo from "@/components/assets/images/white_logo_horizontal.png";
+import white_logo from "@/components/assets/images/white_logo_no_text.png";
 
 export function Header() {
   const router = useRouter()
