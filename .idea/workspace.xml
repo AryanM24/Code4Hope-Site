@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a5c217-abc4-4128-a77d-a301dd5d9b40" name="Changes" comment="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
+    <list default="true" id="63a5c217-abc4-4128-a77d-a301dd5d9b40" name="Changes" comment="Added all the images that I found. All the sponsor carousels are functioning!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,18 +28,23 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2rN41BW1NjxGBx88ZWuSrhvppRo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TypeScript.page.tsx.executor&quot;: &quot;Run&quot;,
     &quot;TypeScript.utils.ts.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;image-update&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.com.intellij.ui.dsl.builder.impl.RowImpl.sdk&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/code4hope&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -45,8 +55,19 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\code4hope\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;jdk.preference.com.intellij.ui.dsl.builder.impl.RowImpl.sdk&quot;: [
+      &quot;22=C:/Users/Malay/.jdks/openjdk-22.0.2&quot;
+    ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code4hope\components" />
+      <recent name="D:\code4hope\app" />
+    </key>
+  </component>
   <component name="RunManager" selected="TypeScript.page.tsx">
     <configuration name="page.tsx" type="TypeScriptProgramRunner" factoryName="TypeScript" temporary="true">
       <module name="code4hope" />
@@ -107,6 +128,8 @@
       <workItem from="1736625941417" duration="495000" />
       <workItem from="1736628352953" duration="439000" />
       <workItem from="1736628858993" duration="274000" />
+      <workItem from="1736658384441" duration="11684000" />
+      <workItem from="1736844641626" duration="1037000" />
     </task>
     <task id="LOCAL-00001" summary="Added images(a few are still left). Created dark mode switch button, commented the code rn">
       <option name="closed" value="true" />
@@ -116,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736629133501</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added all the images that I found. All the sponsor carousels are functioning!">
+      <option name="closed" value="true" />
+      <created>1736672945945</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736672945945</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +165,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
+    <MESSAGE value="Added all the images that I found. All the sponsor carousels are functioning!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all the images that I found. All the sponsor carousels are functioning!" />
   </component>
 </project>

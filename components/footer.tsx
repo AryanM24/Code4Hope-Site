@@ -12,8 +12,8 @@ export function Footer() {
             <Image
                 src={white_logo}
                 alt="Code4Hope Logo"
-                width={80}
-                height={70}
+                width={50}
+                height={50}
                 className="h-10"
             />
             <div className="flex flex-col items-center">

@@ -10,6 +10,7 @@ import blog1 from "@/components/assets/images/blog/1.jpg";
 import blog2 from "@/components/assets/images/blog/2.jpg";
 import blog3 from "@/components/assets/images/blog/3.jpg";
 import impactX from "@/components/assets/images/event/ImpactX.png";
+import black_logo from "@/components/assets/images/black_logo_no_text.png";
 
 export default function Home() {
 
@@ -46,7 +47,7 @@ export default function Home() {
               <div className="md:w-1/2">
                 <div className="flex items-center space-x-4 mb-4">
                   <Image
-                    src="/placeholder.svg?height=40&width=40"
+                    src={black_logo}
                     alt="Code4Hope Logo"
                     width={40}
                     height={40}
