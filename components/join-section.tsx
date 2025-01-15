@@ -13,7 +13,7 @@ export function JoinSection() {
             Click the button below to view our detailed documentation of EVERYTHING you need to know about Code4Hope!
           </p>
         </div>
-        <Button className="bg-[#826CB8] hover:bg-[#6f5c9d] text-white px-8 py-6 text-lg h-auto">
+        <Button className="bg-[#826CB8] hover:bg-[#6f5c9d] text-white px-8 py-6 text-lg h-auto" href="https://docs.code4hope.net/docs">
           Official Documentation
         </Button>
       </div>
