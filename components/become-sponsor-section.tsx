@@ -7,10 +7,8 @@ export function BecomeSponsorSection() {
       <p className="text-gray-500 text-lg mb-8">
         Click below to view the 2024 - 2025 Code4Hope Sponsorship Packet
       </p>
-      <Button 
-        className="w-full max-w-xl bg-[#826CB8] hover:bg-[#6f5c9d] text-white py-6 text-lg h-auto rounded-xl"
-      >
-        Sponsorship Packet
+      <Button className="w-full max-w-xl bg-[#826CB8] hover:bg-[#6f5c9d] text-white py-6 text-lg h-auto rounded-xl">
+        <a href="https://docs.code4hope.net/img/sponsorship_prospectus.pdf">Sponsorship Packet</a>
       </Button>
     </section>
   )
