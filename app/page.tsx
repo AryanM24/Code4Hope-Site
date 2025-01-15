@@ -10,7 +10,7 @@ import blog1 from "@/components/assets/images/blog/1.jpg";
 import blog2 from "@/components/assets/images/blog/2.jpg";
 import blog3 from "@/components/assets/images/blog/3.jpg";
 import impactX from "@/components/assets/images/event/ImpactX.png";
-import black_logo from "@/components/assets/images/black_logo_no_text.png";
+import black_logo from "@/components/assets/images/black_logo_no_text.PNG";
 
 export default function Home() {
 
@@ -46,12 +46,6 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="md:w-1/2">
                 <div className="flex items-center space-x-4 mb-4">
-                  <Image
-                    src={black_logo}
-                    alt="Code4Hope Logo"
-                    width={40}
-                    height={40}
-                  />
                   <h2 className="text-2xl font-bold">Code 4 Hope</h2>
                 </div>
                 <p className="text-gray-500 md:text-lg">
