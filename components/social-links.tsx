@@ -1,5 +1,6 @@
+"use client"
+
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { YoutubeIcon, InstagramIcon, TwitterIcon, GithubIcon } from "lucide-react"
 import { TiktokIcon } from "@/components/icons"
 
@@ -24,15 +25,14 @@ export function SocialLinks() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {socialLinks.map((social) => (
-                <motion.div key={social.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    href={social.href}
-                    className={`flex items-center justify-center w-12 h-12 rounded-full bg-[#826CB8] ${social.color} transition-colors duration-300`}
-                    aria-label={`Follow us on ${social.name}`}
-                  >
-                    <social.icon className="h-6 w-6 text-white" />
-                  </Link>
-                </motion.div>
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  className={`flex items-center justify-center w-12 h-12 rounded-full bg-[#826CB8] ${social.color} transition-all duration-300 hover:scale-110 active:scale-95`}
+                  aria-label={`Follow us on ${social.name}`}
+                >
+                  <social.icon className="h-6 w-6 text-white" />
+                </Link>
               ))}
             </div>
             <p className="text-sm text-gray-500 mt-4">
