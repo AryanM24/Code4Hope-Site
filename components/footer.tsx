@@ -23,13 +23,13 @@ export function Footer() {
             <div className="flex flex-col items-center gap-2">
               <span className="text-sm font-medium">Follow Our Socials!</span>
               <div className="flex space-x-4">
-                <Link href="#" className="text-white hover:text-gray-200">
+                <Link href="https://www.youtube.com/@code4hope" className="text-white hover:text-gray-200">
                   <YoutubeIcon className="h-5 w-5" />
                 </Link>
-                <Link href="#" className="text-white hover:text-gray-200">
+                <Link href="https://www.instagram.com/code4hope_" className="text-white hover:text-gray-200">
                   <InstagramIcon className="h-5 w-5" />
                 </Link>
-                <Link href="#" className="text-white hover:text-gray-200">
+                <Link href="https://www.tiktok.com/@code4hopeofficial/" className="text-white hover:text-gray-200">
                   <TiktokIcon className="h-5 w-5" />
                 </Link>
               </div>

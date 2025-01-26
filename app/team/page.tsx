@@ -11,7 +11,7 @@ export default function TeamPage() {
     {
       name: "Aryan Mittal",
       title: "Founder & Executive Director",
-      image: "https://code4hope.net/assets/images/team/team-1.jpg",
+      image: "https://docs.code4hope.net/img/team-1.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -21,7 +21,7 @@ export default function TeamPage() {
     {
       name: "Krish Tated",
       title: "Director of Outreach",
-      image: "https://code4hope.net/assets/images/team/team-2.jpg",
+      image: "https://docs.code4hope.net/img/team-2.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -31,7 +31,7 @@ export default function TeamPage() {
     {
       name: "Maira Batra",
       title: "Director of Social Media Outreach",
-      image: "https://code4hope.net/assets/images/team/team-3.jpg",
+      image: "https://docs.code4hope.net/img/team-3.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -41,7 +41,7 @@ export default function TeamPage() {
     {
       name: "Ranya Chaudhary",
       title: "Event Director",
-      image: "https://code4hope.net/assets/images/team/team-4.jpg",
+      image: "https://docs.code4hope.net/img/team-4.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -54,7 +54,7 @@ export default function TeamPage() {
     {
       name: "Amogh Sheth",
       title: "Event Director",
-      image: "/placeholder.svg",
+      image: "https://docs.code4hope.net/img/team-5.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -72,7 +72,7 @@ export default function TeamPage() {
       }
     },
     {
-      name: "Alex Johnson",
+      name: "Dhriti Vohra",
       title: "Event Director",
       image: "/placeholder.svg",
       socials: {
@@ -85,9 +85,9 @@ export default function TeamPage() {
 
   const operationsTeam = [
     {
-      name: "Shlok P",
+      name: "Shlok Patel",
       title: "Operations Director",
-      image: "https://avatars.githubusercontent.com/u/194323703?v=4",
+      image: "https://docs.code4hope.net/img/team-6.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",

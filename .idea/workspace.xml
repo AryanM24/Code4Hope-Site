@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a5c217-abc4-4128-a77d-a301dd5d9b40" name="Changes" comment="Added all the images that I found. All the sponsor carousels are functioning!">
+    <list default="true" id="63a5c217-abc4-4128-a77d-a301dd5d9b40" name="Changes" comment="Added all the links and images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +126,9 @@
       <workItem from="1736628352953" duration="439000" />
       <workItem from="1736628858993" duration="274000" />
       <workItem from="1736658384441" duration="11684000" />
-      <workItem from="1736844641626" duration="1037000" />
+      <workItem from="1736844641626" duration="1231000" />
+      <workItem from="1736845935667" duration="4000" />
+      <workItem from="1737188717279" duration="2346000" />
     </task>
     <task id="LOCAL-00001" summary="Added images(a few are still left). Created dark mode switch button, commented the code rn">
       <option name="closed" value="true" />
@@ -147,7 +146,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736672945945</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed stretch logo issue">
+      <option name="closed" value="true" />
+      <created>1736845893979</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736845893979</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added all the links and images">
+      <option name="closed" value="true" />
+      <created>1737190638266</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737190638266</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +183,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added images(a few are still left). Created dark mode switch button, commented the code rn" />
     <MESSAGE value="Added all the images that I found. All the sponsor carousels are functioning!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all the images that I found. All the sponsor carousels are functioning!" />
+    <MESSAGE value="Fixed stretch logo issue" />
+    <MESSAGE value="Added all the links and images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all the links and images" />
   </component>
 </project>
