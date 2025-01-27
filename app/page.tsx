@@ -187,9 +187,6 @@ export default function Home() {
                 and further hone their skills. During every Code4Hope hackathon, workshops will be available for
                 participants to watch live. If you missed these amazing guest speakers, you can access them here.
               </p>
-              <Button variant="outline" className="rounded-full">
-                All Workshops
-              </Button>
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
               <Card className="p-0">
