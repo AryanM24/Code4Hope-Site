@@ -88,7 +88,7 @@ export default function Home() {
               <Card className="p-0">
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
-                    src="/placeholder.svg"
+                    src={c4h2025}
                     alt="Event Image"
                     width={400}
                     height={225}
@@ -110,7 +110,7 @@ export default function Home() {
               <Card className="p-0">
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
-                    src="/placeholder.svg"
+                    src={impactX}
                     alt="Event Image"
                     width={400}
                     height={225}
@@ -195,7 +195,7 @@ export default function Home() {
               <Card className="p-0">
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
-                    src="/placeholder.svg"
+                    src={blog1}
                     alt="Build Your Best Projects Faster with Refact.ai"
                     width={400}
                     height={225}
@@ -213,7 +213,7 @@ export default function Home() {
               <Card className="p-0">
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
-                    src="/placeholder.svg"
+                    src={blog2}
                     alt="Unleashing the Power of Data and AI"
                     width={400}
                     height={225}
@@ -231,7 +231,7 @@ export default function Home() {
               <Card className="p-0">
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
-                    src="/placeholder.svg"
+                    src={blog3}
                     alt="Ignite Your Journey to Entrepreneurship"
                     width={400}
                     height={225}
