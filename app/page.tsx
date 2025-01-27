@@ -243,33 +243,13 @@ export default function Home() {
             <div className="border-2 border-[#826CB8] shadow-md rounded-[32px] p-8 bg-white">
               <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div className="space-y-6 md:w-1/2">
-                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
-                    <Image
-                      src="/placeholder.svg?height=60&width=180"
-                      alt="Code4Hope Logo"
-                      width={180}
-                      height={60}
-                      className="h-15"
-                    />
-                    <h2 className="text-3xl font-bold text-[#826CB8]">Follow Our Socials</h2>
-                  </div>
+                  <h2 className="text-3xl font-bold text-[#826CB8]">Follow Our Socials</h2>
                   <p className="text-gray-600 text-lg leading-relaxed">
                     We post A LOT on our socials and Discord, so as a participant, that is your best place to find event
                     info and pretty much everything going on at Code4Hope! Stay connected with us to get real-time
                     updates, behind-the-scenes content, and exclusive announcements about upcoming hackathons and
                     workshops.
                   </p>
-                  <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                    {["Instagram", "Discord", "TikTok", "Twitter", "GitHub", "LinkedIn"].map((platform) => (
-                      <Button
-                        key={platform}
-                        variant="outline"
-                        className="border-[#826CB8] text-[#826CB8] hover:bg-[#826CB8] hover:text-white transition-colors"
-                      >
-                        {platform}
-                      </Button>
-                    ))}
-                  </div>
                 </div>
                 <div className="grid grid-cols-3 gap-6 md:w-1/2">
                   <Link
@@ -500,4 +480,3 @@ function XIcon(props: React.ComponentProps<"svg">) {
 }
 
 const socialIcons = [<InstagramIcon />, <DiscordIcon />, <TiktokIcon />, <TwitterIcon />, <GithubIcon />]
-
