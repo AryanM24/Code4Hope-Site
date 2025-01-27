@@ -70,19 +70,18 @@ export default function Home() {
       </section>
       </ScrollReveal>
 
-      {/* Recent Workshops Section */}
+      {/* Upcoming Events Section */}
       <ScrollReveal>
-        <section id="workshops" className="w-full py-12 md:py-16 lg:py-20">
+        <section id="events" className="w-full py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Recent Workshops</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Upcoming Events</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Workshop lectures are excellent ways for young software engineers to learn from industry professionals
-                and further hone their skills. During every Code4Hope hackathon, workshops will be available for
-                participants to watch live. If you missed these amazing guest speakers, you can access them here.
+                Throughout the year, Code4Hope hosts multiple hackathons, each on a different topic that relates to a
+                current trend in the technology space. Sign up below.
               </p>
               <Button variant="outline" className="rounded-full">
-                All Workshops
+                Previous Events
               </Button>
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:gap-12 mt-12">
@@ -90,36 +89,44 @@ export default function Home() {
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
                     src="/placeholder.svg"
-                    alt="Build Your Best Projects Faster with Refact.ai"
+                    alt="Event Image"
                     width={400}
                     height={225}
                     className="object-cover w-full h-full"
                   />
                 </div>
                 <CardHeader className="p-6">
-                  <CardTitle>Build Your Best Projects Faster with Refact.ai</CardTitle>
+                  <CardTitle>Code4Hope &apos;25</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
-                  <p className="text-sm text-gray-500 mb-4">Refact AI @ ImpactX</p>
-                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                  <p className="text-sm text-gray-500">
+                    Projects for a better world by solving real-world problems—whether they be health, wellness, and
+                    education—where your ideas today shape a brighter, more sustainable tomorrow. All proceeds from this
+                    hackathon will be donated to World Computer Exchange.
+                  </p>
+                  <Button className="mt-4 w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Sign Up</Button>
                 </CardContent>
               </Card>
               <Card className="p-0">
                 <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
                     src="/placeholder.svg"
-                    alt="Unleashing the Power of Data and AI"
+                    alt="Event Image"
                     width={400}
                     height={225}
                     className="object-cover w-full h-full"
                   />
                 </div>
                 <CardHeader className="p-6">
-                  <CardTitle>Unleashing the Power of Data and AI</CardTitle>
+                  <CardTitle>ImpactX &apos;25</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
-                  <p className="text-sm text-gray-500 mb-4">Rajesh Mittal, PrismView EHS @ ImpactX</p>
-                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                  <p className="text-sm text-gray-500">
+                    Projects for a better world by solving real-world problems—whether they be health, wellness, and
+                    education—where your ideas today shape a brighter, more sustainable tomorrow. All proceeds from this
+                    hackathon will be donated to World Computer Exchange.
+                  </p>
+                  <Button className="mt-4 w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Sign Up</Button>
                 </CardContent>
               </Card>
             </div>
@@ -171,69 +178,77 @@ export default function Home() {
 
       {/* Recent Workshops Section */}
       <ScrollReveal>
-      <section id="workshops" className="w-full py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Recent Workshops</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Workshop lectures are excellent ways for young software engineers to learn from industry professionals and further hone their skills. During every Code4Hope hackathon, workshops will be available at for participants to watch live. However, if you did not get the chance to hear these amazing guest speakers, you, the participants, can access them here.
-            </p>
+        <section id="workshops" className="w-full py-12 md:py-16 lg:py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Recent Workshops</h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Workshop lectures are excellent ways for young software engineers to learn from industry professionals
+                and further hone their skills. During every Code4Hope hackathon, workshops will be available for
+                participants to watch live. If you missed these amazing guest speakers, you can access them here.
+              </p>
+              <Button variant="outline" className="rounded-full">
+                All Workshops
+              </Button>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
+              <Card className="p-0">
+                <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/placeholder.svg"
+                    alt="Build Your Best Projects Faster with Refact.ai"
+                    width={400}
+                    height={225}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <CardHeader className="p-6">
+                  <CardTitle>Build Your Best Projects Faster with Refact.ai</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                  <p className="text-sm text-gray-500 mb-4">Refact AI @ ImpactX</p>
+                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                </CardContent>
+              </Card>
+              <Card className="p-0">
+                <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/placeholder.svg"
+                    alt="Unleashing the Power of Data and AI"
+                    width={400}
+                    height={225}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <CardHeader className="p-6">
+                  <CardTitle>Unleashing the Power of Data and AI</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                  <p className="text-sm text-gray-500 mb-4">Rajesh Mittal, PrismView EHS @ ImpactX</p>
+                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                </CardContent>
+              </Card>
+              <Card className="p-0">
+                <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/placeholder.svg"
+                    alt="Ignite Your Journey to Entrepreneurship"
+                    width={400}
+                    height={225}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <CardHeader className="p-6">
+                  <CardTitle>Ignite Your Journey to Entrepreneurship</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                  <p className="text-sm text-gray-500 mb-4">Prachi Kuradi @ ImpactX</p>
+                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
-            <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
-              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src={blog1}
-                  alt="Build Your Best Projects Faster with Refact.ai"
-                  width={400}
-                  height={225}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <CardHeader className="p-6">
-                <CardTitle>Build Your Best Projects Faster with Refact.ai</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="text-sm text-gray-500">Refact AI @ ImpactX</p>
-              </CardContent>
-            </Card>
-            <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
-              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src={blog2}
-                  alt="Workshop Image"
-                  width={400}
-                  height={225}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <CardHeader className="p-6">
-                <CardTitle>Unleashing the Power of Data and AI</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="text-sm text-gray-500">Rajesh Mittal, PrismView EHS @ ImpactX</p>
-              </CardContent>
-            </Card>
-            <Card className="p-0 border-2 border-[#826CB8] shadow-md rounded-xl overflow-hidden">
-              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src={blog3}
-                  alt="Workshop Image"
-                  width={400}
-                  height={225}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <CardHeader className="p-6">
-                <CardTitle>Ignite Your Journey to Entrepreneurship</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="text-sm text-gray-500">Prachi Kuradi @ ImpactX</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
       </ScrollReveal>
 
       {/* Social Links Section */}
