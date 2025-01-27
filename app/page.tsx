@@ -70,61 +70,61 @@ export default function Home() {
       </section>
       </ScrollReveal>
 
-      {/* Upcoming Events Section */}
+      {/* Recent Workshops Section */}
       <ScrollReveal>
-      <section id="events" className="w-full py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Upcoming Events</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Throughout the year, Code4Hope hosts multiple hackathons, each on a different topic that relates to a current trend in the technology space. Sign up below.
-            </p>
-            <Button variant="outline" className="rounded-full" onClick={() => window.open("/events", "_self")}>Previous Events</Button>
+        <section id="workshops" className="w-full py-12 md:py-16 lg:py-20">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Recent Workshops</h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Workshop lectures are excellent ways for young software engineers to learn from industry professionals
+                and further hone their skills. During every Code4Hope hackathon, workshops will be available for
+                participants to watch live. If you missed these amazing guest speakers, you can access them here.
+              </p>
+              <Button variant="outline" className="rounded-full">
+                All Workshops
+              </Button>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:gap-12 mt-12">
+              <Card className="p-0">
+                <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/placeholder.svg"
+                    alt="Build Your Best Projects Faster with Refact.ai"
+                    width={400}
+                    height={225}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <CardHeader className="p-6">
+                  <CardTitle>Build Your Best Projects Faster with Refact.ai</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                  <p className="text-sm text-gray-500 mb-4">Refact AI @ ImpactX</p>
+                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                </CardContent>
+              </Card>
+              <Card className="p-0">
+                <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <Image
+                    src="/placeholder.svg"
+                    alt="Unleashing the Power of Data and AI"
+                    width={400}
+                    height={225}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <CardHeader className="p-6">
+                  <CardTitle>Unleashing the Power of Data and AI</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 pt-0">
+                  <p className="text-sm text-gray-500 mb-4">Rajesh Mittal, PrismView EHS @ ImpactX</p>
+                  <Button className="w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Watch Now</Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:gap-12 mt-12">
-            <Card className="p-0">
-              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src={c4h2025}
-                  alt="Code4Hope 2025"
-                  width={400}
-                  height={225}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <CardHeader className="p-6">
-                <CardTitle>Code4Hope &apos;25</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="text-sm text-gray-500">
-                  Innovating for a better world by solving real-world challenges—sustainability, health, education, and finance—at our first in-person hackathon at Microsoft Times Square. All proceeds support STEM programs for underserved communities globally.
-                </p>
-                <Button className="mt-4 w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Sign Up</Button>
-              </CardContent>
-            </Card>
-            <Card className="p-0">
-              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src={impactX}
-                  alt="ImpactX"
-                  width={400}
-                  height={225}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <CardHeader className="p-6">
-                <CardTitle>ImpactX &apos;25</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <p className="text-sm text-gray-500">
-                  Projects for a better world by solving real-world problems—whether they be health, wellness, and education—where your ideas today shape a brighter, more sustainable tomorrow. All proceeds from this hackathon will be donated to World Computer Exchange.
-                </p>
-                <Button className="mt-4 w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Sign Up</Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
       </ScrollReveal>
 
       {/* Sponsors Section */}
