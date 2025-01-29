@@ -100,9 +100,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
                   <p className="text-sm text-gray-500">
-                    Projects for a better world by solving real-world problems—whether they be health, wellness, and
-                    education—where your ideas today shape a brighter, more sustainable tomorrow. All proceeds from this
-                    hackathon will be donated to World Computer Exchange.
+                    Code4Hope 2025 is our first in-person-only hackathon, uniting high school innovators to tackle real-world challenges in sustainability, health, education, and finance. Build meaningful projects, collaborate with like-minded peers, and create lasting impact—because the solutions you develop today can shape a better tomorrow.
                   </p>
                   <Button className="mt-4 w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Sign Up</Button>
                 </CardContent>
