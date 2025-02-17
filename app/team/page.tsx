@@ -11,7 +11,7 @@ export default function TeamPage() {
     {
       name: "Aryan Mittal",
       title: "Founder & Executive Director",
-      image: "/placeholder.svg",
+      image: "https://docs.code4hope.net/img/team-1.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -20,8 +20,8 @@ export default function TeamPage() {
     },
     {
       name: "Krish Tated",
-      title: "Director of Outreach",
-      image: "/placeholder.svg",
+      title: "Executive Director of Outreach",
+      image: "https://docs.code4hope.net/img/team-2.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -30,8 +30,8 @@ export default function TeamPage() {
     },
     {
       name: "Maira Batra",
-      title: "Director of Social Media Outreach",
-      image: "/placeholder.svg",
+      title: "Executive Director of Marketing",
+      image: "https://docs.code4hope.net/img/team-3.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -40,8 +40,8 @@ export default function TeamPage() {
     },
     {
       name: "Ranya Chaudhary",
-      title: "Event Director",
-      image: "/placeholder.svg",
+      title: "Executive Event Director",
+      image: "https://docs.code4hope.net/img/team-4.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -54,7 +54,7 @@ export default function TeamPage() {
     {
       name: "Amogh Sheth",
       title: "Event Director",
-      image: "/placeholder.svg",
+      image: "https://docs.code4hope.net/img/team-5.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -72,8 +72,18 @@ export default function TeamPage() {
       }
     },
     {
-      name: "Alex Johnson",
+      name: "Dhriti Vohra",
       title: "Event Director",
+      image: "/placeholder.svg",
+      socials: {
+        linkedin: "#",
+        instagram: "#",
+        tiktok: "#"
+      }
+    },
+    {
+      name: "Anvita Somisetty",
+      title: "Merch Designer",
       image: "/placeholder.svg",
       socials: {
         linkedin: "#",
@@ -85,9 +95,9 @@ export default function TeamPage() {
 
   const operationsTeam = [
     {
-      name: "Shlok P",
+      name: "Shlok Patel",
       title: "Operations Director",
-      image: "/placeholder.svg",
+      image: "https://docs.code4hope.net/img/team-6.jpg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -97,17 +107,17 @@ export default function TeamPage() {
     {
       name: "Malay Patel",
       title: "Operations Director",
-      image: "/placeholder.svg",
+      image: "https://avatars.githubusercontent.com/u/56907997?v=4",
       socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
+        linkedin: "https://www.linkedin.com/in/malay-patel-dev/",
+        instagram: "https://instagram.com/malayyy.p",
+        tiktok: "#",
       }
     },
     {
       name: "Gong Ming",
       title: "Operations Director",
-      image: "/placeholder.svg",
+      image: "https://avatars.githubusercontent.com/u/137864516?v=4",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -120,7 +130,7 @@ export default function TeamPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <section className="py-12 md:py-16 lg:py-20 bg-titleSectionBackground">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl font-bold mb-4">Our Amazing Team</h1>
               <p className="text-gray-600 max-w-3xl">
@@ -194,4 +204,3 @@ export default function TeamPage() {
     </div>
   )
 }
-
