@@ -2,29 +2,26 @@ import { EventSlider } from "@/components/event-slider"
 import { JoinSection } from "@/components/join-section"
 import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
+import impactX from "@/components/assets/images/event/ImpactX.png";
+import c4h2025 from "@/components/assets/images/event/c4h2025.png";
 
-const events = [
-  {
-    name: "Code4Hope 2025",
-    description: "Innovate. Impact. Inspire. Coming Soon.",
-    logo: "/placeholder.svg",
-    devpostLink: "#"
-  },
-  {
-    name: "ImpactX'24",
-    description: "Hosted in December of 2024, ImpactX was C4H's debut hackathon, with over 130+ participants and 25k+ in prizes",
-    logo: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/071/021/datas/original.png",
-    devpostLink: "https://impactx-code4hope.devpost.com/"
-  },
-  {
-    name: "ImpactX'24",
-    description: "Hosted in December of 2024, ImpactX was C4H's debut hackathon, with over 130+ participants and 25k+ in prizes",
-    logo: "/placeholder.svg",
-    devpostLink: "#"
-  }
-]
+
 
 export default function EventsPage() {
+  const events = [
+    {
+      name: "Code4Hope 2025",
+      description: "Scheduled for March 31, 2025, Code4Hope’s first in-person hackathon will take place at the Microsoft Center in Times Square, promising an exciting event with innovative challenges, impactful projects, and incredible prizes.",
+      logo: c4h2025,
+      devpostLink: "https://c4h2025.devpost.com/"
+    },
+    {
+      name: "ImpactX'24",
+      description: "Hosted in December of 2024, ImpactX was C4H's debut hackathon, with over 130+ participants and 25k+ in prizes",
+      logo: impactX,
+      devpostLink: "https://impactx-code4hope.devpost.com/"
+    }
+  ]
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">

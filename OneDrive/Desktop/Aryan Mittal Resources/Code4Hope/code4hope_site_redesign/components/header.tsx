@@ -33,9 +33,9 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
             <Image
-                src="/placeholder.svg?height=40&width=120"
+                src="/white_logo_horizontal.PNG"
                 alt="Code4Hope Logo"
-                width={120}
+                width={275}
                 height={40}
                 className="h-10"
             />

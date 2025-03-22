@@ -40,7 +40,7 @@ export default function Home() {
               <div className="md:w-1/2">
                 <div className="flex items-center space-x-4 mb-4">
                   <Image
-                    src="/placeholder.svg?height=40&width=40"
+                    src="/black_logo_no_text.png"
                     alt="Code4Hope Logo"
                     width={40}
                     height={40}

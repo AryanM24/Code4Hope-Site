@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
@@ -10,7 +11,9 @@ import blog1 from "@/components/assets/images/blog/1.jpg";
 import blog2 from "@/components/assets/images/blog/2.jpg";
 import blog3 from "@/components/assets/images/blog/3.jpg";
 import impactX from "@/components/assets/images/event/ImpactX.png";
+import c4h2025 from "@/components/assets/images/event/c4h2025.png";
 import black_logo from "@/components/assets/images/black_logo_no_text.PNG";
+import {router} from "next/client";
 
 export default function Home() {
 
@@ -28,8 +31,8 @@ export default function Home() {
               A not-for-profit organization that hosts hackathons throughout the year, empowering students to innovate and make an impact for charitable causes.
             </p>
             <div className="space-x-4">
-              <Button className="bg-[#826CB8] hover:bg-[#6f5c9d] text-white">Learn More</Button>
-              <Button variant="secondary" className="bg-gray-200 hover:bg-gray-300 text-black">
+              <Button className="bg-[#826CB8] hover:bg-[#6f5c9d] text-white" onClick={() => window.open("/about", "_self")}>Learn More</Button>
+              <Button variant="secondary" className="bg-gray-200 hover:bg-gray-300 text-black" onClick={() => window.open("/events", "_self")}>
                 Outreach
               </Button>
             </div>
@@ -76,14 +79,14 @@ export default function Home() {
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Throughout the year, Code4Hope hosts multiple hackathons, each on a different topic that relates to a current trend in the technology space. Sign up below.
             </p>
-            <Button variant="outline" className="rounded-full">Previous Events</Button>
+            <Button variant="outline" className="rounded-full" onClick={() => window.open("/events", "_self")}>Previous Events</Button>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:gap-12 mt-12">
             <Card className="p-0">
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Event Image"
+                  src={c4h2025}
+                  alt="Code4Hope 2025"
                   width={400}
                   height={225}
                   className="object-cover w-full h-full"
@@ -94,7 +97,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="p-6 pt-0">
                 <p className="text-sm text-gray-500">
-                  Projects for a better world by solving real-world problems—whether they be health, wellness, and education—where your ideas today shape a brighter, more sustainable tomorrow. All proceeds from this hackathon will be donated to World Computer Exchange.
+                  Innovating for a better world by solving real-world challenges—sustainability, health, education, and finance—at our first in-person hackathon at Microsoft Times Square. All proceeds support STEM programs for underserved communities globally.
                 </p>
                 <Button className="mt-4 w-full bg-[#826CB8] hover:bg-[#6f5c9d]">Sign Up</Button>
               </CardContent>
@@ -103,7 +106,7 @@ export default function Home() {
               <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                 <Image
                   src={impactX}
-                  alt="Event Image"
+                  alt="ImpactX"
                   width={400}
                   height={225}
                   className="object-cover w-full h-full"
@@ -133,7 +136,7 @@ export default function Home() {
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Sponsors provide our hackathons with funding so that young developers who participate can receive awards, prizes, and workshops that can help them further develop their skills.
             </p>
-            <Button variant="outline" className="rounded-full" >See more...</Button>
+            <Button variant="outline" className="rounded-full" onClick={() => window.open("/sponsors", "_self")} >See more...</Button>
           </div>
           <div className="relative mt-12">
             <div className="container mx-auto px-4 md:px-6 relative">

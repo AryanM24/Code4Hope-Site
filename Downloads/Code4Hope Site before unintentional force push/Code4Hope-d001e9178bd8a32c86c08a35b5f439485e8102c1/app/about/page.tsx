@@ -33,7 +33,7 @@ export default function AboutPage() {
               <ContentSection
                 title="Outreach"
                 content="Our outreach initiatives focus on connecting with students, educational institutions, and charitable organizations worldwide. We believe in the power of technology to create positive change, and through our programs, we encourage students to apply their skills to solve real-world problems. Our community extends beyond hackathons, creating lasting connections and opportunities for continued learning and impact."
-                imageSrc="/placeholder.svg"
+                imageSrc="https://imageio.forbes.com/blogs-images/theopriestley/files/2016/01/eduhackathon-e1453285584945.jpg?height=400&width=711&fit=bounds"
                 imageAlt="Code4Hope outreach event"
                 reversed
               />
