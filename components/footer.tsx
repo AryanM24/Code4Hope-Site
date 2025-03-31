@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link"
+import Image from "next/image"
 import { Code, Github, Twitter, Linkedin, Mail, Heart } from "lucide-react"
+import { useState, useEffect } from "react"
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const [currentYear, setCurrentYear] = useState(2023); // Use a placeholder initial value
+
+  // Set the correct year only on client side to prevent hydration mismatch
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800">
@@ -10,9 +19,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Code className="h-6 w-6 text-primary" />
-              <span className="font-bold text-xl text-foreground">Code4Hope</span>
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="rounded-md">
+                <Image 
+                src="https://docs.code4hope.net/img/black%20_logo_no_text.PNG" 
+                alt="Code4Hope Logo" 
+                width={24}
+                height={24}
+                className="h-5 w-auto md:h-8"
+                />
+              </div>
+              <span className="font-bold text-xl text-[#1F2937] dark:text-white">Code4Hope</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-md">
               Code4Hope is dedicated to making coding education and technology access available to all students,

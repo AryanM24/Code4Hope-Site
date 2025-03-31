@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Code, Menu, X, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -61,8 +62,18 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Code className="h-6 w-6 text-primary" />
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="rounded-md" suppressHydrationWarning>
+              <Image 
+              src="https://docs.code4hope.net/img/black%20_logo_no_text.PNG" 
+              alt="Code4Hope Logo" 
+              width={24}
+              height={24}
+              className="h-5 w-auto md:h-8"
+              priority
+              unoptimized
+              />
+            </div>
             <span className="font-bold text-xl text-[#1F2937] dark:text-white">Code4Hope</span>
           </Link>
 
