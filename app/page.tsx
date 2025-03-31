@@ -8,7 +8,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ImageComparisonSlider from "@/components/image-comparison-slider"
 import ScrollingNewsTicker from "@/components/scrolling-ticker"
 import LocationMap from "@/components/location-map"
@@ -209,6 +209,16 @@ export default function Home() {
   const [message, setMessage] = useState("")
   const [subscribed, setSubscribed] = useState(false)
   const [contactSubmitted, setContactSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate content loading
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 500)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault()
@@ -251,6 +261,14 @@ export default function Home() {
     },
   ]
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-background dark:bg-[#262626]">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
+      </div>
+    )
+  }
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -274,7 +292,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <motion.h1 
-                className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white"
+                className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
@@ -290,17 +308,17 @@ export default function Home() {
                 A not-for-profit organization that hosts hackathons throughout the year, empowering students to innovate and make an impact for charitable causes.
               </motion.p>
               <motion.div 
-                className="space-x-6 pt-6"
+                className="space-x-2 sm:space-x-6 pt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
                 <motion.div 
-                  className="inline-block"
+                  className="inline-block mb-2 sm:mb-0"
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg" onClick={() => window.open("/about", "_self")}>
+                  <Button className="bg-primary hover:bg-primary/90 text-white px-5 sm:px-8 py-5 sm:py-6 text-base sm:text-lg" onClick={() => window.open("/about", "_self")}>
                     Learn More
                   </Button>
                 </motion.div>
@@ -309,7 +327,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg" onClick={() => window.open("/events", "_self")}>
+                  <Button className="bg-white text-primary hover:bg-white/90 px-5 sm:px-8 py-5 sm:py-6 text-base sm:text-lg" onClick={() => window.open("/events", "_self")}>
                     Get Involved
                   </Button>
                 </motion.div>
