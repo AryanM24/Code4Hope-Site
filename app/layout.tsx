@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Code4Hope is a non-profit organization dedicated to providing free coding education and technology access to underserved communities.",
   keywords: "coding, education, technology, non-profit, digital literacy, computer science",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -25,14 +25,12 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'

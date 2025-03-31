@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import type React from "react"
 import { useRef } from "react"
@@ -18,11 +18,11 @@ import SponsorCarousel from "../components/sponsor-carousel"
 
 // Import images
 import hero_image from "@/public/placeholder.svg" // Replace with your actual image paths
-import blog1 from "@/public/placeholder.svg"
-import blog2 from "@/public/placeholder.svg"
-import blog3 from "@/public/placeholder.svg"
-import impactX from "@/public/placeholder.svg"
-import c4h2025 from "@/public/placeholder.svg"
+import blog1 from "@/public/1.jpg"
+import blog2 from "@/public/2.jpg"
+import blog3 from "@/public/3.jpg"
+import impactX from "@/public/ImpactX (1).png"
+import c4h2025 from "@/public/c4h2025.png"
 
 // Import icons
 function HeartIcon(props) {
@@ -227,15 +227,6 @@ export default function Home() {
     }
   }
 
-  // News items for the ticker
-  const newsItems = [
-    { id: 1, text: "Code4Hope receives national grant to expand programs to 20 new communities" },
-    { id: 2, text: "Over 5,000 students participated in our coding programs last year" },
-    { id: 3, text: "Tech Access Initiative has distributed 1,500 computers to students in need" },
-    { id: 4, text: "New partnership with major tech company to provide internship opportunities" },
-    { id: 5, text: "Summer Code Camps registration now open - scholarships available" },
-  ]
-
   // Gallery images
   const galleryImages = [
     {
@@ -267,7 +258,7 @@ export default function Home() {
         <section className="w-full py-24 md:py-32 lg:py-40 relative">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/placeholder.svg?height=1080&width=1920"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=1080&width=1920"
               alt="Students coding together"
               fill
               className="object-cover"
@@ -318,7 +309,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" className="border-white text-white hover:bg-white/20 px-8 py-6 text-lg" onClick={() => window.open("/events", "_self")}>
+                  <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-lg" onClick={() => window.open("/events", "_self")}>
                     Get Involved
                   </Button>
                 </motion.div>
@@ -330,7 +321,7 @@ export default function Home() {
 
       {/* About Section - Revised Layout */}
       <ScrollReveal>
-        <section id="about" className="w-full py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-800">
+        <section id="about" className="w-full py-16 md:py-20 lg:py-24 bg-background dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -339,8 +330,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1F2937] dark:text-white">Our Story</h2>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">Our Story</h2>
+              <p className="text-muted-foreground dark:text-gray-300 text-lg">
                 Uniting technology and creativity to drive social change and empower the next generation of innovators.
               </p>
             </motion.div>
@@ -355,13 +346,13 @@ export default function Home() {
               >
                 <div>
                   <div className="h-1 w-12 bg-primary mb-6"></div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#1F2937] dark:text-white leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground dark:text-white leading-tight">
                     Empowering students to create technology <span className="text-primary">with purpose</span>
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
+                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed mb-6">
                     Code4Hope is a not-for-profit organization dedicated to empowering students to leverage technology for social good. Our mission is to unite technology and creativity to drive social change, fostering a global community of young innovators addressing real-world challenges.
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
                     Through our regular hackathons, we create opportunities for students to develop their skills while making a meaningful impact for charitable causes. We believe in the power of young minds to shape a better future through code.
                   </p>
                 </div>
@@ -402,16 +393,16 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-[#F9FAFB] dark:bg-gray-700/30 p-8 rounded-xl shadow-sm">
-                  <h4 className="font-bold text-xl mb-4 text-[#1F2937] dark:text-white">Our Vision</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                <div className="p-8 rounded-xl bg-card dark:bg-[#333333] shadow-sm">
+                  <h4 className="font-bold text-xl mb-4 text-foreground dark:text-white">Our Vision</h4>
+                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
                     A world where technology is created with compassion and purpose, solving our most pressing social challenges.
                   </p>
                 </div>
                 
-                <div className="bg-[#F9FAFB] dark:bg-gray-700/30 p-8 rounded-xl shadow-sm">
-                  <h4 className="font-bold text-xl mb-4 text-[#1F2937] dark:text-white">Our Impact</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                <div className="p-8 rounded-xl bg-card dark:bg-[#333333] shadow-sm">
+                  <h4 className="font-bold text-xl mb-4 text-foreground dark:text-white">Our Impact</h4>
+                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
                     Thousands of students connected, hundreds of projects created, and dozens of charitable causes supported through innovative hackathons and events.
                   </p>
                 </div>
@@ -423,7 +414,7 @@ export default function Home() {
 
       {/* Sponsors Section */}
       <ScrollReveal>
-        <section id="sponsors" className="w-full py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900/30">
+        <section id="sponsors" className="w-full py-12 md:py-16 lg:py-20 bg-background dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -432,8 +423,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-4"
             >
-              <h2 className="text-3xl font-bold mb-4 text-[#1F2937] dark:text-white">Our Sponsors</h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Sponsors</h2>
+              <p className="text-muted-foreground dark:text-gray-300">
                 We're grateful to partner with these amazing organizations who make our hackathons possible.
               </p>
             </motion.div>
@@ -451,7 +442,7 @@ export default function Home() {
 
       {/* Events Section */}
       <ScrollReveal>
-        <section id="events" className="w-full py-12 md:py-16 lg:py-20 bg-[#F9FAFB] dark:bg-gray-900">
+        <section id="events" className="w-full py-12 md:py-16 lg:py-20 bg-muted dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -460,8 +451,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4 text-[#1F2937] dark:text-white">Upcoming Events</h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Upcoming Events</h2>
+              <p className="text-muted-foreground dark:text-gray-300">
                 Throughout the year, we host multiple hackathons, each focusing on a different technology trend
                 that supports charitable causes.
               </p>
@@ -497,7 +488,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="flex flex-col h-full"
                 >
-                  <div className="card rounded-xl overflow-hidden h-full transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white dark:bg-gray-800">
+                  <div className="card rounded-xl overflow-hidden h-full transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-card dark:bg-[#333333]">
                     <div className="relative">
                       <div className="aspect-video overflow-hidden">
                         <Image
@@ -514,12 +505,12 @@ export default function Home() {
                     </div>
                     
                     <div className="p-6">
-                      <h3 className="text-2xl font-semibold mb-2 text-[#1F2937] dark:text-white">{event.title}</h3>
-                      <div className="flex items-center text-gray-600 dark:text-gray-300 mb-4">
+                      <h3 className="text-2xl font-semibold mb-2 text-foreground dark:text-white">{event.title}</h3>
+                      <div className="flex items-center text-muted-foreground dark:text-gray-300 mb-4">
                         <LocationIcon className="h-4 w-4 mr-1" />
                         <span className="text-sm">{event.location}</span>
                       </div>
-                      <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3">
+                      <p className="text-muted-foreground dark:text-gray-300 mb-6 line-clamp-3">
                         {event.description}
                       </p>
                       <div className="mt-auto pt-4 flex">
@@ -547,7 +538,7 @@ export default function Home() {
 
       {/* Workshops Section */}
       <ScrollReveal>
-        <section id="workshops" className="w-full py-12 md:py-16 lg:py-20 bg-[#F9FAFB] dark:bg-gray-900">
+        <section id="workshops" className="w-full py-12 md:py-16 lg:py-20 bg-background dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -556,8 +547,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4 text-[#1F2937] dark:text-white">Recent Workshops</h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Recent Workshops</h2>
+              <p className="text-muted-foreground dark:text-gray-300">
                 Learn from industry professionals through our workshop recordings. These sessions from our past hackathons
                 provide valuable insights and skills for aspiring developers.
               </p>
@@ -589,7 +580,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="h-full"
                 >
-                  <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-gray-800">
+                  <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333]">
                     <div className="relative">
                       <Image
                         src={workshop.image}
@@ -601,10 +592,10 @@ export default function Home() {
                     </div>
                     
                     <div className="p-5">
-                      <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-[#1F2937] dark:text-white">
+                      <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
                         {workshop.title}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 flex items-center">
+                      <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
                         <UserIcon className="h-4 w-4 mr-1 inline" />
                         {workshop.presenter}
                       </p>
@@ -628,7 +619,7 @@ export default function Home() {
 
       {/* Photo Gallery */}
       <ScrollReveal>
-        <section className="py-16 bg-white dark:bg-gray-800">
+        <section className="py-16 bg-muted dark:bg-[#262626]">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -637,8 +628,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4 text-[#1F2937] dark:text-white">Our Impact in Pictures</h2>
-              <p className="text-gray-600 dark:text-gray-300">Glimpses of our work and the students we serve</p>
+              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Impact in Pictures</h2>
+              <p className="text-muted-foreground dark:text-gray-300">Glimpses of our work and the students we serve</p>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -689,7 +680,7 @@ export default function Home() {
 
       {/* Social Media Section */}
       <ScrollReveal>
-        <section className="w-full py-16 md:py-20 lg:py-24 bg-[#F9FAFB] dark:bg-gray-900">
+        <section className="w-full py-16 md:py-20 lg:py-24 bg-background dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
             <div className="card rounded-3xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-5">
@@ -717,11 +708,11 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center bg-white dark:bg-gray-800">
-                  <h3 className="text-2xl font-semibold mb-2 text-[#1F2937] dark:text-white">
+                <div className="lg:col-span-3 p-8 md:p-12 bg-card dark:bg-[#333333] flex flex-col justify-center">
+                  <h3 className="text-2xl font-semibold mb-2 text-foreground dark:text-white">
                     Follow Us On Social Media
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-8">
+                  <p className="text-muted-foreground dark:text-gray-300 mb-8">
                     We post regularly on our social channels with event updates, tech tips, and success stories from our community.
                   </p>
                   
@@ -744,7 +735,7 @@ export default function Home() {
                       >
                         <Link
                           href={social.href}
-                          className="flex flex-col items-center justify-center p-3 rounded-lg border border-border hover:border-primary hover:text-primary transition-all duration-300"
+                          className="flex flex-col items-center justify-center p-3 rounded-lg border border-border dark:border-gray-700 hover:border-primary hover:text-primary transition-all duration-300 text-foreground dark:text-gray-300"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

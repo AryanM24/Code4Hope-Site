@@ -4,16 +4,7 @@ import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion, useAnimation, useInView } from "framer-motion"
 
-const sponsors = [
-  { name: "Sponsor 1", logo: "/placeholder.svg", tier: "platinum" },
-  { name: "Sponsor 2", logo: "/placeholder.svg", tier: "gold" },
-  { name: "Sponsor 3", logo: "/placeholder.svg", tier: "gold" },
-  { name: "Sponsor 4", logo: "/placeholder.svg", tier: "silver" },
-  { name: "Sponsor 5", logo: "/placeholder.svg", tier: "silver" },
-  { name: "Sponsor 6", logo: "/placeholder.svg", tier: "silver" },
-  { name: "Sponsor 7", logo: "/placeholder.svg", tier: "bronze" },
-  { name: "Sponsor 8", logo: "/placeholder.svg", tier: "bronze" },
-]
+// No need to define sponsors here as we'll use the global sponsors from utils.ts
 
 const SponsorCarousel = () => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -38,6 +29,9 @@ const SponsorCarousel = () => {
     }
   }, [isInView, controls])
 
+  // Use the global sponsors defined in utils.ts
+  const sponsors = globalThis.sponsors || []
+
   return (
     <div className="w-full overflow-hidden" ref={containerRef}>
       <div className="py-8">
@@ -49,17 +43,24 @@ const SponsorCarousel = () => {
           {sponsors.map((sponsor, index) => (
             <div 
               key={`sponsor-${index}`}
-              className="mx-8 flex-shrink-0"
+              className="mx-4 flex-shrink-0"
             >
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-20 w-40">
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={120}
-                  height={60}
-                  className="object-contain max-h-12"
-                />
-              </div>
+              <a 
+                href={sponsor.devpostLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="bg-white dark:bg-[#333333] rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={200}
+                    height={100}
+                    className="object-contain max-h-20"
+                  />
+                </div>
+              </a>
             </div>
           ))}
           
@@ -67,17 +68,24 @@ const SponsorCarousel = () => {
           {sponsors.map((sponsor, index) => (
             <div 
               key={`sponsor-dup-${index}`}
-              className="mx-8 flex-shrink-0"
+              className="mx-4 flex-shrink-0"
             >
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-20 w-40">
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={120}
-                  height={60}
-                  className="object-contain max-h-12"
-                />
-              </div>
+              <a 
+                href={sponsor.devpostLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="bg-white dark:bg-[#333333] rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={200}
+                    height={100}
+                    className="object-contain max-h-20"
+                  />
+                </div>
+              </a>
             </div>
           ))}
         </motion.div>

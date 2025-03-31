@@ -17,7 +17,7 @@ globalThis.sponsors = [
     name: "NordVPN",
     description: "Protect your internet traffic with the world’s leading VPN service.",
     logo: "https://a.storyblok.com/f/157611/284x64/116a8617cc/nordvpn-logo.png/m/828x0/filters:quality(60):format(avif)",
-    devpostLink: "https://nordvpn.com/",
+    devpostLink: "https://nordvpn.com/hackathons",
   },
   {
     name: "NordPass",
@@ -35,7 +35,7 @@ globalThis.sponsors = [
     name: "Saily",
     description: "An advanced AI-powered search tool designed to help businesses uncover insights from vast data sources.",
     logo: "https://www.monpetitforfait.com/wp-content/uploads/2024/04/saily-logo-black1.png",
-    devpostLink: "https://saily.ai/",
+    devpostLink: "https://saily.com/",
   },
   {
     name: "Flatlogic",

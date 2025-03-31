@@ -16,12 +16,12 @@ export function JoinSection() {
           className="rounded-2xl overflow-hidden shadow-xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-5">
-            <div className="lg:col-span-2 p-8 md:p-12 bg-primary/90">
+            <div className="lg:col-span-2 p-8 md:p-12 bg-primary">
               <div className="h-full flex flex-col justify-center">
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-3xl font-bold text-primary-foreground mb-6">
                   Join Code4Hope
                 </h2>
-                <p className="text-white/90 text-lg mb-8 leading-relaxed">
+                <p className="text-primary-foreground/90 text-lg mb-8 leading-relaxed">
                   Become part of our vibrant community and help create technology solutions that make a real difference for charitable causes.
                 </p>
                 <div className="mt-auto">
@@ -30,7 +30,7 @@ export function JoinSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button 
-                      className="bg-white text-primary hover:bg-gray-100 px-6 font-medium"
+                      className="bg-background text-foreground hover:bg-background/90 px-6 font-medium"
                       onClick={() => window.open("https://discord.gg/7ssCZx8Hme", "_blank")}
                     >
                       Join Our Community
@@ -40,11 +40,11 @@ export function JoinSection() {
               </div>
             </div>
             
-            <div className="lg:col-span-3 p-8 md:p-12 bg-white dark:bg-gray-800 flex flex-col justify-center">
-              <h3 className="text-2xl font-semibold mb-6 text-[#1F2937] dark:text-white">
+            <div className="lg:col-span-3 p-8 md:p-12 bg-card dark:bg-card flex flex-col justify-center">
+              <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
                 Explore Our Resources
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+              <p className="text-muted-foreground mb-8 leading-relaxed">
                 We've prepared comprehensive documentation to help you get started and understand everything about Code4Hope's mission, events, and how you can contribute.
               </p>
               
@@ -79,7 +79,7 @@ export function JoinSection() {
                       boxShadow: "0 10px 25px -5px rgba(130, 108, 184, 0.2), 0 8px 10px -6px rgba(130, 108, 184, 0.1)",
                       transition: { duration: 0.3 }
                     }}
-                    className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md"
+                    className="bg-background dark:bg-card rounded-xl overflow-hidden shadow-md"
                   >
                     <Link
                       href={resource.href}
@@ -92,8 +92,8 @@ export function JoinSection() {
                           {resource.icon}
                         </div>
                       </div>
-                      <h4 className="font-semibold mb-2 text-[#1F2937] dark:text-white">{resource.label}</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{resource.description}</p>
+                      <h4 className="font-semibold mb-2 text-foreground">{resource.label}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{resource.description}</p>
                       <div className="mt-auto pt-2 flex items-center text-sm font-medium text-primary">
                         <span>View</span>
                         <ArrowRightIcon className="ml-2 h-4 w-4" />

@@ -55,7 +55,7 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
-        scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -84,7 +84,7 @@ export default function Navbar() {
             </Button>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-[#1F2937] dark:text-gray-200"
+              className="p-2 rounded-full text-[#1F2937] dark:text-gray-200"
               aria-label="Toggle theme"
             >
               {mounted && theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
