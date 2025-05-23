@@ -20,6 +20,9 @@ import SponsorCarousel from "../components/sponsor-carousel";
 import WinnersSlider from "@/components/WinnersSlider"; // Adjust path if necessary
 import type { Winner } from "@/components/WinnersSlider"; // Import Winner type
 
+// Import the new EventPopup component
+import EventPopup from "@/components/EventPopup"; // Adjust path if necessary, e.g., ../components/EventPopup
+
 // Import images
 // import hero_image from "@/public/placeholder.svg"; // No longer used directly for slider
 import blog1 from "@/public/1.jpg";
@@ -348,6 +351,14 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col">
+      {/* Event Popup - Add this component here */}
+      {/* You can customize the props for your specific event */}
+      <EventPopup 
+        eventName="Code4Hope '25"
+        eventDate="Jun 20 – 22, 2025"
+        eventPageUrl="https://c4h2025.devpost.com/"
+      />
+
       {/* Hero Section */}
       <ScrollReveal>
         <section className="w-full py-24 md:py-32 lg:py-40 relative">
