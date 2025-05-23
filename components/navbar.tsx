@@ -91,7 +91,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Button asChild size="sm" className="bg-primary hover:bg-primary/80 text-primary-foreground">
-              <Link href="/get-involved">Donate</Link>
+              <Link href="https://hcb.hackclub.com/donations/start/code-4-hope">Donate</Link>
             </Button>
             <button
               onClick={toggleTheme}
@@ -179,7 +179,7 @@ export default function Navbar() {
                   size="default" 
                   className="bg-primary hover:bg-primary/80 text-primary-foreground w-full"
                 >
-                  <Link href="/get-involved" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="https://hcb.hackclub.com/donations/start/code-4-hope" onClick={() => setIsMenuOpen(false)}>
                     Donate
                   </Link>
                 </Button>
