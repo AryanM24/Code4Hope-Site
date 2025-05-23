@@ -14,6 +14,12 @@ declare  global {
 }
 globalThis.sponsors = [
   {
+    name: "Gradescout",
+    description: "GradeScout is a student-focused platform that enhances K–12 grade portals by offering real-time grade notifications, GPA calculations, and predictive tools within a sleek, user-friendly interface. ",
+    logo: "https://digitalpress.fra1.cdn.digitaloceanspaces.com/4at5wal/2023/06/GradeScout-Logo.png",
+    devpostLink: "https://gradescout.live/welcome",
+  },
+  {
     name: "NordVPN",
     description: "Protect your internet traffic with the world’s leading VPN service.",
     logo: "https://a.storyblok.com/f/157611/284x64/116a8617cc/nordvpn-logo.png/m/828x0/filters:quality(60):format(avif)",
