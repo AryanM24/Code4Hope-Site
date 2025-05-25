@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button"; // Assuming shadcn/ui Button
 import Link from "next/link";
 import { X, CalendarDays, PartyPopper } from "lucide-react"; // Icons
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface EventPopupProps {
   eventPageUrl?: string;
@@ -19,8 +20,12 @@ const EventPopup: React.FC<EventPopupProps> = ({
   eventDate = "Coming Soon!",
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    // Don't show popup on mobile devices
+    if (isMobile) return;
+
     // Show the popup after a short delay to be less intrusive
     const timer = setTimeout(() => {
       // Check if the popup has been dismissed before
@@ -31,7 +36,7 @@ const EventPopup: React.FC<EventPopupProps> = ({
     }, 1500); // 1.5-second delay
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isMobile]);
 
   const handleClose = () => {
     setIsVisible(false);

@@ -643,10 +643,10 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Workshops Section */}
-      <ScrollReveal>
+      <ScrollReveal> {/* Assuming ScrollReveal is a working component from your project */}
         <section id="workshops" className="w-full py-12 md:py-16 lg:py-20 bg-background dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
-            <motion.div
+            <motion.div // Assuming motion is a working component (e.g., from framer-motion)
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -663,19 +663,22 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
               {[
                 {
-                  image: blog1,
+                  image: blog1, // Assuming blog1 is an imported image source
                   title: "Build Your Best Projects Faster with Refact.ai",
-                  presenter: "Refact AI @ ImpactX"
+                  presenter: "Refact AI @ ImpactX",
+                  link: "https://www.youtube.com/watch?v=aZquJC9YlXA" // <-- ADD ACTUAL LINK
                 },
                 {
-                  image: blog2,
+                  image: blog2, // Assuming blog2 is an imported image source
                   title: "Unleashing the Power of Data and AI",
-                  presenter: "Rajesh Mittal, PrismView EHS @ ImpactX"
+                  presenter: "Rajesh Mittal, PrismView EHS @ ImpactX",
+                  link: "/HighSchool_Data_Conversation.pdf" // <-- ADD ACTUAL LINK
                 },
                 {
-                  image: blog3,
+                  image: blog3, // Assuming blog3 is an imported image source
                   title: "Ignite Your Journey to Entrepreneurship",
-                  presenter: "Prachi Kuradi @ ImpactX"
+                  presenter: "Prachi Kuradi @ ImpactX",
+                  link: "/Enhanced_Entrepreneurship_Presentation.pdf" // <-- ADD ACTUAL LINK
                 }
               ].map((workshop, index) => (
                 <motion.div 
@@ -686,9 +689,10 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="h-full"
                 >
-                  <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333]">
+                  {/* Added flex flex-col to ensure button can be pushed to the bottom */}
+                  <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
                     <div className="relative">
-                      <Image
+                      <Image // Assuming Image is a working component (e.g., next/image)
                         src={workshop.image}
                         alt={workshop.title}
                         width={400}
@@ -697,22 +701,36 @@ export default function Home() {
                       />
                     </div>
                     
-                    <div className="p-5">
+                    {/* Added flex flex-col flex-grow to allow content to push button down */}
+                    <div className="p-5 flex flex-col flex-grow">
                       <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
                         {workshop.title}
                       </h3>
                       <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
-                        <UserIcon className="h-4 w-4 mr-1 inline" /> 
+                        <UserIcon className="h-4 w-4 mr-1 inline" /> {/* Assuming UserIcon is a working component */}
                         {workshop.presenter}
                       </p>
+
+                      {/* This div will take up remaining space, pushing the button to the bottom */}
+                      <div className="flex-grow"></div>
+
                       <motion.div 
                         whileHover={{ scale: 1.03 }} 
                         whileTap={{ scale: 0.97 }}
-                        className="mt-auto"
+                        className="mt-auto" // This helps ensure the button is at the bottom of the card
                       >
-                        <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-1">
-                          Watch Now
-                        </Button>
+                        {/* --- MODIFICATION FOR BUTTON LINK --- */}
+                        <a
+                          href={workshop.link} // Use the link from your workshop data
+                          target="_blank" // Optional: opens in a new tab
+                          rel="noopener noreferrer" // Recommended for security with target="_blank"
+                          className="block w-full" // Makes the anchor tag take full width for the button
+                        >
+                          <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4"> {/* Assuming Button is a working component. Added some padding for better default appearance. */}
+                            Watch Now
+                          </Button>
+                        </a>
+                        {/* --- END MODIFICATION --- */}
                       </motion.div>
                     </div>
                   </div>
