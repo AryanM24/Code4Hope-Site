@@ -355,7 +355,7 @@ export default function Home() {
       {/* You can customize the props for your specific event */}
       <EventPopup 
         eventName="Code4Hope '25"
-        eventDate="Jun 20 – 22, 2025"
+        eventDate="June 27 – 29, 2025 and July 10, 2025"
         eventPageUrl="https://c4h2025.devpost.com/"
       />
 
@@ -572,9 +572,9 @@ export default function Home() {
                 {
                   image: c4h2025,
                   title: "Code4Hope '25",
-                  date: "July 10, 2025",
+                  date: "June 27-29, 2025 and July 10, 2025",
                   location: "Times Square, New York City, NY",
-                  description: "Code4Hope 2025 is our first in-person-only hackathon, uniting high school innovators to tackle real-world challenges in sustainability, health, education, and finance.",
+                  description: "Structured similarly to many entrepreneurship competitions, in this two-round hackathon, participants will work with their teams to develop a solution to a critical issue of a fictional company of random assignment. Their solution will be within four global challenge tracks: sustainability, health, education, or finance.",
                   link: "https://c4h2025.devpost.com/"
                 },
                 {
@@ -643,100 +643,168 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Workshops Section */}
-      <ScrollReveal> {/* Assuming ScrollReveal is a working component from your project */}
+      <ScrollReveal>
         <section id="workshops" className="w-full py-12 md:py-16 lg:py-20 bg-background dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
-            <motion.div // Assuming motion is a working component (e.g., from framer-motion)
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center mb-12"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Recent Workshops</h2>
+          <p className="text-muted-foreground dark:text-gray-300">
+            Learn from industry professionals through our workshop recordings. These sessions from our past hackathons
+            provide valuable insights and skills for aspiring developers.
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+          {/* Workshop Card 1 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="h-full"
+          >
+            <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
+          <div className="relative">
+            <Image
+              src={blog1}
+              alt="Build Your Best Projects Faster with Refact.ai"
+              width={400}
+              height={225}
+              className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+          
+          <div className="p-5 flex flex-col flex-grow">
+            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
+              Build Your Best Projects Faster with Refact.ai
+            </h3>
+            <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
+              <UserIcon className="h-4 w-4 mr-1 inline" />
+              Refact AI @ ImpactX
+            </p>
+            <div className="flex-grow"></div>
+            <motion.div 
+              whileHover={{ scale: 1.03 }} 
+              whileTap={{ scale: 0.97 }}
+              className="mt-auto"
             >
-              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Recent Workshops</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                Learn from industry professionals through our workshop recordings. These sessions from our past hackathons
-                provide valuable insights and skills for aspiring developers.
-              </p>
+              <a
+            href="https://www.youtube.com/watch?v=aZquJC9YlXA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+              >
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4">
+              Watch Now
+            </Button>
+              </a>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-              {[
-                {
-                  image: blog1, // Assuming blog1 is an imported image source
-                  title: "Build Your Best Projects Faster with Refact.ai",
-                  presenter: "Refact AI @ ImpactX",
-                  link: "https://www.youtube.com/watch?v=aZquJC9YlXA" // <-- ADD ACTUAL LINK
-                },
-                {
-                  image: blog2, // Assuming blog2 is an imported image source
-                  title: "Unleashing the Power of Data and AI",
-                  presenter: "Rajesh Mittal, PrismView EHS @ ImpactX",
-                  link: "/HighSchool_Data_Conversation.pdf" // <-- ADD ACTUAL LINK
-                },
-                {
-                  image: blog3, // Assuming blog3 is an imported image source
-                  title: "Ignite Your Journey to Entrepreneurship",
-                  presenter: "Prachi Kuradi @ ImpactX",
-                  link: "/Enhanced_Entrepreneurship_Presentation.pdf" // <-- ADD ACTUAL LINK
-                }
-              ].map((workshop, index) => (
-                <motion.div 
-                  key={index} 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="h-full"
-                >
-                  {/* Added flex flex-col to ensure button can be pushed to the bottom */}
-                  <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
-                    <div className="relative">
-                      <Image // Assuming Image is a working component (e.g., next/image)
-                        src={workshop.image}
-                        alt={workshop.title}
-                        width={400}
-                        height={225}
-                        className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    </div>
-                    
-                    {/* Added flex flex-col flex-grow to allow content to push button down */}
-                    <div className="p-5 flex flex-col flex-grow">
-                      <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
-                        {workshop.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
-                        <UserIcon className="h-4 w-4 mr-1 inline" /> {/* Assuming UserIcon is a working component */}
-                        {workshop.presenter}
-                      </p>
-
-                      {/* This div will take up remaining space, pushing the button to the bottom */}
-                      <div className="flex-grow"></div>
-
-                      <motion.div 
-                        whileHover={{ scale: 1.03 }} 
-                        whileTap={{ scale: 0.97 }}
-                        className="mt-auto" // This helps ensure the button is at the bottom of the card
-                      >
-                        {/* --- MODIFICATION FOR BUTTON LINK --- */}
-                        <a
-                          href={workshop.link} // Use the link from your workshop data
-                          target="_blank" // Optional: opens in a new tab
-                          rel="noopener noreferrer" // Recommended for security with target="_blank"
-                          className="block w-full" // Makes the anchor tag take full width for the button
-                        >
-                          <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4"> {/* Assuming Button is a working component. Added some padding for better default appearance. */}
-                            Watch Now
-                          </Button>
-                        </a>
-                        {/* --- END MODIFICATION --- */}
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+          </div>
             </div>
+          </motion.div>
+
+          {/* Workshop Card 2 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="h-full"
+          >
+            <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
+          <div className="relative">
+            <Image
+              src={blog2}
+              alt="Unleashing the Power of Data and AI"
+              width={400}
+              height={225}
+              className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+          
+          <div className="p-5 flex flex-col flex-grow">
+            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
+              Unleashing the Power of Data and AI
+            </h3>
+            <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
+              <UserIcon className="h-4 w-4 mr-1 inline" />
+              Rajesh Mittal, PrismView EHS @ ImpactX
+            </p>
+            <div className="flex-grow"></div>
+            <motion.div 
+              whileHover={{ scale: 1.03 }} 
+              whileTap={{ scale: 0.97 }}
+              className="mt-auto"
+            >
+              <a
+            href="/HighSchool_Data_Conversation.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+              >
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4">
+              Watch Now
+            </Button>
+              </a>
+            </motion.div>
+          </div>
+            </div>
+          </motion.div>
+
+          {/* Workshop Card 3 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="h-full"
+          >
+            <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
+          <div className="relative">
+            <Image
+              src="/c4hxhackjps.png"
+              alt="Hackathon Projects to Business Ventures with Code4Hope"
+              width={400}
+              height={225}
+              className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+          
+          <div className="p-5 flex flex-col flex-grow">
+            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
+              Hackathon Projects to Business Ventures with Code4Hope
+            </h3>
+            <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
+              <UserIcon className="h-4 w-4 mr-1 inline" />
+              C4H E-Board @ HackJPS 2025
+            </p>
+            <div className="flex-grow"></div>
+            <motion.div 
+              whileHover={{ scale: 1.03 }} 
+              whileTap={{ scale: 0.97 }}
+              className="mt-auto"
+            >
+              <a
+            href="https://youtu.be/kVIHTpSUaTw?t=7707"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+              >
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4">
+              Watch Now
+            </Button>
+              </a>
+            </motion.div>
+          </div>
+            </div>
+          </motion.div>
+        </div>
           </div>
         </section>
       </ScrollReveal>
@@ -752,7 +820,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Hall of Fame: Our Past Champions</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Past Winners</h2>
               <p className="text-muted-foreground dark:text-gray-300">
                 Celebrating the innovative projects and talented minds from our previous hackathons.
               </p>
