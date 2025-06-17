@@ -93,6 +93,16 @@ export default function TeamPage() {
         instagram: "#",
         tiktok: "#"
       }
+    },
+    {
+      name: "Aryan Varshney",
+      title: "Director of Outreach",
+      image: "https://myainak.org/wp-content/uploads/2024/08/aryan.png",
+      socials: {
+        linkedin: "#",
+        instagram: "#",
+        tiktok: "#"
+      }
     }
   ]
 
