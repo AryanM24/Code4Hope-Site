@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { Suspense } from "react";
 import Image from "next/image";
+import { useState, useMemo, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,11 +50,11 @@ const events = [
         { name: "The Python Lab", logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/038/291/highres/DALL%C2%B7E_2024-12-04_16.13.32_-_A_modern_and_professional_logo_for_'The_Python_Lab'_incorporating_the_Python_logo_%28a_snake_coiled_into_the_shape_of_a_'P'%29._The_design_features_a_slee.png" },
     ],
     links: [
-        { name: "Join Discord", url: "https://discord.gg/hu8e25c6cy", type: "primary" },
-        { name: "Registration Form", url: "https://forms.gle/2J1kRmpkeaRhfjmUA", type: "primary" },
-        { name: "Payment Portal", url: "https://hcb.hackclub.com/donations/start/code-4-hope", type: "secondary" },
-        { name: "Company Profiles", url: "https://docs.google.com/document/d/1m6I0V96rjSUR5dMccf1KlTvE1x3rv1NZGtqKSK-6IB8/edit?usp=sharing", type: "secondary" },
-        { name: "Devpost", url: "https://c4h2025.devpost.com/", type: "secondary" },
+        { name: "Join Discord", url: "https://discord.gg/hu8e25c6cy", type: "primary" as const },
+        { name: "Registration Form", url: "https://forms.gle/2J1kRmpkeaRhfjmUA", type: "primary" as const },
+        { name: "Payment Portal", url: "https://hcb.hackclub.com/donations/start/code-4-hope", type: "secondary" as const },
+        { name: "Company Profiles", url: "https://docs.google.com/document/d/1m6I0V96rjSUR5dMccf1KlTvE1x3rv1NZGtqKSK-6IB8/edit?usp=sharing", type: "secondary" as const },
+        { name: "Devpost", url: "https://c4h2025.devpost.com/", type: "secondary" as const },
     ],
     faq: [
         { question: "Who is eligible to participate?", answer: "All current high school students from any country are eligible." },
@@ -82,9 +83,9 @@ const events = [
     ],
     sponsors: [],
     links: [
-        { name: "View Results", url: "https://docs.google.com/presentation/d/1VByYEq0a-eG6OrIcFkCtOJUKHSuLTiW9lv49HT0WaqI/edit?usp=sharing", type: "primary" },
-        { name: "Project Gallery", url: "https://impactx-code4hope.devpost.com/project-gallery", type: "primary" },
-        { name: "Event Page", url: "https://impactx-code4hope.devpost.com/", type: "secondary" },
+        { name: "View Results", url: "https://docs.google.com/presentation/d/1VByYEq0a-eG6OrIcFkCtOJUKHSuLTiW9lv49HT0WaqI/edit?usp=sharing", type: "primary" as const },
+        { name: "Project Gallery", url: "https://impactx-code4hope.devpost.com/project-gallery", type: "primary" as const },
+        { name: "Event Page", url: "https://impactx-code4hope.devpost.com/", type: "secondary" as const },
     ],
     faq: [
         { question: "Where were the projects submitted?", answer: "All projects were submitted through our Devpost platform." },
@@ -380,8 +381,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
     );
 }
 
-// --- Main Events Page Component ---
-export default function EventsPage() {
+function EventsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState("All");
@@ -504,5 +504,14 @@ export default function EventsPage() {
         </main>
       </div>
     </>
+  );
+}
+
+export default function EventsPage() {
+  // This remains a server component
+  return (
+    <Suspense>
+      <EventsPageContent />
+    </Suspense>
   );
 }
