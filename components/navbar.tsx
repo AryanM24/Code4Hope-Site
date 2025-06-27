@@ -24,6 +24,7 @@ export default function Navbar() {
     { name: "Team", href: "/team" },
     { name: "Gallery", href: "/gallery" },
     { name: "Sponsors", href: "/sponsors" },
+    { name: "Blogs", href: "https://blogs.code4hope.net/" },
   ]
 
   // Handle scroll effect

@@ -320,9 +320,9 @@ export default function Home() {
 
   const galleryImages = [
     {
-      src: "/placeholder.svg",
-      alt: "Code Club Session",
-      caption: "Students learning Python at our weekly after-school program",
+      src: "/c4h@hackjps25/c4h@hackjps1.jpeg",
+      alt: "Code4Hope Workshop at HackJPS",
+      caption: "hosted a 30-minute lecture on turning hackathon projects into business ventures",
     },
     {
       src: "/placeholder.svg",
@@ -356,7 +356,7 @@ export default function Home() {
       <EventPopup 
         eventName="Code4Hope '25"
         eventDate="June 27 – 29, 2025 and July 10, 2025"
-        eventPageUrl="https://c4h2025.devpost.com/"
+        eventPageUrl="https://code4hope.net/events?event=c4h-2025"
       />
 
       {/* Hero Section */}
@@ -575,7 +575,7 @@ export default function Home() {
                   date: "June 27-29, 2025 and July 10, 2025",
                   location: "Times Square, New York City, NY",
                   description: "Structured similarly to many entrepreneurship competitions, in this two-round hackathon, participants will work with their teams to develop a solution to a critical issue of a fictional company of random assignment. Their solution will be within four global challenge tracks: sustainability, health, education, or finance.",
-                  link: "https://c4h2025.devpost.com/"
+                  link: "https://code4hope.net/events?event=c4h-2025"
                 },
                 {
                   image: impactX,

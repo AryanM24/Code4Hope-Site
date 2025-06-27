@@ -180,23 +180,7 @@ export default function AboutPage() {
                     Outreach
                   </button>
 
-                  <button
-                    onClick={() => setActiveTab("operations")}
-                    className={cn(
-                      "text-left px-4 py-3 rounded-lg transition-all duration-300 flex items-center",
-                      activeTab === "operations"
-                        ? "bg-primary/10 font-medium text-primary"
-                        : "hover:bg-muted dark:hover:bg-[#333333] text-foreground",
-                    )}
-                  >
-                    <div
-                      className={cn(
-                        "w-2 h-2 rounded-full mr-3 transition-all duration-300",
-                        activeTab === "operations" ? "bg-primary" : "bg-muted dark:bg-[#444444]",
-                      )}
-                    />
-                    Operations
-                  </button>
+                  {/* Operations tab removed */}
                 </div>
               </motion.div>
             </div>
@@ -222,7 +206,7 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps15.jpeg?height=720&width=1280"
                       alt="Students collaborating at a hackathon"
                       fill
                       className="object-cover"
@@ -241,8 +225,7 @@ export default function AboutPage() {
                   <div className="mb-6 h-1 w-12 bg-primary"></div>
                   <h3 className="text-2xl font-bold text-card-foreground mb-6">Who We Are</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Code4Hope is a not-for-profit organization dedicated to empowering students to leverage technology
-                    for social good. We are a community of passionate students, educators, and technology enthusiasts
+                    We are a community of passionate students, educators, and technology enthusiasts
                     who believe in the power of innovation to address real-world challenges.
                   </p>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -253,7 +236,7 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps14.jpeg?height=720&width=1280"
                       alt="Code4Hope team members"
                       fill
                       className="object-cover"
@@ -284,7 +267,7 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden mb-6">
                     <Image
-                      src="/placeholder.svg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps2.jpeg?height=720&width=1280"
                       alt="Students working on hackathon projects"
                       fill
                       className="object-cover"
@@ -323,7 +306,7 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps5.jpeg?height=720&width=1280"
                       alt="Code4Hope outreach event"
                       fill
                       className="object-cover"
@@ -332,36 +315,7 @@ export default function AboutPage() {
                 </motion.div>
               )}
 
-              {activeTab === "operations" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-card dark:bg-[#333333] p-8 rounded-2xl shadow-xl"
-                >
-                  <div className="mb-6 h-1 w-12 bg-primary"></div>
-                  <h3 className="text-2xl font-bold text-card-foreground mb-6">Operations</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    The Operations team is the backbone of Code4Hope's technical infrastructure. This dedicated subteam
-                    manages web development, ensures seamless hackathon experiences, and implements automation solutions
-                    to streamline our organization's processes.
-                  </p>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    From maintaining our digital presence to developing innovative tools for outreach projects, the
-                    Operations team plays a crucial role in advancing our mission. They work behind the scenes to create
-                    platforms that facilitate collaboration, track project progress, and showcase the impact of our
-                    community's work.
-                  </p>
-                  <div className="aspect-video relative rounded-xl overflow-hidden">
-                    <Image
-                      src="/placeholder.svg?height=720&width=1280"
-                      alt="Operations team working on technical infrastructure"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </motion.div>
-              )}
+              {/* Operations tab content removed */}
             </div>
           </div>
         </div>

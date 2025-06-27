@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils"
 const galleryImages = [
   {
     id: 1,
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Hackathon Winners 2024",
-    category: "hackathon",
-    description: "Our winning team presenting their solution at the 2024 Climate Tech Hackathon.",
-    date: "March 2024",
+    src: "/c4h@hackjps25/c4h@hackjps1.jpeg?height=400&width=600",
+    alt: "Code4Hope Workshop at HackJPS",
+    category: "workshop",
+    description: "hosted a 30-minute lecture on turning hackathon projects into business ventures",
+    date: "June 2025",
   },
   {
     id: 2,
