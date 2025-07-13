@@ -23,6 +23,9 @@ import type { Winner } from "@/components/WinnersSlider"; // Import Winner type
 // Import the new EventPopup component
 import EventPopup from "@/components/EventPopup"; // Adjust path if necessary, e.g., ../components/EventPopup
 
+// Import the new Carousel component
+import ImageCarousel from "@/components/heroimagescarousel";
+
 // Import images
 // import hero_image from "@/public/placeholder.svg"; // No longer used directly for slider
 import blog1 from "@/public/1.jpg";
@@ -322,22 +325,22 @@ export default function Home() {
     {
       src: "/c4h@hackjps25/c4h@hackjps1.jpeg",
       alt: "Code4Hope Workshop at HackJPS",
-      caption: "hosted a 30-minute lecture on turning hackathon projects into business ventures",
+      caption: "At JPS Robotics Team 2554's Annual Hackathon, HackJPS, we hosted a 30-minute lecture on turning hackathon projects into...",
     },
     {
-      src: "/placeholder.svg",
-      alt: "Computer Distribution",
-      caption: "Providing refurbished computers to students without technology at home",
+      src: "/c4h@c4h.JPG",
+      alt: "Code4Hope Workshop on Entrepenuership at Code4Hope '25",
+      caption: "At our summer event, Code4Hope'25 or Code4Hope's 2025 STEM Hackathon, we hosted a workshop on entrepenuership...",
     },
     {
-      src: "/placeholder.svg",
-      alt: "Summer Code Camp",
-      caption: "Intensive coding education during our summer programs",
+      src: "/angel@c4h.JPG",
+      alt: "Angel Rodriguez at Code4Hope '25",
+      caption: "College Professor and Microsoft Technology Strategist Abel Angel Rodriguez hosted a workshop on DevOps and Cloud Computing... ",
     },
     {
-      src: "/placeholder.svg",
-      alt: "Community Hackathon",
-      caption: "Students collaborating to solve real-world problems with code",
+      src: "/c4h2025round2.JPG",
+      alt: "A Room Full of Innovators",
+      caption: "About 40 finalists joined us in-person and online for the second round of Code4Hope '25 (Code4Hope's 2025 STEM Hackathon), where they presented...",
     },
   ];
 
@@ -354,9 +357,9 @@ export default function Home() {
       {/* Event Popup - Add this component here */}
       {/* You can customize the props for your specific event */}
       <EventPopup 
-        eventName="Code4Hope '25"
-        eventDate="June 27 – 29, 2025 and July 10, 2025"
-        eventPageUrl="https://code4hope.net/events?event=c4h-2025"
+        eventName="ImpactX '25"
+        eventDate="Dec 5 – 7, 2025"
+        eventPageUrl="https://impactx2025.devpost.com/"
       />
 
       {/* Hero Section */}
@@ -499,18 +502,11 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="p-8 rounded-xl bg-card dark:bg-[#333333] shadow-sm">
-                  <h4 className="font-bold text-xl mb-4 text-foreground dark:text-white">Our Vision</h4>
-                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
-                    A world where technology is created with compassion and purpose, solving our most pressing social challenges.
-                  </p>
-                </div>
-                
-                <div className="p-8 rounded-xl bg-card dark:bg-[#333333] shadow-sm">
-                  <h4 className="font-bold text-xl mb-4 text-foreground dark:text-white">Our Impact</h4>
-                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
-                    Thousands of students connected, hundreds of projects created, and dozens of charitable causes supported through innovative hackathons and events.
-                  </p>
+                {/* Replace the image with ImageCarousel component */}
+                <div className="p-0 rounded-xl bg-transparent shadow-none flex justify-center items-center h-full">
+                  <div className="w-full max-w-md">
+                    <ImageCarousel />
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -550,97 +546,121 @@ export default function Home() {
       <ScrollReveal>
         <section id="events" className="w-full py-12 md:py-16 lg:py-20 bg-muted dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Upcoming Events</h2>
+            <p className="text-muted-foreground dark:text-gray-300">
+          Throughout the year, we host multiple hackathons, each focusing on a different technology trend
+          that supports charitable causes.
+            </p>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center mb-12"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-block mt-4"
             >
-              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Upcoming Events</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                Throughout the year, we host multiple hackathons, each focusing on a different technology trend
-                that supports charitable causes.
-              </p>
-              <Button variant="outline" className="rounded-full mt-4" onClick={() => window.open("/events", "_self")}>
-                View All Events
-              </Button>
+            <Button variant="outline" className="rounded-full" onClick={() => window.open("/events", "_self")}>
+              View All Events
+            </Button>
             </motion.div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-6">
-              {[
-                {
-                  image: c4h2025,
-                  title: "Code4Hope '25",
-                  date: "June 27-29, 2025 and July 10, 2025",
-                  location: "Times Square, New York City, NY",
-                  description: "Structured similarly to many entrepreneurship competitions, in this two-round hackathon, participants will work with their teams to develop a solution to a critical issue of a fictional company of random assignment. Their solution will be within four global challenge tracks: sustainability, health, education, or finance.",
-                  link: "https://code4hope.net/events?event=c4h-2025"
-                },
-                {
-                  image: impactX,
-                  title: "ImpactX '25",
-                  date: "Dec 7-9, 2025",
-                  location: "Virtual Event",
-                  description: "Projects for a better world by solving real-world problems—whether they be health, wellness, and education—where your ideas today shape a brighter, more sustainable tomorrow.",
-                  link: "/"
-                }
-              ].map((event, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col h-full"
-                >
-                  <div className="card rounded-xl overflow-hidden h-full transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-card dark:bg-[#333333]">
-                    <div className="relative">
-                      <div className="aspect-video overflow-hidden">
-                        <Image
-                          src={event.image}
-                          alt={event.title}
-                          width={600}
-                          height={340}
-                          className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                      <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {event.date}
-                      </div>
-                    </div>
-                    
-                    <div className="p-6">
-                      <h3 className="text-2xl font-semibold mb-2 text-foreground dark:text-white">{event.title}</h3>
-                      <div className="flex items-center text-muted-foreground dark:text-gray-300 mb-4">
-                        <LocationIcon className="h-4 w-4 mr-1" />
-                        <span className="text-sm">{event.location}</span>
-                      </div>
-                      <p className="text-muted-foreground dark:text-gray-300 mb-6 line-clamp-3">
-                        {event.description}
-                      </p>
-                      <div className="mt-auto pt-4 flex">
-                        <motion.div 
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-full"
-                        >
-                          <Button 
-                            className="w-full bg-primary hover:bg-primary/90 text-white" 
-                            onClick={() => window.open(event.link, "_self")}
-                          >
-                            Register Now
-                          </Button>
-                        </motion.div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+            {[
+          {
+            image: c4h2025,
+            title: "Code4Hope '25",
+            date: "June 27-29, 2025 and July 10, 2025",
+            location: "Times Square, New York City, NY",
+            description: "Structured similarly to many entrepreneurship competitions, in this two-round hackathon, participants will work with their teams to develop a solution to a critical issue of a fictional company of random assignment. Their solution will be within four global challenge tracks: sustainability, health, education, or finance.",
+            link: "https://code4hope.net/events?event=c4h-2025",
+            isOver: true
+          },
+          {
+            image: impactX,
+            title: "ImpactX '25",
+            date: "Dec 5-7, 2025",
+            location: "Virtual Event",
+            description: "In the second annual ImpactX by Code4Hope, build projects for a better world by solving real-world problems—whether they be health, wellness, and education—where your ideas today shape a brighter, more sustainable tomorrow.",
+            link: "https://impactx2025.devpost.com/",
+            isOver: false
+          },
+          {
+            image: "/placeholder.svg",
+            title: "Code4Hope '26",
+            date: "TBD",
+            location: "TBD",
+            description: "Coming Soon. Stay tuned for updates on our next hackathon event!",
+            link: "/",
+            isOver: false
+          },
+            ].map((event, index) => (
+          <div
+            key={index}
+            className="flex flex-col h-full"
+          >
+            <div className="card rounded-lg overflow-hidden h-full shadow-md bg-card dark:bg-[#333333]">
+          <div className="relative">
+            <div className="aspect-[4/3] overflow-hidden">
+          <Image
+            src={event.image}
+            alt={event.title}
+            width={320}
+            height={240}
+            className="object-cover w-full h-full"
+          />
+            </div>
+            <div className="absolute top-3 right-3 bg-primary text-white px-2 py-0.5 rounded-full text-xs font-medium">
+          {event.date}
             </div>
           </div>
-        </section>
-      </ScrollReveal>
+          
+          <div className="p-4 flex flex-col flex-1">
+            <h3 className="text-lg font-semibold mb-1 text-foreground dark:text-white">{event.title}</h3>
+            <div className="flex items-center text-muted-foreground dark:text-gray-300 mb-2">
+          <LocationIcon className="h-4 w-4 mr-1" />
+          <span className="text-xs">{event.location}</span>
+            </div>
+            <p className="text-muted-foreground dark:text-gray-300 mb-4 text-sm line-clamp-3">
+          {event.description}
+            </p>
+            <div className="mt-auto pt-2 flex">
+          <div className="w-full">
+            {event.isOver ? (
+            <Button 
+            className="w-full bg-gray-400 text-white cursor-not-allowed text-sm py-1.5"
+            disabled
+            >
+            Event Over
+            </Button>
+            ) : (
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full"
+            >
+              <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-1.5" 
+              onClick={() => window.open(event.link, "_self")}
+              >
+              Register Now
+              </Button>
+            </motion.div>
+            )}
+          </div>
+            </div>
+          </div>
+            </div>
+          </div>
+            ))}
+          </div>
+            </div>
+          </section>
+          </ScrollReveal>
 
       {/* Workshops Section */}
       <ScrollReveal>
@@ -659,27 +679,20 @@ export default function Home() {
             provide valuable insights and skills for aspiring developers.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
           {/* Workshop Card 1 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="h-full"
-          >
-            <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
+          <div className="h-full">
+            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-card dark:bg-[#333333] flex flex-col">
           <div className="relative">
             <Image
               src={blog1}
               alt="Build Your Best Projects Faster with Refact.ai"
               width={400}
               height={225}
-              className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full h-48 object-cover"
             />
           </div>
-          
           <div className="p-5 flex flex-col flex-grow">
             <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
               Build Your Best Projects Faster with Refact.ai
@@ -689,11 +702,7 @@ export default function Home() {
               Refact AI @ ImpactX
             </p>
             <div className="flex-grow"></div>
-            <motion.div 
-              whileHover={{ scale: 1.03 }} 
-              whileTap={{ scale: 0.97 }}
-              className="mt-auto"
-            >
+            <div className="mt-auto">
               <a
             href="https://www.youtube.com/watch?v=aZquJC9YlXA"
             target="_blank"
@@ -704,30 +713,23 @@ export default function Home() {
               Watch Now
             </Button>
               </a>
-            </motion.div>
+            </div>
           </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Workshop Card 2 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="h-full"
-          >
-            <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
+          <div className="h-full">
+            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-card dark:bg-[#333333] flex flex-col">
           <div className="relative">
             <Image
               src={blog2}
               alt="Unleashing the Power of Data and AI"
               width={400}
               height={225}
-              className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full h-48 object-cover"
             />
           </div>
-          
           <div className="p-5 flex flex-col flex-grow">
             <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
               Unleashing the Power of Data and AI
@@ -737,11 +739,7 @@ export default function Home() {
               Rajesh Mittal, PrismView EHS @ ImpactX
             </p>
             <div className="flex-grow"></div>
-            <motion.div 
-              whileHover={{ scale: 1.03 }} 
-              whileTap={{ scale: 0.97 }}
-              className="mt-auto"
-            >
+            <div className="mt-auto">
               <a
             href="/HighSchool_Data_Conversation.pdf"
             target="_blank"
@@ -752,30 +750,23 @@ export default function Home() {
               Watch Now
             </Button>
               </a>
-            </motion.div>
+            </div>
           </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Workshop Card 3 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="h-full"
-          >
-            <div className="card rounded-xl overflow-hidden h-full hover:shadow-xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col">
+          <div className="h-full">
+            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-card dark:bg-[#333333] flex flex-col">
           <div className="relative">
             <Image
               src="/c4hxhackjps.png"
               alt="Hackathon Projects to Business Ventures with Code4Hope"
               width={400}
               height={225}
-              className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full h-48 object-cover"
             />
           </div>
-          
           <div className="p-5 flex flex-col flex-grow">
             <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
               Hackathon Projects to Business Ventures with Code4Hope
@@ -785,11 +776,7 @@ export default function Home() {
               C4H E-Board @ HackJPS 2025
             </p>
             <div className="flex-grow"></div>
-            <motion.div 
-              whileHover={{ scale: 1.03 }} 
-              whileTap={{ scale: 0.97 }}
-              className="mt-auto"
-            >
+            <div className="mt-auto">
               <a
             href="https://youtu.be/kVIHTpSUaTw?t=7707"
             target="_blank"
@@ -800,10 +787,10 @@ export default function Home() {
               Watch Now
             </Button>
               </a>
-            </motion.div>
+            </div>
           </div>
             </div>
-          </motion.div>
+          </div>
         </div>
           </div>
         </section>
@@ -813,20 +800,20 @@ export default function Home() {
       <ScrollReveal>
         <section id="previous-winners" className="w-full py-12 md:py-16 lg:py-20 bg-muted dark:bg-[#262626]">
           <div className="container mx-auto px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center mb-12"
-            >
-              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Past Winners</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
-                Celebrating the innovative projects and talented minds from our previous hackathons.
-              </p>
-            </motion.div>
-            
-            <WinnersSlider winners={previousWinnersData} />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mb-12 shadow-md"
+        >
+          <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Past Winners</h2>
+          <p className="text-muted-foreground dark:text-gray-300">
+            Celebrating the innovative projects and talented minds from our previous hackathons.
+          </p>
+        </motion.div>
+        
+        <WinnersSlider winners={previousWinnersData} />
 
           </div>
         </section>

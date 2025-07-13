@@ -65,26 +65,6 @@ export default function TeamPage() {
       }
     },
     {
-      name: "Shivali Sood",
-      title: "Event Director",
-      image: "/placeholder.svg",
-      socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
-      }
-    },
-    {
-      name: "Dhriti Vohra",
-      title: "Event Director",
-      image: "/placeholder.svg",
-      socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
-      }
-    },
-    {
       name: "Anvita Somisetty",
       title: "Merch Designer",
       image: "/placeholder.svg",
@@ -96,8 +76,18 @@ export default function TeamPage() {
     },
     {
       name: "Aryan Varshney",
-      title: "Director of Outreach",
+      title: "Outreach Director",
       image: "https://myainak.org/wp-content/uploads/2024/08/aryan.png",
+      socials: {
+        linkedin: "#",
+        instagram: "#",
+        tiktok: "#"
+      }
+    },
+    {
+      name: "Aakansha Sharma",
+      title: "Outreach Director and Media Specialist",
+      image: "/team5.JPG",
       socials: {
         linkedin: "#",
         instagram: "#",

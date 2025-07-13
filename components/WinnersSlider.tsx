@@ -199,7 +199,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
             >
               {currentWinners.map((winner) => (
                 <div key={winner.id} className="h-full flex">
-                  <div className="card rounded-xl overflow-hidden h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-card dark:bg-[#333333] flex flex-col w-full relative">
+                  <div className="card rounded-xl overflow-hidden h-full shadow-lg bg-card dark:bg-[#333333] flex flex-col w-full relative">
                     {winner.awardName && (
                       <div className="absolute top-0 right-0 bg-primary text-white text-xs font-semibold py-1 px-3 m-2 rounded-full shadow-md z-10">
                         {winner.awardName}
@@ -222,7 +222,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                       </div>
                     )}
                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                      <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-primary pt-1">{winner.projectName}</h3>
+                      <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black pt-1">{winner.projectName}</h3>
                       <p className="text-xs sm:text-sm font-medium text-muted-foreground dark:text-gray-400 mb-1 flex items-center">
                         <UserIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 inline-block flex-shrink-0" /> Team: {winner.name}
                       </p>
