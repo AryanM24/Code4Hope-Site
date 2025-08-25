@@ -86,7 +86,7 @@ export default function TeamPage() {
     },
     {
       name: "Aakansha Sharma",
-      title: "Outreach Director and Media Specialist",
+      title: "Outreach Director and Head of Legal Operations",
       image: "/team5.JPG",
       socials: {
         linkedin: "#",
