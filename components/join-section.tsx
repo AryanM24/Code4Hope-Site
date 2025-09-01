@@ -30,7 +30,7 @@ export function JoinSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button 
-                      className="bg-background text-foreground hover:bg-background/90 px-6 font-medium"
+                      className="bg-background text-gray-800 hover:bg-background/90 px-6 font-medium"
                       onClick={() => window.open("https://discord.gg/7ssCZx8Hme", "_blank")}
                     >
                       Join Our Community
@@ -40,11 +40,11 @@ export function JoinSection() {
               </div>
             </div>
             
-            <div className="lg:col-span-3 p-8 md:p-12 bg-card dark:bg-card flex flex-col justify-center">
+            <div className="lg:col-span-3 p-8 md:p-12 bg-card">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
                 Explore Our Resources
               </h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-gray-600 mb-8 leading-relaxed">
                 We've prepared comprehensive documentation to help you get started and understand everything about Code4Hope's mission, events, and how you can contribute.
               </p>
               
@@ -79,7 +79,7 @@ export function JoinSection() {
                       boxShadow: "0 10px 25px -5px rgba(130, 108, 184, 0.2), 0 8px 10px -6px rgba(130, 108, 184, 0.1)",
                       transition: { duration: 0.3 }
                     }}
-                    className="bg-background dark:bg-card rounded-xl overflow-hidden shadow-md"
+                    className="bg-background rounded-lg border border-gray-200 shadow-sm"
                   >
                     <Link
                       href={resource.href}
@@ -92,8 +92,8 @@ export function JoinSection() {
                           {resource.icon}
                         </div>
                       </div>
-                      <h4 className="font-semibold mb-2 text-foreground">{resource.label}</h4>
-                      <p className="text-sm text-muted-foreground mb-2">{resource.description}</p>
+                      <h4 className="font-semibold mb-2 text-gray-800">{resource.label}</h4>
+                      <p className="text-sm text-gray-600 mb-2">{resource.description}</p>
                       <div className="mt-auto pt-2 flex items-center text-sm font-medium text-primary">
                         <span>View</span>
                         <ArrowRightIcon className="ml-2 h-4 w-4" />

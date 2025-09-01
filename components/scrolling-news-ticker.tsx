@@ -20,7 +20,7 @@ export default function ScrollingNewsTicker({ news }: ScrollingNewsTickerProps) 
   const duplicatedNews = [...news, ...news]
 
   return (
-    <div className="w-full overflow-hidden bg-gray-100 dark:bg-gray-800 py-4 rounded-lg">
+    <div className="w-full overflow-hidden bg-gray-100">
       <div className="relative flex">
         <motion.div
           ref={tickerRef}
@@ -49,7 +49,7 @@ export default function ScrollingNewsTicker({ news }: ScrollingNewsTickerProps) 
                   {item.text}
                 </a>
               ) : (
-                <span className="text-gray-800 dark:text-gray-200">{item.text}</span>
+                <span className="text-gray-800">{item.text}</span>
               )}
             </div>
           ))}

@@ -17,8 +17,8 @@ import Footer from "@/components/footer";
 import SponsorCarousel from "../components/sponsor-carousel";
 
 // Import the new WinnersSlider component
-import WinnersSlider from "@/components/WinnersSlider"; // Adjust path if necessary
-import type { Winner } from "@/components/WinnersSlider"; // Import Winner type
+import { WinnersSliderClean } from "@/components/winners-slider-clean";
+import type { Winner } from "@/components/winners-slider-clean";
 
 // Import the new EventPopup component
 import EventPopup from "@/components/EventPopup"; // Adjust path if necessary, e.g., ../components/EventPopup
@@ -220,31 +220,65 @@ function UserIcon(props: React.SVGProps<SVGSVGElement>) {
 
 
 // previousWinners data is now defined here or fetched from an API
+// Most recent winners first (C4H'25), then older winners (ImpactX '24)
 const previousWinnersData: Winner[] = [
-    {
+  {
     id: 1,
+    name: "Ryder Hornbeck, Randy Taylor",
+    projectName: "LingoBuddy",
+    event: "Code4Hope '25",
+    year: "2025",
+    awardName: "1st Place Winner", 
+    description: "An innovative language learning platform that connects users with native speakers for personalized conversational practice and cultural exchange.",
+    image: "/placeholder.svg",
+    devpostLink: "#",
+  },
+  {
+    id: 2,
+    name: "Neil Mehra, Georgiy Derkachev, Lakshya Dhakar, Advik Vatsyayan",
+    projectName: "ClimaGrid",
+    event: "Code4Hope '25",
+    year: "2025",
+    awardName: "2nd Place Winner", 
+    description: "A comprehensive climate monitoring and prediction system that helps communities prepare for and adapt to climate change impacts.",
+    image: "/placeholder.svg",
+    devpostLink: "#",
+  },
+  {
+    id: 3,
+    name: "Hritvik Singhvi, Vedo Bhomik, Varenya Garg, Rijul Rajput",
+    projectName: "TheraBot",
+    event: "Code4Hope '25",
+    year: "2025",
+    awardName: "3rd Place Winner", 
+    description: "An AI-powered therapeutic companion that provides mental health support and resources through conversational interfaces and personalized care plans.",
+    image: "/placeholder.svg",
+    devpostLink: "#",
+  },
+  {
+    id: 4,
     name: "Vasil V., Crep V., Aleksandar H., Dimitar A.",
     projectName: "Quare AI",
     event: "ImpactX '24",
     year: "2024",
     awardName: "1st Place Overall", 
     description: "An AI-powered tool that simplifies health decisions, empowers users with accurate insights, and bridges the gap between symptoms and professional care.",
-    image: "/QuareAI.png", // Ensure this path is correct from public folder
+    image: "/QuareAI.png",
     devpostLink: "https://devpost.com/software/quare-ai?_gl=1*1v3yyp9*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1MzYxNCRqMCRsMCRoMA..",
   },
   {
-    id: 2,
+    id: 5,
     name: "Malay P.",
     projectName: "CourseVerse",
     event: "ImpactX '24",
     year: "2024",
     awardName: "2nd Place Overall", 
-    description: "CourseVerse is a Flutter-based application that enables users to effortlessly create and share personalized courses by simply providing a title and description, making educational content creation accessible to all. ",
+    description: "CourseVerse is a Flutter-based application that enables users to effortlessly create and share personalized courses by simply providing a title and description, making educational content creation accessible to all.",
     image: "/CourseVerse.png", 
     devpostLink: "https://devpost.com/software/codeverse-d0z5sb?_gl=1*apqm0r*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1NDEyNyRqMCRsMCRoMA..",
   },
   {
-    id: 3,
+    id: 6,
     name: "Chanmin K., Chris S., Aspen K.",
     projectName: "Paywell",
     event: "ImpactX '24",
@@ -253,39 +287,6 @@ const previousWinnersData: Winner[] = [
     description: "A comprehensive solution designed to help users reduce or eliminate medical debt through personalized financial assistance tools.",
     image: "/PayWell.png", 
     devpostLink: "https://devpost.com/software/paywell",
-  },
-  {
-    id: 4,
-    name: "Meet P.",
-    projectName: "EcoLearn",
-    event: "ImpactX '24",
-    year: "2024",
-    awardName: "Sustainability Track Prize", 
-    description: "An interactive and educational platform designed for teenagers to tackle key challenges in sustainability, education, and health and wellness.",
-    image: "/EcoLearn.png", 
-    devpostLink: "https://devpost.com/software/ecolearn-3li1dr?_gl=1*qxvcbs*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1NDU0NCRqMCRsMCRoMA..",
-  },
-  {
-    id: 5,
-    name: "Mohammed Maaz A",
-    projectName: "BunkBuddy",
-    event: "ImpactX '24",
-    year: "2024",
-    awardName: "Education Track Prize", 
-    description: "BunkBuddy keeps your academic life organized with simplicity and privacy, ensuring you stay on top of your schedule, attendance, and productivity!",
-    image: "/BunkBuddy.png", 
-    devpostLink: "https://devpost.com/software/bunkbuddy-odgt5n?_gl=1*1t50ze2*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1NTIxOCRqMCRsMCRoMA..",
-  },
-  {
-    id: 6,
-    name: "Shritej M., Vandan A.",
-    projectName: "CrimeBot",
-    event: "ImpactX '24",
-    year: "2024",
-    awardName: "Health and Wellness Prize", 
-    description: "A surveillance tool designed to identify porch pirates so by analyzing webcam footage in real-time so YOU can take action.",
-    image: "/CrimeBOT.png", 
-    devpostLink: "https://devpost.com/software/crimebot-4ldmvh?_gl=1*12mow8f*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1NDk5MiRqMCRsMCRoMA..",
   },
 ];
 
@@ -346,9 +347,9 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-background dark:bg-[#262626]">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
-      </div>
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
+        </div>
     );
   }
 
@@ -430,7 +431,7 @@ export default function Home() {
 
       {/* About Section */}
       <ScrollReveal>
-        <section id="about" className="w-full py-16 md:py-20 lg:py-24 bg-background dark:bg-[#262626]">
+        <section id="about" className="w-full py-16 md:py-20 lg:py-24">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -439,8 +440,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">Our Story</h2>
-              <p className="text-muted-foreground dark:text-gray-300 text-lg">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Story</h2>
+              <p className="text-gray-600 text-lg">
                 Uniting technology and creativity to drive social change and empower the next generation of innovators.
               </p>
             </motion.div>
@@ -455,13 +456,13 @@ export default function Home() {
               >
                 <div>
                   <div className="h-1 w-12 bg-primary mb-6"></div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground dark:text-white leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 leading-tight">
                     Empowering students to create technology <span className="text-primary">with purpose</span>
                   </h3>
-                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed mb-6">
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
                     Code4Hope is a not-for-profit organization dedicated to empowering students to leverage technology for social good. Our mission is to unite technology and creativity to drive social change, fostering a global community of young innovators addressing real-world challenges.
                   </p>
-                  <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed">
+                  <p className="text-gray-600 text-lg leading-relaxed">
                     Through our regular hackathons, we create opportunities for students to develop their skills while making a meaningful impact for charitable causes. We believe in the power of young minds to shape a better future through code.
                   </p>
                 </div>
@@ -516,7 +517,7 @@ export default function Home() {
 
       {/* Sponsors Section */}
       <ScrollReveal>
-        <section id="sponsors" className="w-full py-12 md:py-16 lg:py-20 bg-background dark:bg-[#262626]">
+        <section id="sponsors" className="w-full py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -525,18 +526,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-4"
             >
-              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Sponsors</h2>
-              <p className="text-muted-foreground dark:text-gray-300">
+              <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Sponsors</h2>
+              <p className="text-gray-600">
                 We're grateful to partner with these amazing organizations who make our hackathons possible.
               </p>
             </motion.div>
-
-            <div className="text-center mb-4">
-              <Button variant="outline" className="rounded-full" onClick={() => window.open("/sponsors", "_self")}>
-                View All Sponsors
-              </Button>
-            </div>
-
             <SponsorCarousel />
           </div>
         </section>
@@ -544,7 +538,7 @@ export default function Home() {
 
       {/* Events Section */}
       <ScrollReveal>
-        <section id="events" className="w-full py-12 md:py-16 lg:py-20 bg-muted dark:bg-[#262626]">
+        <section id="events" className="w-full py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -553,8 +547,8 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Upcoming Events</h2>
-            <p className="text-muted-foreground dark:text-gray-300">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Upcoming Events</h2>
+            <p className="text-gray-600">
           Throughout the year, we host multiple hackathons, each focusing on a different technology trend
           that supports charitable causes.
             </p>
@@ -563,9 +557,6 @@ export default function Home() {
             whileTap={{ scale: 0.97 }}
             className="inline-block mt-4"
             >
-            <Button variant="outline" className="rounded-full" onClick={() => window.open("/events", "_self")}>
-              View All Events
-            </Button>
             </motion.div>
           </motion.div>
           
@@ -596,14 +587,15 @@ export default function Home() {
             location: "TBD",
             description: "Coming Soon. Stay tuned for updates on our next hackathon event!",
             link: "/",
-            isOver: false
+            isOver: false,
+            isComingSoon: true
           },
             ].map((event, index) => (
           <div
             key={index}
             className="flex flex-col h-full"
           >
-            <div className="card rounded-lg overflow-hidden h-full shadow-md bg-card dark:bg-[#333333]">
+            <div className="card rounded-lg overflow-hidden h-full shadow-md bg-white">
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden">
           <Image
@@ -620,12 +612,12 @@ export default function Home() {
           </div>
           
           <div className="p-4 flex flex-col flex-1">
-            <h3 className="text-lg font-semibold mb-1 text-foreground dark:text-white">{event.title}</h3>
-            <div className="flex items-center text-muted-foreground dark:text-gray-300 mb-2">
+            <h3 className="text-lg font-semibold mb-1 text-gray-800">{event.title}</h3>
+            <div className="flex items-center text-gray-600 mb-2">
           <LocationIcon className="h-4 w-4 mr-1" />
           <span className="text-xs">{event.location}</span>
             </div>
-            <p className="text-muted-foreground dark:text-gray-300 mb-4 text-sm line-clamp-3">
+            <p className="text-gray-600 mb-4 text-sm line-clamp-3">
           {event.description}
             </p>
             <div className="mt-auto pt-2 flex">
@@ -636,6 +628,13 @@ export default function Home() {
             disabled
             >
             Event Over
+            </Button>
+            ) : event.isComingSoon ? (
+            <Button 
+            className="w-full bg-gray-400 text-gray-300 cursor-not-allowed text-sm py-1.5"
+            disabled
+            >
+            Coming soon
             </Button>
             ) : (
             <motion.div
@@ -664,7 +663,7 @@ export default function Home() {
 
       {/* Workshops Section */}
       <ScrollReveal>
-        <section id="workshops" className="w-full py-12 md:py-16 lg:py-20 bg-background dark:bg-[#262626]">
+        <section id="workshops" className="hidden md:block w-full py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -673,8 +672,8 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Recent Workshops</h2>
-          <p className="text-muted-foreground dark:text-gray-300">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Recent Workshops</h2>
+          <p className="text-gray-600">
             Learn from industry professionals through our workshop recordings. These sessions from our past hackathons
             provide valuable insights and skills for aspiring developers.
           </p>
@@ -683,7 +682,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
           {/* Workshop Card 1 */}
           <div className="h-full">
-            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-card dark:bg-[#333333] flex flex-col">
+            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-white flex flex-col">
           <div className="relative">
             <Image
               src={blog1}
@@ -694,12 +693,12 @@ export default function Home() {
             />
           </div>
           <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
+            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-gray-800">
               Build Your Best Projects Faster with Refact.ai
             </h3>
-            <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
+            <p className="text-sm text-gray-600 mb-4 flex items-center">
               <UserIcon className="h-4 w-4 mr-1 inline" />
-              Refact AI @ ImpactX
+              Refact AI @ ImpactX'24
             </p>
             <div className="flex-grow"></div>
             <div className="mt-auto">
@@ -720,7 +719,7 @@ export default function Home() {
 
           {/* Workshop Card 2 */}
           <div className="h-full">
-            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-card dark:bg-[#333333] flex flex-col">
+            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-white flex flex-col">
           <div className="relative">
             <Image
               src={blog2}
@@ -731,12 +730,12 @@ export default function Home() {
             />
           </div>
           <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
+            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-gray-800">
               Unleashing the Power of Data and AI
             </h3>
-            <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
+            <p className="text-sm text-gray-600 mb-4 flex items-center">
               <UserIcon className="h-4 w-4 mr-1 inline" />
-              Rajesh Mittal, PrismView EHS @ ImpactX
+              Rajesh Mittal, PrismView EHS @ ImpactX'24
             </p>
             <div className="flex-grow"></div>
             <div className="mt-auto">
@@ -757,7 +756,7 @@ export default function Home() {
 
           {/* Workshop Card 3 */}
           <div className="h-full">
-            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-card dark:bg-[#333333] flex flex-col">
+            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-white flex flex-col">
           <div className="relative">
             <Image
               src="/c4hxhackjps.png"
@@ -768,10 +767,10 @@ export default function Home() {
             />
           </div>
           <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-foreground dark:text-white">
+            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-gray-800">
               Hackathon Projects to Business Ventures with Code4Hope
             </h3>
-            <p className="text-sm text-muted-foreground dark:text-gray-300 mb-4 flex items-center">
+            <p className="text-sm text-gray-600 mb-4 flex items-center">
               <UserIcon className="h-4 w-4 mr-1 inline" />
               C4H E-Board @ HackJPS 2025
             </p>
@@ -798,22 +797,22 @@ export default function Home() {
 
       {/* Previous Winners Section - Now uses WinnersSlider */}
       <ScrollReveal>
-        <section id="previous-winners" className="w-full py-12 md:py-16 lg:py-20 bg-muted dark:bg-[#262626]">
+        <section id="previous-winners" className="hidden md:block w-full py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center mb-12 shadow-md"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Past Winners</h2>
-          <p className="text-muted-foreground dark:text-gray-300">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Past Winners</h2>
+          <p className="text-gray-600">
             Celebrating the innovative projects and talented minds from our previous hackathons.
           </p>
         </motion.div>
         
-        <WinnersSlider winners={previousWinnersData} />
+        <WinnersSliderClean winners={previousWinnersData} />
 
           </div>
         </section>
@@ -821,7 +820,7 @@ export default function Home() {
 
       {/* Photo Gallery - Adjusted background */}
       <ScrollReveal>
-        <section className="py-16 bg-background dark:bg-[#262626]"> 
+        <section className="py-16"> 
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -830,8 +829,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4 text-foreground dark:text-white">Our Impact in Pictures</h2>
-              <p className="text-muted-foreground dark:text-gray-300">Glimpses of our work and the students we serve</p>
+              <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Impact in Pictures</h2>
+              <p className="text-gray-600">Glimpses of our work and the students we serve</p>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -857,7 +856,7 @@ export default function Home() {
                             target.src = `https://placehold.co/${target.width || 400}x${target.height || 400}/CCCCCC/FFFFFF?text=Error`;
                        }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4">
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
                       <h3 className="text-white font-medium text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         {image.alt}
                       </h3>
@@ -887,7 +886,7 @@ export default function Home() {
 
       {/* Social Media Section - Adjusted background */}
       <ScrollReveal>
-        <section className="w-full py-16 md:py-20 lg:py-24 bg-muted dark:bg-[#262626]"> 
+        <section className="w-full py-16 md:py-20 lg:py-24"> 
           <div className="container mx-auto px-4 md:px-6">
             <div className="card rounded-3xl overflow-hidden"> 
               <div className="grid grid-cols-1 lg:grid-cols-5">
@@ -915,11 +914,11 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="lg:col-span-3 p-8 md:p-12 bg-card dark:bg-[#333333] flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold mb-2 text-foreground dark:text-white">
+                <div className="lg:col-span-3 p-8 md:p-12 bg-white flex flex-col justify-center">
+                  <h3 className="text-2xl font-semibold mb-2 text-gray-800">
                     Follow Us On Social Media
                   </h3>
-                  <p className="text-muted-foreground dark:text-gray-300 mb-8">
+                  <p className="text-gray-600 mb-8">
                     We post regularly on our social channels with event updates, tech tips, and success stories from our community.
                   </p>
                   
@@ -942,7 +941,7 @@ export default function Home() {
                       >
                         <Link
                           href={social.href}
-                          className="flex flex-col items-center justify-center p-3 rounded-lg border border-border dark:border-gray-700 hover:border-primary hover:text-primary transition-all duration-300 text-foreground dark:text-gray-300"
+                          className="flex flex-col items-center justify-center p-3 rounded-lg border border-border"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

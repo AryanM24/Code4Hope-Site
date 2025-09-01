@@ -34,7 +34,7 @@ const events = [
       { name: "Harpreet Kaur Chawla", title: "Senior Software Engineer at Amazon", image: "https://d2dmyh35ffsxbl.cloudfront.net/assets/defaults/no-avatar-100-b164b29ca37cbce6b6dbcf4d61d40ba7a3081dfd121a32e2a773eb8f018f0a1f.png" },
       { name: "Nitin Kumar", title: "Director of Data Science at Marriott International", image: "https://d112y698adiu2z.cloudfront.net/photos/production/judge_photos/003/486/971/datas/large.png" },
       { name: "Vipin Kataria", title: "Lead Architect at Picarro", image: "https://lh3.googleusercontent.com/a/ACg8ocJ6BUj03xe-PuFJUuL3HIMkqLOc4jUYhm_EDnrWryadE-onCZzM=s96-c?type=normal" },
-      { name: "Ahmed Ibrahim", title: "Technical Staff at OpenAI", image: "https://media.licdn.com/dms/image/v2/C5603AQEJctR3Fg0bEg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1652717772342?e=1753315200&t=Kh6J_9A_Cw-MXy6y1AY35YCJQQXMvA5-71Dr2XYloLQ&type=normal&v=beta" },
+      { name: "Ahmed Ibrahim", title: "Technical Staff at OpenAI", image: "https://media.licdn.com/dms/image/v2/C5603AQEJctR3Fg0bEg/profile-displaypho" },
       { name: "Louis Demeslay", title: "CTO at Zealy", image: "https://d112y698adiu2z.cloudfront.net/photos/production/judge_photos/003/521/315/datas/large.png" },
       { name: "Anand Desai", title: "Senior Software Engineer at Microsoft", image: "https://d112y698adiu2z.cloudfront.net/photos/production/judge_photos/003/488/497/datas/large.png" },
       { name: "Prankur Gupta", title: "Software Engineer at Meta", image: "https://d112y698adiu2z.cloudfront.net/photos/production/judge_photos/003/486/972/datas/large.png" },
@@ -155,10 +155,10 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-card border rounded-lg overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+      className="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
       <div className="flex flex-col md:flex-row">
-        <div className="flex-shrink-0 w-full md:w-52 h-52 relative bg-muted flex items-center justify-center p-4">
+        <div className="flex-shrink-0 w-full md:w-52 h-52 relative">
           <Image 
             src={event.logo} 
             alt={`${event.name} logo`} 
@@ -170,11 +170,11 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
         <div className="p-6 flex flex-col justify-between flex-grow">
           <div className="space-y-3">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-              <h3 className="text-xl font-bold text-card-foreground">{event.name}</h3>
+              <h3 className="text-xl font-bold text-gray-800">{event.name}</h3>
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
                 event.status === "Upcoming" 
                   ? "bg-primary/10 text-primary" 
-                  : "bg-muted text-muted-foreground"
+                  : "bg-gray-100 text-gray-600"
               }`}>
                 {event.status}
               </span>
@@ -190,7 +190,7 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
               )}
             </div>
             
-            <p className="text-muted-foreground text-sm leading-relaxed">{event.cardDescription}</p>
+            <p className="text-gray-600 text-sm leading-relaxed">{event.cardDescription}</p>
           </div>
           
           <div className="mt-4 pt-4">
@@ -225,12 +225,12 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 50 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="bg-background rounded-xl shadow-2xl w-full max-w-4xl flex flex-col max-h-full overflow-hidden relative"
+                className="bg-white rounded-xl shadow-2xl w-full max-w-4xl flex flex-col max-h-full overflow-hidden relative"
                 style={{ maxHeight: '100%', minHeight: 0 }}
                 onClick={(e) => e.stopPropagation()} 
             >
                 {/* Fixed Header */}
-                <div className="sticky top-0 bg-background border-b p-6 flex justify-between items-start z-10">
+                <div className="sticky top-0">
                     <div className="flex-1 mr-4">
                         <h2 className="text-2xl md:text-3xl font-bold mb-2">{event.name}</h2>
                         <div className="text-sm md:text-base">
@@ -242,11 +242,11 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                 )
                             )}
                         </div>
-                        <p className="text-muted-foreground mt-2 text-sm md:text-base">{event.tagline}</p>
+                        <p className="text-gray-600 mt-2 text-sm md:text-base">{event.tagline}</p>
                     </div>
                     <button 
                         onClick={onClose} 
-                        className="flex-shrink-0 text-muted-foreground hover:text-foreground bg-muted hover:bg-muted/80 rounded-full p-2 transition-colors"
+                        className="flex-shrink-0 text-gray-600 hover:text-gray-800"
                     >
                         <X size={20} />
                     </button>
@@ -259,7 +259,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                         <div className="lg:col-span-2 space-y-8">
                             <section>
                                 <h3 className="text-xl md:text-2xl font-bold border-l-4 border-primary pl-4 mb-4">About</h3>
-                                <p className="text-muted-foreground leading-relaxed">{event.fullDescription}</p>
+                                <p className="text-gray-600 leading-relaxed">{event.fullDescription}</p>
                             </section>
 
                             {/* Links Section */}
@@ -276,7 +276,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                                 className={`flex items-center justify-between p-3 rounded-lg transition-all duration-200 hover:scale-[1.02] ${
                                                     link.type === 'primary' 
                                                         ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
-                                                        : 'bg-muted hover:bg-muted/80 text-foreground'
+                                                        : 'bg-gray-100 hover:bg-gray-100/80 text-gray-800'
                                                 }`}
                                             >
                                                 <span className="font-medium text-sm">{link.name}</span>
@@ -308,7 +308,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                         {event.faq.map((item: { question: string; answer: string }) => (
                                             <div key={item.question} className="space-y-2">
                                                 <h4 className="font-semibold text-sm md:text-base">{item.question}</h4>
-                                                <p className="text-muted-foreground text-sm leading-relaxed">{item.answer}</p>
+                                                <p className="text-gray-600 text-sm leading-relaxed">{item.answer}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -319,13 +319,13 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                         {/* Sidebar */}
                         <div className="lg:col-span-1 space-y-6">
                             {event.prizes?.length > 0 && (
-                                <section className="bg-card/50 p-4 rounded-lg border">
+                                <section className="bg-white/50 p-4 rounded-lg border">
                                     <h3 className="text-lg font-bold mb-3">Prizes</h3>
                                     <div className="space-y-3">
                                         {event.prizes.map((p: { tier: string; value: string }) => (
                                             <div key={p.tier} className="space-y-1">
                                                 <div className="font-semibold text-sm">{p.tier}</div>
-                                                <div className="text-muted-foreground text-xs leading-relaxed">{p.value}</div>
+                                                <div className="text-gray-600 text-xs leading-relaxed">{p.value}</div>
                                             </div>
                                         ))}
                                     </div>
@@ -347,7 +347,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                                 />
                                                 <div className="min-w-0 flex-1">
                                                     <p className="font-semibold text-sm truncate">{j.name}</p>
-                                                    <p className="text-xs text-muted-foreground leading-tight">{j.title}</p>
+                                                    <p className="text-xs text-gray-600 leading-tight">{j.title}</p>
                                                 </div>
                                             </div>
                                         ))}
@@ -367,7 +367,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                                 width={40} 
                                                 height={40} 
                                                 title={s.name} 
-                                                className="filter dark:invert flex-shrink-0"
+                                                className="filter "
                                             />
                                         ))}
                                     </div>
@@ -451,15 +451,15 @@ function EventsPageContent() {
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="py-12 md:py-16 lg:py-20 bg-background">
+          <section className="py-8 md:py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="container mx-auto px-4 text-center"
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">Events</h1>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-800">Events</h1>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Here is where you can find info about our previous and upcoming events!
               </p>
             </motion.div>
@@ -467,11 +467,11 @@ function EventsPageContent() {
           
           {/* Events Content */}
           <ScrollReveal>
-            <section className="py-12 md:py-16 lg:py-20">
+            <section className="py-8 md:py-12">
               <div className="container mx-auto px-4">
                 {/* Tab Navigation */}
-                <div className="flex justify-center mb-12">
-                  <div className="flex flex-wrap gap-2 p-1 bg-muted rounded-full">
+                <div className="flex justify-center mb-8">
+                  <div className="flex flex-wrap gap-2 p-1">
                     {eventTypes.map(type => (
                       <button
                         key={type}
@@ -479,7 +479,7 @@ function EventsPageContent() {
                         className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
                           activeTab === type 
                             ? "bg-primary text-primary-foreground shadow-md" 
-                            : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
+                            : "text-gray-600 hover:bg-white/50 hover:text-gray-800"
                         }`}
                       >
                         {type}

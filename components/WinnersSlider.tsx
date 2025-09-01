@@ -161,14 +161,14 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
   const currentWinners = winners.slice(startIndex, endIndex);
 
   if (!winners || winners.length === 0) {
-    return <p className="text-center text-muted-foreground py-8">No past winners to display at the moment.</p>;
+    return <p className="text-center text-gray-600 py-8">No past winners to display at the moment.</p>;
   }
   
   return (
     <div className="relative w-full max-w-6xl mx-auto">
       <button 
         onClick={prevSlide}
-        className="absolute left-[-15px] sm:left-[-25px] md:left-[-35px] top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-transform p-2 bg-card/50 hover:bg-card/80 dark:bg-background/50 dark:hover:bg-background/80 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute left-[-15px] sm:left-[-25px] md:left-[-35px] top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-transform p-2 bg-card/50 hover:bg-card/80"
         aria-label="Previous winners"
         disabled={numSlides <= 1}
       >
@@ -199,7 +199,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
             >
               {currentWinners.map((winner) => (
                 <div key={winner.id} className="h-full flex">
-                  <div className="card rounded-xl overflow-hidden h-full shadow-lg bg-card dark:bg-[#333333] flex flex-col w-full relative">
+                  <div className="card rounded-xl overflow-hidden h-full shadow-lg bg-card flex flex-col w-full relative">
                     {winner.awardName && (
                       <div className="absolute top-0 right-0 bg-primary text-white text-xs font-semibold py-1 px-3 m-2 rounded-full shadow-md z-10">
                         {winner.awardName}
@@ -223,13 +223,13 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                     )}
                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
                       <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black pt-1">{winner.projectName}</h3>
-                      <p className="text-xs sm:text-sm font-medium text-muted-foreground dark:text-gray-400 mb-1 flex items-center">
+                      <p className="text-xs sm:text-sm font-medium text-gray-600">
                         <UserIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 inline-block flex-shrink-0" /> Team: {winner.name}
                       </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground dark:text-gray-400 mb-3 flex items-center">
+                      <p className="text-xs sm:text-sm text-gray-600">
                         <TrophyIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 inline-block flex-shrink-0" /> Event: {winner.event} ({winner.year})
                       </p>
-                      <p className="text-muted-foreground dark:text-gray-300 text-sm sm:text-base mb-4 flex-grow line-clamp-3 sm:line-clamp-4">
+                      <p className="text-gray-600 text-sm sm:text-base mb-4 flex-grow line-clamp-3 sm:line-clamp-4">
                         {winner.description}
                       </p>
                       {winner.devpostLink && winner.devpostLink !== "#" && (
@@ -240,7 +240,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                          >
                           <Button
                             variant="outline"
-                            className="w-full text-sm sm:text-base border-primary text-primary hover:bg-primary/10 dark:border-sky-400 dark:text-sky-400 dark:hover:bg-sky-400/10" 
+                            className="w-full text-sm sm:text-base border-primary text-primary hover:bg-primary/10" 
                             onClick={() => window.open(winner.devpostLink, "_blank", "noopener,noreferrer")}
                           >
                             View Project
@@ -259,7 +259,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
 
       <button 
         onClick={nextSlide}
-        className="absolute right-[-15px] sm:right-[-25px] md:right-[-35px] top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-transform p-2 bg-card/50 hover:bg-card/80 dark:bg-background/50 dark:hover:bg-background/80 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute right-[-15px] sm:right-[-25px] md:right-[-35px] top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-transform p-2 bg-card/50 hover:bg-card/80"
         aria-label="Next winners"
         disabled={numSlides <= 1}
       >

@@ -82,3 +82,16 @@
   animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+/* Dynamic background gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dynamic-bg {
+  background: linear-gradient(135deg, #f9fafb, #ffffff, #f3f4f6, #fdfeff, #f1f5f9);
+  background-size: 300% 300%;
+  animation: gradientShift 20s ease infinite;
+}
+

@@ -57,7 +57,7 @@ export function TeamMemberCard({ name, title, image, socials }: TeamMemberCardPr
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="overflow-hidden rounded-2xl bg-card dark:bg-[#333333] shadow-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-2" 
+      className="overflow-hidden rounded-2xl bg-card shadow-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-2" 
       suppressHydrationWarning
     >
       <div className="relative aspect-square overflow-hidden">
@@ -91,8 +91,8 @@ export function TeamMemberCard({ name, title, image, socials }: TeamMemberCardPr
         </div>
       </div>
       <div className="p-5 text-center">
-        <h3 className="text-lg font-bold text-foreground mb-1">{name}</h3>
-        <p className="text-sm text-muted-foreground">{title}</p>
+        <h3 className="text-lg font-bold text-gray-800 mb-1">{name}</h3>
+        <p className="text-sm text-gray-600">{title}</p>
       </div>
     </motion.div>
   )

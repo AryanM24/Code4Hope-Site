@@ -23,7 +23,7 @@ export default function FlipCard({ frontContent, backContent, className = "" }: 
       onClick={toggleFlip}
     >
       <div className={`relative w-full h-full duration-700 preserve-3d ${isFlipped ? "rotate-y-180" : ""}`}>
-        <div className="absolute w-full h-full backface-hidden bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-center">
+        <div className="absolute w-full h-full backface-hidden bg-white">
           {frontContent}
         </div>
         <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-[#4CAF50] text-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-center">

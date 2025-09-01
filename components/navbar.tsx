@@ -5,15 +5,13 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Code, Menu, X, Sun, Moon } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Code, Menu, X } from "lucide-react"
 import Image from "next/image"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   // Navigation links
@@ -50,9 +48,6 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
 
   return (
     <header
@@ -75,7 +70,7 @@ export default function Navbar() {
               unoptimized
               />
             </div>
-            <span className="font-bold text-xl text-[#1F2937] dark:text-white">Code4Hope</span>
+            <span className="font-bold text-xl text-[#1F2937]">Code4Hope</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,7 +80,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href ? "text-primary" : "text-[#1F2937] dark:text-gray-200"
+                  pathname === link.href ? "text-primary" : "text-[#1F2937]"
                 }`}
               >
                 {link.name}
@@ -94,27 +89,13 @@ export default function Navbar() {
             <Button asChild size="sm" className="bg-primary hover:bg-primary/80 text-primary-foreground">
               <Link href="https://hcb.hackclub.com/donations/start/code-4-hope">Donate</Link>
             </Button>
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-[#1F2937] dark:text-gray-200"
-              aria-label="Toggle theme"
-            >
-              {mounted && theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center space-x-2">
             <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-[#1F2937] dark:text-gray-200"
-              aria-label="Toggle theme"
-            >
-              {mounted && theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
-            <button
               onClick={toggleMenu}
-              className="p-2 rounded-md text-[#1F2937] dark:text-gray-200"
+              className="p-2 rounded-md text-[#1F2937]"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -143,12 +124,12 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.25 }}
-              className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white dark:bg-gray-900 shadow-xl md:hidden z-50 flex flex-col"
+              className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-xl md:hidden z-50 flex flex-col"
             >
               <div className="flex justify-end p-4">
                 <button
                   onClick={toggleMenu}
-                  className="p-2 rounded-md text-[#1F2937] dark:text-gray-200"
+                  className="p-2 rounded-md text-[#1F2937]"
                   aria-label="Close menu"
                 >
                   <X className="h-5 w-5" />
@@ -162,10 +143,10 @@ export default function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`text-base font-medium py-3 px-2 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                      className={`text-base font-medium py-3 px-2 rounded-md transition-colors hover:bg-gray-100 ${
                         pathname === link.href 
-                          ? "text-primary font-semibold bg-gray-50 dark:bg-gray-800/60" 
-                          : "text-[#1F2937] dark:text-gray-200"
+                          ? "text-primary font-semibold bg-gray-50" 
+                          : "text-[#1F2937]"
                       }`}
                     >
                       {link.name}
@@ -174,7 +155,7 @@ export default function Navbar() {
                 </nav>
               </div>
               
-              <div className="p-4 border-t dark:border-gray-800">
+              <div className="p-4 border-t">
                 <Button 
                   asChild 
                   size="default" 
