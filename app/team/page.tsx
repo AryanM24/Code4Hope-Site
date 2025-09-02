@@ -87,7 +87,7 @@ export default function TeamPage() {
     {
       name: "Madhav Kuruba",
       title: "Outreach Director",
-      image: "/placeholder.svg",
+      image: "/madhav.jpeg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -107,7 +107,7 @@ export default function TeamPage() {
     {
       name: "Pranav Gaddipati",
       title: "Media Specialist",
-      image: "/placeholder.svg",
+      image: "/pranav.jpeg",
       socials: {
         linkedin: "#",
         instagram: "#",
