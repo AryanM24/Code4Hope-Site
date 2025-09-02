@@ -1,31 +1,29 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import LoadingScreen from "./loading-screen";
 
 export default function LoadingProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
-  const pathname = usePathname();
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
 
-  // Show loading on initial page load
+  // Only show loading on the very first page load
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!hasLoadedOnce) {
+      // Simulate initial page load time
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        setHasLoadedOnce(true);
+      }, 500);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [hasLoadedOnce]);
 
-  // Show loading when navigating to a new page
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [pathname]);
+  // For subsequent navigations, don't show loading unless explicitly needed
+  // This can be extended in the future to listen for slow API calls or heavy data loading
 
-  if (isLoading) {
+  if (isLoading && !hasLoadedOnce) {
     return <LoadingScreen />;
   }
 
