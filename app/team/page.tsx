@@ -44,7 +44,7 @@ export default function TeamPage() {
     {
       name: "Ranya Chaudhary",
       title: "Executive Event Director",
-      image: "https://docs.code4hope.net/img/team-4.jpg",
+      image: "/team1.jpeg",
       socials: {
         linkedin: "https://www.linkedin.com/in/ranya-chaudhary-b41169375/",
         instagram: "#",
@@ -54,7 +54,7 @@ export default function TeamPage() {
     {
       name: "Sarvin Bhutani",
       title: "Executive Director of Community",
-      image: "/placeholder.svg",
+      image: "/exec_director_community.jpeg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -76,8 +76,18 @@ export default function TeamPage() {
     },
     {
       name: "Aakansha Sharma",
-      title: "Outreach Director and Head of Legal Operations",
+      title: " Director of Outreach & Legal Operations",
       image: "/team5.JPG",
+      socials: {
+        linkedin: "#",
+        instagram: "#",
+        tiktok: "#"
+      }
+    },
+    {
+      name: "Madhav Kuruba",
+      title: "Outreach Director",
+      image: "/placeholder.svg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -97,16 +107,6 @@ export default function TeamPage() {
     {
       name: "Pranav Gaddipati",
       title: "Media Specialist",
-      image: "/placeholder.svg",
-      socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
-      }
-    },
-    {
-      name: "Anvita Somisetty",
-      title: "Merch Designer",
       image: "/placeholder.svg",
       socials: {
         linkedin: "#",
@@ -139,18 +139,6 @@ export default function TeamPage() {
     }
   ]
 
-  const alumni = [
-    {
-      name: "Shlok Patel",
-      title: "Former Operations Director",
-      image: "https://docs.code4hope.net/img/team-6.jpg",
-      socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
-      }
-    }
-  ]
 
   // Animation variants
   const containerVariants = {
@@ -300,36 +288,6 @@ export default function TeamPage() {
           </section>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <section className="py-8 md:py-12 mb-16">
-            <div className="container mx-auto px-4">
-              <motion.div 
-                className="mb-8 text-center"
-                variants={headingVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Alumni</h2>
-                <div className="w-16 h-0.5 bg-primary/50 my-3 mx-auto" />
-                <p className="text-gray-600">Honoring those who helped build our foundation</p>
-              </motion.div>
-              <motion.div 
-                className={teamLayoutClass}
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {alumni.map((member, index) => (
-                  <motion.div key={member.name} variants={itemVariants} custom={index} className="w-[160px] sm:w-[180px] md:w-[200px]">
-                    <TeamMemberCard {...member} />
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </section>
-        </ScrollReveal>
 
         <ScrollReveal>
           <section className="py-12 ">

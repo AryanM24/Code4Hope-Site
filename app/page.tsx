@@ -224,36 +224,36 @@ function UserIcon(props: React.SVGProps<SVGSVGElement>) {
 const previousWinnersData: Winner[] = [
   {
     id: 1,
-    name: "Ryder Hornbeck, Randy Taylor",
+    name: "Ryder H., Randy T.",
     projectName: "LingoBuddy",
     event: "Code4Hope '25",
     year: "2025",
     awardName: "1st Place Winner", 
     description: "An innovative language learning platform that connects users with native speakers for personalized conversational practice and cultural exchange.",
-    image: "/placeholder.svg",
-    devpostLink: "#",
+    image: "https://d112y698adiu2z.cloudfront.net/photos/production/solution_photos/003/546/964/datas/xlarge.png",
+    devpostLink: "https://devpost.com/software/lingobuddy-zy8v06",
   },
   {
     id: 2,
-    name: "Neil Mehra, Georgiy Derkachev, Lakshya Dhakar, Advik Vatsyayan",
+    name: "Neil M., Georgiy D., Lakshya D., Advik V.",
     projectName: "ClimaGrid",
     event: "Code4Hope '25",
     year: "2025",
     awardName: "2nd Place Winner", 
     description: "A comprehensive climate monitoring and prediction system that helps communities prepare for and adapt to climate change impacts.",
-    image: "/placeholder.svg",
-    devpostLink: "#",
+    image: "https://d112y698adiu2z.cloudfront.net/photos/production/solution_photos/003/552/901/datas/xlarge.png",
+    devpostLink: "https://www.youtube.com/embed/3jUIG-Xd95I",
   },
   {
     id: 3,
-    name: "Hritvik Singhvi, Vedo Bhomik, Varenya Garg, Rijul Rajput",
+    name: "Hritvik S., Vedo B., Varenya G., Rijul R.",
     projectName: "TheraBot",
     event: "Code4Hope '25",
     year: "2025",
     awardName: "3rd Place Winner", 
     description: "An AI-powered therapeutic companion that provides mental health support and resources through conversational interfaces and personalized care plans.",
-    image: "/placeholder.svg",
-    devpostLink: "#",
+    image: "https://d112y698adiu2z.cloudfront.net/photos/production/solution_photos/003/556/730/datas/xlarge.png",
+    devpostLink: "https://www.youtube.com/embed/FPXkf4AanCg",
   },
   {
     id: 4,
@@ -296,14 +296,6 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -344,14 +336,6 @@ export default function Home() {
       caption: "About 40 finalists joined us in-person and online for the second round of Code4Hope '25 (Code4Hope's 2025 STEM Hackathon), where they presented...",
     },
   ];
-
-  if (isLoading) {
-    return (
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
-        </div>
-    );
-  }
 
   return (
     <main className="flex min-h-screen flex-col">
@@ -572,7 +556,7 @@ export default function Home() {
             isOver: true
           },
           {
-            image: impactX,
+            image: "/impactx25-thumbnail.png",
             title: "ImpactX '25",
             date: "Dec 5-7, 2025",
             location: "Virtual Event",
@@ -593,7 +577,9 @@ export default function Home() {
             ].map((event, index) => (
           <div
             key={index}
-            className="flex flex-col h-full"
+            className={`flex flex-col h-full ${
+              (event.isOver || event.isComingSoon) ? 'hidden md:flex' : ''
+            }`}
           >
             <div className="card rounded-lg overflow-hidden h-full shadow-md bg-white">
           <div className="relative">

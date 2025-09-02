@@ -321,8 +321,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section id="timeline" className="py-20">
+      {/* Timeline Section - Hidden on mobile */}
+      <section id="timeline" className="hidden md:block py-20">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div

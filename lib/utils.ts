@@ -20,6 +20,12 @@ globalThis.sponsors = [
     devpostLink: "https://gradescout.live/welcome",
   },
   {
+    name: "AidSnap",
+    description: "A personalized, AI-powered first aid assistant with agentic AI that provides instant, life-saving emergency guidance when every second counts.",
+    logo: "/AidSnap.png",
+    devpostLink: "https://aidsnap.com",
+  },
+  {
     name: "NordVPN",
     description: "Protect your internet traffic with the world’s leading VPN service.",
     logo: "https://a.storyblok.com/f/157611/284x64/116a8617cc/nordvpn-logo.png/m/828x0/filters:quality(60):format(avif)",
@@ -91,4 +97,5 @@ globalThis.sponsors = [
     logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/636/highres/xyz-logo-color.png",
     devpostLink: "https://gen.xyz/",
   },
+  
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react"
+import { createPortal } from "react-dom"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
@@ -10,7 +11,6 @@ import Image from "next/image"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
 
@@ -25,20 +25,6 @@ export default function Navbar() {
     { name: "Blogs", href: "https://blogs.code4hope.net/" },
   ]
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   // Handle theme mounting
   useEffect(() => {
     setMounted(true)
@@ -48,29 +34,22 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
-        scrolled ? "backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50 w-full transition-all duration-200 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center">
             <div className="rounded-md" suppressHydrationWarning>
               <Image 
-              src="https://docs.code4hope.net/img/black%20_logo_no_text.PNG" 
+              src="/c4h_logo1.png" 
               alt="Code4Hope Logo" 
-              width={24}
-              height={24}
-              className="h-5 w-auto md:h-8"
+              width={120}
+              height={40}
+              className="h-6 w-auto md:h-8"
               priority
-              unoptimized
               />
             </div>
-            <span className="font-bold text-xl text-[#1F2937]">Code4Hope</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -104,73 +83,77 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Sidebar Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            {/* Backdrop Overlay */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black md:hidden z-40"
-              onClick={() => setIsMenuOpen(false)}
-            />
-            
-            {/* Sidebar */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.25 }}
-              className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-xl md:hidden z-50 flex flex-col"
-            >
-              <div className="flex justify-end p-4">
-                <button
-                  onClick={toggleMenu}
-                  className="p-2 rounded-md text-[#1F2937]"
-                  aria-label="Close menu"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
+      {/* Mobile Sidebar Navigation - Rendered using Portal */}
+      {mounted && isMenuOpen && createPortal(
+        <AnimatePresence>
+          {isMenuOpen && (
+            <>
+              {/* Backdrop Overlay */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 bg-black md:hidden"
+                style={{ zIndex: 9998 }}
+                onClick={() => setIsMenuOpen(false)}
+              />
               
-              <div className="flex-1 overflow-y-auto px-4 py-2">
-                <nav className="flex flex-col space-y-1">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`text-base font-medium py-3 px-2 rounded-md transition-colors hover:bg-gray-100 ${
-                        pathname === link.href 
-                          ? "text-primary font-semibold bg-gray-50" 
-                          : "text-[#1F2937]"
-                      }`}
-                    >
-                      {link.name}
+              {/* Sidebar */}
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "tween", duration: 0.25 }}
+                className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-xl md:hidden flex flex-col"
+                style={{ zIndex: 9999 }}
+              >
+                <div className="flex justify-end p-4">
+                  <button
+                    onClick={toggleMenu}
+                    className="p-2 rounded-md text-[#1F2937]"
+                    aria-label="Close menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                
+                <div className="flex-1 overflow-y-auto px-4 py-2">
+                  <nav className="flex flex-col space-y-1">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`text-base font-medium py-3 px-2 rounded-md transition-colors hover:bg-gray-100 ${
+                          pathname === link.href 
+                            ? "text-primary font-semibold bg-gray-50" 
+                            : "text-[#1F2937]"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+                
+                <div className="p-4 border-t">
+                  <Button 
+                    asChild 
+                    size="default" 
+                    className="bg-primary hover:bg-primary/80 text-primary-foreground w-full"
+                  >
+                    <Link href="https://hcb.hackclub.com/donations/start/code-4-hope" onClick={() => setIsMenuOpen(false)}>
+                      Donate
                     </Link>
-                  ))}
-                </nav>
-              </div>
-              
-              <div className="p-4 border-t">
-                <Button 
-                  asChild 
-                  size="default" 
-                  className="bg-primary hover:bg-primary/80 text-primary-foreground w-full"
-                >
-                  <Link href="https://hcb.hackclub.com/donations/start/code-4-hope" onClick={() => setIsMenuOpen(false)}>
-                    Donate
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+                  </Button>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </header>
   )
 }
-

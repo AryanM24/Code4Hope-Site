@@ -127,15 +127,15 @@ export default function GalleryPage() {
 
         <section className="py-6 md:py-8">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 space-y-4 md:space-y-0">
               {/* Filter tabs */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start w-full md:w-auto">
                 {categories.map((category) => (
                   <button
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
                     className={cn(
-                      "px-4 py-2 rounded-full transition-all duration-300",
+                      "px-3 md:px-4 py-2 text-sm rounded-full transition-all duration-300 flex-shrink-0",
                       selectedCategory === category.id
                         ? "bg-primary text-primary-foreground shadow-md"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-100/80 "
@@ -147,17 +147,17 @@ export default function GalleryPage() {
               </div>
 
               {/* Search and view toggle */}
-              <div className="flex items-center space-x-4 w-full md:w-auto">
-                <div className="relative flex-grow md:flex-grow-0">
+              <div className="flex items-center space-x-2 md:space-x-4 w-full md:w-auto">
+                <div className="relative flex-grow md:flex-grow-0 md:min-w-[200px]">
                   <input
                     type="text"
-                    placeholder="Search gallery..."
+                    placeholder="Search..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 pr-4 py-2 border rounded-full w-full focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="pl-10 pr-4 py-2 border rounded-full w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <svg
-                    className="absolute left-3 top-2.5 h-5 w-5 text-gray-600"
+                    className="absolute left-3 top-2.5 h-4 w-4 md:h-5 md:w-5 text-gray-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -172,32 +172,32 @@ export default function GalleryPage() {
                   </svg>
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-1 md:space-x-2 flex-shrink-0">
                   <button
                     onClick={() => setIsGridView(true)}
                     className={cn(
-                      "p-2 rounded",
+                      "p-2 rounded text-xs md:text-sm",
                       isGridView 
                         ? "bg-primary/10 text-primary" 
                         : "text-gray-600 hover:bg-gray-100"
                     )}
                     aria-label="Grid view"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                     </svg>
                   </button>
                   <button
                     onClick={() => setIsGridView(false)}
                     className={cn(
-                      "p-2 rounded",
+                      "p-2 rounded text-xs md:text-sm",
                       !isGridView 
                         ? "bg-primary/10 text-primary" 
                         : "text-gray-600 hover:bg-gray-100"
                     )}
                     aria-label="List view"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fillRule="evenodd"
                         d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -234,7 +234,7 @@ export default function GalleryPage() {
             ) : isGridView ? (
               // Grid View
               <AnimatePresence>
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                   {filteredImages.map((image) => (
                     <motion.div
                       key={image.id}
@@ -244,7 +244,7 @@ export default function GalleryPage() {
                       exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.3 }}
                       whileHover={{ y: -5, scale: 1.02 }}
-                      className="group relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer "
+                      className="group relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer bg-white"
                       onClick={() => openLightbox(image)}
                     >
                       <Image
@@ -253,11 +253,11 @@ export default function GalleryPage() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                        <h3 className="text-white font-bold text-lg">{image.alt}</h3>
-                        <p className="text-white/80 text-sm">{image.date}</p>
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 md:p-4 flex flex-col justify-end">
+                        <h3 className="text-white font-bold text-sm md:text-lg line-clamp-2">{image.alt}</h3>
+                        <p className="text-white/80 text-xs md:text-sm">{image.date}</p>
                       </div>
-                      <div className="absolute top-3 right-3">
+                      <div className="absolute top-2 right-2 md:top-3 md:right-3">
                         <span className="bg-primary/90 text-primary-foreground text-xs px-2 py-1 rounded-full capitalize">
                           {image.category}
                         </span>
@@ -275,10 +275,10 @@ export default function GalleryPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex flex-col md:flex-row gap-6 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 "
+                    className="flex flex-col md:flex-row gap-4 md:gap-6 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 "
                   >
                     <div
-                      className="relative md:w-1/3 h-60 md:h-auto cursor-pointer"
+                      className="relative md:w-1/3 h-48 md:h-60 cursor-pointer flex-shrink-0"
                       onClick={() => openLightbox(image)}
                     >
                       <Image
@@ -288,18 +288,18 @@ export default function GalleryPage() {
                         className="object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
-                    <div className="p-6 flex flex-col md:w-2/3">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-bold text-gray-800">{image.alt}</h3>
-                        <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full capitalize">
+                    <div className="p-4 md:p-6 flex flex-col md:w-2/3">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
+                        <h3 className="text-lg md:text-xl font-bold text-gray-800 line-clamp-2">{image.alt}</h3>
+                        <span className="bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full capitalize self-start sm:self-auto flex-shrink-0">
                           {image.category}
                         </span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-2">{image.date}</p>
-                      <p className="text-gray-600 flex-grow">{image.description}</p>
+                      <p className="text-gray-600 text-sm mb-3">{image.date}</p>
+                      <p className="text-gray-600 text-sm md:text-base flex-grow leading-relaxed">{image.description}</p>
                       <button
                         onClick={() => openLightbox(image)}
-                        className="mt-4 self-start px-4 py-2 text-sm"
+                        className="mt-4 self-start px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
                       >
                         View full image
                       </button>
@@ -313,10 +313,10 @@ export default function GalleryPage() {
 
         {/* Lightbox */}
         {selectedImage && (
-          <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 md:p-4">
             <div className="absolute inset-0" onClick={closeLightbox}></div>
             <div className="relative z-10 max-w-6xl w-full max-h-full flex flex-col">
-              <div className="relative h-[70vh] bg-black rounded-t-lg overflow-hidden">
+              <div className="relative h-[60vh] md:h-[70vh] bg-black rounded-t-lg overflow-hidden">
                 <Image
                   src={selectedImage.src || "/placeholder.svg"}
                   alt={selectedImage.alt}
@@ -324,19 +324,19 @@ export default function GalleryPage() {
                   className="object-contain"
                 />
               </div>
-              <div className="bg-white p-6 rounded-b-lg">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800">{selectedImage.alt}</h3>
-                    <p className="text-gray-600">{selectedImage.date}</p>
-                    <p className="mt-2 text-gray-600">{selectedImage.description}</p>
+              <div className="bg-white p-4 md:p-6 rounded-b-lg max-h-[30vh] overflow-y-auto">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-3">
+                  <div className="flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-800 pr-8 md:pr-0">{selectedImage.alt}</h3>
+                    <p className="text-gray-600 text-sm">{selectedImage.date}</p>
+                    <p className="mt-2 text-gray-600 text-sm md:text-base leading-relaxed">{selectedImage.description}</p>
                   </div>
                   <button
                     onClick={closeLightbox}
-                    className="text-gray-600 hover:text-gray-800"
+                    className="absolute top-4 right-4 md:relative md:top-auto md:right-auto text-gray-600 hover:text-gray-800 bg-white md:bg-transparent rounded-full p-2 md:p-0"
                     aria-label="Close lightbox"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
