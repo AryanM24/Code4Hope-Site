@@ -97,5 +97,10 @@ globalThis.sponsors = [
     logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/636/highres/xyz-logo-color.png",
     devpostLink: "https://gen.xyz/",
   },
-  
+  {
+    name: "Codecrafters.io",
+    description: "Hands-on coding challenges where you build real-world systems from scratch, like Docker, Git, or Redis.",
+    logo: "https://bookface-images.s3.amazonaws.com/logos/8d0d5fa65a7f2cdfcab0e0aad44ae0008b65342a.png?1676875965",
+    devpostLink: "https://codecrafters.io/",
+  },
 ];
