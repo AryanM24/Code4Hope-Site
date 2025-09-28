@@ -11,7 +11,6 @@ import { X, ExternalLink } from "lucide-react"; // Added ExternalLink icon
 
 import impactX from "@/public/ImpactX (1).png";
 import c4h2025 from "@/public/c4h2025.png";
-
 // --- DATA POPULATED WITH ACCURATE, DETAILED CONTENT ---
 const events = [
   {
@@ -44,6 +43,34 @@ const events = [
         { question: "When will registration open?", answer: "Registration details will be announced soon. Join our Discord for the latest updates!" },
         { question: "Will this event be virtual?", answer: "Yes, ImpactX'25 will be a fully remote, virtual hackathon accessible to participants worldwide." },
         { question: "What tracks will be available?", answer: "We'll have multiple tracks including Sustainability, Education, Health and Wellness, and more to be announced." },
+    ],
+  },
+  {
+    id: "c4h-2026",
+    name: "Code4Hope Hackathon 2026",
+    status: "Upcoming",
+    startDate: "2026-07-15",
+    endDate: "2026-07-17",
+    tagline: "Code for Tomorrow. Build for Hope.",
+    cardDescription: "The next iteration of our flagship Code4Hope hackathon, empowering young innovators to create technology solutions for global challenges.",
+    logo: "placeholder.svg",
+    fullDescription: "Building on the tremendous success of Code4Hope 2025, we're excited to announce Code4Hope Hackathon 2026! Following our proven format of empowering high school students to tackle real-world challenges through innovative technology solutions, this year's event promises to be bigger and better than ever. Participants will work on meaningful projects across multiple tracks, with mentorship from industry professionals and the opportunity to make a real impact. Stay tuned for more details about format, prizes, and registration!",
+    prizes: [
+        { tier: "🏆 1st Place", value: "To be announced - stay tuned for exciting prizes!" },
+        { tier: "🥈 2nd Place", value: "To be announced - stay tuned for exciting prizes!" },
+        { tier: "🥉 3rd Place", value: "To be announced - stay tuned for exciting prizes!" },
+    ],
+    sponsors: [
+      { name: "YRI Science", logo: "https://www.yriscience.com/logo.png" },
+    ],
+    links: [
+        { name: "Event Website", url: "https://hack.code4hope.net", type: "primary" as const },
+        { name: "Join Discord", url: "https://discord.gg/hu8e25c6cy", type: "primary" as const },
+    ],
+    faq: [
+        { question: "When will registration open?", answer: "Registration details will be announced soon. Visit our website and join our Discord for the latest updates!" },
+        { question: "Who can participate?", answer: "Details about eligibility will be announced closer to the event date." },
+        { question: "What format will the event follow?", answer: "Event format details will be shared as we get closer to the hackathon. Follow our updates for more information!" },
     ],
   },
   {
@@ -128,7 +155,6 @@ const events = [
     videoEmbed: "https://www.youtube.com/embed/EB9dBGkqFoc",
   },
 ];
-
 // --- Helper to format dates ---
 function formatEventDate(start: string, end: string) {
     const startDate = new Date(start);
