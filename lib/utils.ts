@@ -26,6 +26,18 @@ globalThis.sponsors = [
     devpostLink: "https://aidsnap.com",
   },
   {
+  name: "YRI Fellowship",
+  description: "A research and innovation fellowship that empowers high school students to explore STEM through hands-on projects and mentorship.",
+  logo: "https://yriscience.com/logo.png",
+  devpostLink: "https://yriscience.com",
+  },
+  {
+    name: "Koda Finance",
+    description: "An AI-powered personal finance tracker that automates budgeting, spending insights, and saving recommendations, built for Gen Z and students.",
+    logo: "https://koda.vercel.app/_next/image?url=%2Flogo.png&w=48&q=75",
+    devpostLink: "https://kodafinance.com",
+  },
+  {
     name: "NordVPN",
     description: "Protect your internet traffic with the world’s leading VPN service.",
     logo: "https://a.storyblok.com/f/157611/284x64/116a8617cc/nordvpn-logo.png/m/828x0/filters:quality(60):format(avif)",
