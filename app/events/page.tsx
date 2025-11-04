@@ -52,7 +52,7 @@ const events = [
     startDate: "2025-12-05",
     endDate: "2025-12-07",
     tagline: "Building on our success, innovating for tomorrow!",
-    cardDescription: "The highly anticipated second edition of our flagship hackathon, bringing together young innovators to tackle global challenges with technology.",
+    cardDescription: "Following the tremendous success of ImpactX'24, we're excited to announce ImpactX'25! This year's hackathon will once again challenge participants from around the world to build technology that addresses key social issues.",
     logo: impactx25Cover,
     fullDescription: "Following the tremendous success of ImpactX'24, we're excited to announce ImpactX'25! This year's hackathon will once again challenge participants from around the world to build technology that addresses key social issues. Building on the foundation of our debut event, we're expanding our reach and impact, providing even more opportunities for young innovators to create meaningful solutions. Stay tuned for more details about prizes, judges, and registration!",
     prizes: [
