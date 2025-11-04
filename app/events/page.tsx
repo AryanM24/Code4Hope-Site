@@ -10,9 +10,41 @@ import { Button } from "@/components/ui/button";
 import { X, ExternalLink } from "lucide-react"; // Added ExternalLink icon
 
 import impactX from "@/public/ImpactX (1).png";
-import c4h2025 from "@/public/c4h2025.png";
+import c4h2025 from "@/public/c4h25-cover.png";
+import c4hxdivergent from "@/public/c4hxdivergent.png";
+import c4h2026 from "@/public/c4h2026-cover.png";
+import impactx25Cover from "@/public/impactx25-cover.png";
 // --- DATA POPULATED WITH ACCURATE, DETAILED CONTENT ---
 const events = [
+  {
+    id: "divergent-c4h-2025",
+    name: "Code4Hope Hackathon 2025",
+    status: "Upcoming",
+    startDate: "2025-11-11",
+    endDate: "2025-11-11",
+    tagline: "Innovate, Create, and Make a Difference!",
+    cardDescription: "A collaborative hackathon hosted by Divergent Teams and Code4Hope at the Microsoft Office in New York City, where students develop impactful solutions in health and wellness, education, and sustainability.",
+    logo: c4hxdivergent,
+    fullDescription: "Join us for an exciting day of innovation at the Microsoft Office in New York City! This hackathon, co-hosted by Divergent Teams and Code4Hope, brings together students to solve problems and develop impactful solutions in three key categories: health and wellness, education, and sustainability. Whether you want to build a game, create a presentation, write up your ideas in a document, or explore any other creative format, this is your chance to showcase your creativity and innovation while making a meaningful impact. Participants can work individually or in teams of up to 4 members. With breakfast and lunch provided, and mentorship from directors and volunteers throughout the day, you'll have everything you need to bring your ideas to life. Each participant or team will present their project to judges, so make sure to make your presentation unique, creative, and impressive! Registration is first come, first served for 125 students, so sign up early!",
+    prizes: [
+        { tier: "🏆 Prizes", value: "Prizes and awards will be announced closer to the event date. Stay tuned for exciting announcements!" },
+    ],
+    sponsors: [
+        { name: "Code4Hope", logo: "/c4hlogo_black.PNG" },
+    ],
+    links: [
+        { name: "Register Now", url: "https://docs.google.com/forms/d/1rIchjuw0c-LqnpBzWDQtpcD0u-31hY8APIe68Z9NoPo/edit", type: "primary" as const },
+        { name: "Event Website", url: "https://divergentteams.org/newyork-hackathon/#", type: "secondary" as const },
+    ],
+    faq: [
+        { question: "When is the registration deadline?", answer: "The sign-up deadline is Monday, November 6th. Registration is first come, first served for 125 students." },
+        { question: "What categories should projects focus on?", answer: "Projects should be impactful in one of three categories: health and wellness, education, or sustainability." },
+        { question: "Can I work alone or in a team?", answer: "Yes! You can work individually or in a group of up to 4 members." },
+        { question: "Will food be provided?", answer: "Yes, breakfast and lunch will be provided for all participants." },
+        { question: "Where is the event located?", answer: "The hackathon will be held at the Microsoft Office in New York City." },
+        { question: "Can parents stay during the event?", answer: "Parents may only drop off and pick up students at the start and end of the event. They cannot stay unless volunteering." },
+    ],
+  },
   {
     id: "impactx-25",
     name: "ImpactX'25",
@@ -21,7 +53,7 @@ const events = [
     endDate: "2025-12-07",
     tagline: "Building on our success, innovating for tomorrow!",
     cardDescription: "The highly anticipated second edition of our flagship hackathon, bringing together young innovators to tackle global challenges with technology.",
-    logo: "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/071/021/datas/medium_square.png?height=400&width=400",
+    logo: impactx25Cover,
     fullDescription: "Following the tremendous success of ImpactX'24, we're excited to announce ImpactX'25! This year's hackathon will once again challenge participants from around the world to build technology that addresses key social issues. Building on the foundation of our debut event, we're expanding our reach and impact, providing even more opportunities for young innovators to create meaningful solutions. Stay tuned for more details about prizes, judges, and registration!",
     prizes: [
         { tier: "🏆 1st Best Overall Hack", value: "The best overall hack submitted to ImpactX 2025." },
@@ -53,7 +85,7 @@ const events = [
     endDate: "2026-07-17",
     tagline: "Code for Tomorrow. Build for Hope.",
     cardDescription: "The next iteration of our flagship Code4Hope hackathon, empowering young innovators to create technology solutions for global challenges.",
-    logo: "placeholder.svg",
+    logo: c4h2026,
     fullDescription: "Building on the tremendous success of Code4Hope 2025, we're excited to announce Code4Hope Hackathon 2026! Following our proven format of empowering high school students to tackle real-world challenges through innovative technology solutions, this year's event promises to be bigger and better than ever. Participants will work on meaningful projects across multiple tracks, with mentorship from industry professionals and the opportunity to make a real impact. Stay tuned for more details about format, prizes, and registration!",
     prizes: [
         { tier: "🏆 1st Place", value: "To be announced - stay tuned for exciting prizes!" },
