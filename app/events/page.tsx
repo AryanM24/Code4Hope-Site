@@ -18,7 +18,7 @@ import impactx25Cover from "@/public/impactx25-cover.png";
 const events = [
   {
     id: "divergent-c4h-2025",
-    name: "Code4Hope Hackathon 2025",
+    name: "Divergent Teams and Code4Hope Hackathon 2025",
     status: "Upcoming",
     startDate: "2025-11-11",
     endDate: "2025-11-11",
@@ -501,7 +501,14 @@ function EventsPageContent() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const eventTypes = useMemo(() => {
-    const types = new Set(events.map(event => event.name.replace(/'\d{2}$| \d{4}$/, '')));
+    const types = new Set(events.map(event => {
+      const cleanedName = event.name.replace(/'\d{2}$| \d{4}$/, '');
+      // Normalize Code4Hope Hackathon events to group under the same tab
+      if (cleanedName.includes("Code4Hope Hackathon")) {
+        return "Code4Hope Hackathon";
+      }
+      return cleanedName;
+    }));
     return ["All", "ImpactX", ...Array.from(types).filter(t => t !== "ImpactX")];
   }, []);
 
