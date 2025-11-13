@@ -10,6 +10,7 @@ declare  global {
     description: string;
     logo: string;
     devpostLink: string;
+    invertColors?: boolean;
   }>;
 }
 globalThis.sponsors = [
@@ -28,13 +29,14 @@ globalThis.sponsors = [
   {
   name: "YRI Fellowship",
   description: "A research and innovation fellowship that empowers high school students to explore STEM through hands-on projects and mentorship.",
-  logo: "https://yriscience.com/logo.png",
+  logo: "https://hack.code4hope.net/yri-white-horizontal.png",
   devpostLink: "https://yriscience.com",
+  invertColors: true,
   },
   {
     name: "Koda Finance",
     description: "An AI-powered personal finance tracker that automates budgeting, spending insights, and saving recommendations, built for Gen Z and students.",
-    logo: "https://koda.vercel.app/_next/image?url=%2Flogo.png&w=48&q=75",
+    logo: "/kodafinance.png",
     devpostLink: "https://kodafinance.com",
   },
   {

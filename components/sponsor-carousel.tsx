@@ -57,7 +57,7 @@ const SponsorCarousel = () => {
                     alt={sponsor.name}
                     width={200}
                     height={100}
-                    className="object-contain max-h-20"
+                    className={`object-contain max-h-20 ${sponsor.invertColors ? 'invert' : ''} ${sponsor.name === 'YRI Fellowship' ? 'scale-125' : ''}`}
                   />
                 </div>
               </a>
@@ -82,7 +82,7 @@ const SponsorCarousel = () => {
                     alt={sponsor.name}
                     width={200}
                     height={100}
-                    className="object-contain max-h-20"
+                    className={`object-contain max-h-20 ${sponsor.invertColors ? 'invert' : ''} ${sponsor.name === 'YRI Fellowship' ? 'scale-125' : ''}`}
                   />
                 </div>
               </a>

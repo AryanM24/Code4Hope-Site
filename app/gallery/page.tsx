@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 // Enhanced gallery data with categories and descriptions
-const galleryImages = [
+const rawGalleryImages = [
   {
     id: 1,
     src: "/c4h@hackjps25/c4h@hackjps1.jpeg?height=400&width=600",
@@ -55,7 +55,51 @@ const galleryImages = [
     description: "At Code4Hope '25, Limit Digital led a thoughtful workshop focused on promoting healthy digital habits among youth. They began by sharing their mission to help students build a balanced relationship with technology, emphasizing the importance of mindfulness, screen time awareness, and mental wellness. The interactive discussion encouraged participants to reflect on their own tech usage and left them with practical strategies for creating a healthier digital lifestyle.",
     date: "July 10, 2025",
   },
+  {
+    id: 7,
+    src: "/c4hxdivergent-team.JPG?height=400&width=600&fit=crop&crop=focalpoint&fp-x=1",
+    alt: "Code4Hope x Divergent Teams 2025",
+    category: "hackathon",
+    description: "Landing back in New York for Code4Hope and Divergent Teams 2025 felt like a homecoming for our team. The energy inside Microsoft's Times Square office was unmistakable—nearly 60 students dove into a one-day sprint hackathon, building products and pitches at lightning speed before presenting to a panel of Microsoft judges. The format rewarded urgency and clarity; teams had just hours to form ideas, gather feedback from mentors, and show how technology could turn community challenges into working impact.",
+    date: "November 12, 2025",
+  },
+  {
+    id: 8,
+    src: "/c4hxdivergent-speech.JPG?height=400&width=600",
+    alt: "Code4Hope's Send-off at C4H x Divergent 2025",
+    category: "community",
+    description: "Before the judging window opened, Code4Hope took the stage to set the tone for the day. Founder Aryan Mittal and the Code4Hope executive board got the crowd hype for a day full of fun and building with an electric speech.",
+    date: "November 12, 2025",
+  },
+  {
+    id: 9,
+    src: "/c4hxdivergent-workshop.JPG?height=400&width=600",
+    alt: "\"Hack to Business\" Workshop at C4H x Divergent 2025",
+    category: "workshop",
+    description: "Later in the day, our \"Hack to Business\" workshop returned for an encore after its debut at C4H'25, this time adapted for Divergent Teams. Participants, judges, and even volunteers pulled chairs into a tight circle while we explored how to validate users, prototype fast, and pitch like founders. The live prompt was familiar—take a playful problem and craft a market-ready fix in minutes—but the dialogue felt new. Students and volunteers worked together and rushed to find creative ideas before presenting in front of our board, who gave them feedback and advice on their product.",
+    date: "November 12, 2025",
+  },
+  {
+    id: 10,
+    src: "/c4hworkshophackjps.jpeg?height=400&width=600",
+    alt: "Code4Hope Workshop at HackJPS",
+    category: "workshop",
+    description: "At JPS Robotics Team 2554's Annual Hackathon, HackJPS, we hosted a 30-minute lecture on turning hackathon projects into real-world startups, guiding students through the process of validating ideas, building MVPs, and pitching to investors. We shared actionable strategies for identifying target users, collecting feedback, and leveraging free tools to scale early-stage products. By using examples from successful high school-led ventures and highlighting common pitfalls, we aimed to inspire attendees to take their projects beyond the weekend and continue innovating.",
+    date: "June 15, 2025",
+  },
 ]
+
+// Function to parse date string to Date object
+function parseDate(dateString: string): Date {
+  return new Date(dateString)
+}
+
+// Sort gallery images by date (newest to oldest)
+const galleryImages = [...rawGalleryImages].sort((a, b) => {
+  const dateA = parseDate(a.date)
+  const dateB = parseDate(b.date)
+  return dateB.getTime() - dateA.getTime() // Newest first
+})
 
 // Gallery filter categories
 const categories = [

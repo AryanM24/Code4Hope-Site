@@ -11,6 +11,7 @@ interface Sponsor {
   description: string
   logo: string
   devpostLink: string
+  invertColors?: boolean
 }
 
 interface SponsorSliderProps {
@@ -86,28 +87,28 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
                   alt={`${sponsors[getImages(false, 1)].name} logo`}
                   width={400}
                   height={400}
-                  className="w-full h-full object-contain"
+                  className={`w-full h-full object-contain ${sponsors[getImages(false, 1)].invertColors ? 'invert' : ''} ${sponsors[getImages(false, 1)].name === 'YRI Fellowship' ? 'scale-125' : ''}`}
                 />
                 <Image
                   src={sponsors[currentIndex].logo}
                   alt={`${sponsors[currentIndex].name} logo`}
                   width={400}
                   height={400}
-                  className="w-full h-full object-contain"
+                  className={`w-full h-full object-contain ${sponsors[currentIndex].invertColors ? 'invert' : ''} ${sponsors[currentIndex].name === 'YRI Fellowship' ? 'scale-125' : ''}`}
                 />
                 <Image
                   src={sponsors[getImages(true, 1)].logo}
                   alt={`${sponsors[getImages(true, 1)].name} logo`}
                   width={400}
                   height={400}
-                  className="w-full h-full object-contain"
+                  className={`w-full h-full object-contain ${sponsors[getImages(true, 1)].invertColors ? 'invert' : ''} ${sponsors[getImages(true, 1)].name === 'YRI Fellowship' ? 'scale-125' : ''}`}
                 />
                 <Image
                   src={sponsors[getImages(true, 2)].logo}
                   alt={`${sponsors[getImages(true, 2)].name} logo`}
                   width={400}
                   height={400}
-                  className="w-full h-full object-contain"
+                  className={`w-full h-full object-contain ${sponsors[getImages(true, 2)].invertColors ? 'invert' : ''} ${sponsors[getImages(true, 2)].name === 'YRI Fellowship' ? 'scale-125' : ''}`}
                 />
               </div>
             ) : (
@@ -116,7 +117,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
                 alt={`${sponsors[currentIndex].name} logo`}
                 width={400}
                 height={400}
-                className="w-full h-full object-contain transition-opacity duration-300"
+                className={`w-full h-full object-contain transition-opacity duration-300 ${sponsors[currentIndex].invertColors ? 'invert' : ''} ${sponsors[currentIndex].name === 'YRI Fellowship' ? 'scale-125' : ''}`}
               />
             )}
           </div>

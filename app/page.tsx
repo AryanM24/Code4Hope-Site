@@ -321,9 +321,9 @@ export default function Home() {
       caption: "At JPS Robotics Team 2554's Annual Hackathon, HackJPS, we hosted a 30-minute lecture on turning hackathon projects into...",
     },
     {
-      src: "/c4h@c4h.JPG",
-      alt: "Code4Hope Workshop on Entrepenuership at Code4Hope '25",
-      caption: "At our summer event, Code4Hope'25 or Code4Hope's 2025 STEM Hackathon, we hosted a workshop on entrepenuership...",
+      src: "/c4hxdivergent-workshop.JPG",
+      alt: "\"Hack to Business\" Workshop at C4H x Divergent 2025",
+      caption: "Our \"Hack to Business\" workshop returned for an encore after its debut at C4H'25...",
     },
     {
       src: "/angel@c4h.JPG",
@@ -331,7 +331,7 @@ export default function Home() {
       caption: "College Professor and Microsoft Technology Strategist Abel Angel Rodriguez hosted a workshop on DevOps and Cloud Computing... ",
     },
     {
-      src: "/c4h2025round2.JPG",
+      src: "/participants1.JPG",
       alt: "A Room Full of Innovators",
       caption: "About 40 finalists joined us in-person and online for the second round of Code4Hope '25 (Code4Hope's 2025 STEM Hackathon), where they presented...",
     },
