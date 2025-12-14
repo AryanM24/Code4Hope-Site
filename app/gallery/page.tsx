@@ -76,7 +76,7 @@ const rawGalleryImages = [
     src: "/c4hxdivergent-workshop.JPG?height=400&width=600",
     alt: "\"Hack to Business\" Workshop at C4H x Divergent 2025",
     category: "workshop",
-    description: "Later in the day, our \"Hack to Business\" workshop returned for an encore after its debut at C4H'25, this time adapted for Divergent Teams. Participants, judges, and even volunteers pulled chairs into a tight circle while we explored how to validate users, prototype fast, and pitch like founders. The live prompt was familiar—take a playful problem and craft a market-ready fix in minutes—but the dialogue felt new. Students and volunteers worked together and rushed to find creative ideas before presenting in front of our board, who gave them feedback and advice on their product.",
+    description: "Our \"Hack to Business\" workshop returned for an encore after its debut at C4H'25, this time adapted for Divergent Teams. Participants, judges, and even volunteers pulled chairs into a tight circle while we explored how to validate users, prototype fast, and pitch like founders. The live prompt was familiar—take a playful problem and craft a market-ready fix in minutes—but the dialogue felt new. Students and volunteers worked together and rushed to find creative ideas before presenting in front of our board, who gave them feedback and advice on their product.",
     date: "November 12, 2025",
   },
   {
