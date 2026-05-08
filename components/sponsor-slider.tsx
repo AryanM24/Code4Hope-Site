@@ -74,12 +74,12 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
       </button>
 
       <motion.div 
-        className="border border-primary/30 bg-card rounded-2xl p-6 md:p-8 shadow-lg"
+        className="border border-hairline bg-card rounded-2xl p-6 md:p-8 shadow-lg"
         animate={shake ? "shake" : ""}
         variants={shakeVariants}
       >
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="aspect-square w-full max-w-[400px] mx-auto bg-white/10 p-4 rounded-xl">
+          <div className="aspect-square w-full max-w-[400px] mx-auto bg-canvas/10 p-4 rounded-xl">
             {multiImage ? (
               <div>
                 <Image
@@ -125,7 +125,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
             <h3 className="text-2xl md:text-3xl font-bold text-card-foreground">{sponsors[currentIndex].name}</h3>
             <p className="text-card-foreground/80 text-base md:text-lg">{sponsors[currentIndex].description}</p>
             <Button 
-              className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-all duration-300"
+              className="w-full bg-primary hover:bg-charcoal text-primary-foreground transition-all duration-300"
               asChild
               size="lg"
             >
@@ -152,7 +152,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 w-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'bg-primary w-6' : 'bg-primary/30'
+              index === currentIndex ? 'bg-primary w-6' : 'bg-brand-blue-200'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

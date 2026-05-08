@@ -123,7 +123,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? numSlides - 1 : prevIndex - 1));
     setShake(true);
   };
-  
+
   useEffect(() => {
     if (shake) {
       const timer = setTimeout(() => setShake(false), 500);
@@ -161,12 +161,12 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
   const currentWinners = winners.slice(startIndex, endIndex);
 
   if (!winners || winners.length === 0) {
-    return <p className="text-center text-gray-600 py-8">No past winners to display at the moment.</p>;
+    return <p className="text-center text-slate py-8">No past winners to display at the moment.</p>;
   }
-  
+
   return (
     <div className="relative w-full max-w-6xl mx-auto">
-      <button 
+      <button
         onClick={prevSlide}
         className="absolute left-[-15px] sm:left-[-25px] md:left-[-35px] top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-transform p-2 bg-card/50 hover:bg-card/80"
         aria-label="Previous winners"
@@ -181,13 +181,13 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
       >
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
-            key={currentIndex} 
+            key={currentIndex}
             custom={direction}
             variants={slideVariants}
             initial="enter"
             animate="center"
             exit="exit"
-            className="py-6 md:py-8 px-2 sm:px-0" 
+            className="py-6 md:py-8 px-2 sm:px-0"
           >
             <div className={`grid gap-6 sm:gap-8 ${
                 itemsPerSlide === 1 ? 'grid-cols-1 max-w-sm mx-auto' : ''
@@ -206,7 +206,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                       </div>
                     )}
                     {winner.image && (
-                      <div className="relative w-full h-48 flex-shrink-0"> 
+                      <div className="relative w-full h-48 flex-shrink-0">
                         <Image
                           src={winner.image}
                           alt={winner.projectName}
@@ -215,7 +215,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" // Basic sizes, adjust as needed
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
-                            target.onerror = null; 
+                            target.onerror = null;
                             target.src = "https://placehold.co/600x400/CCCCCC/FFFFFF?text=Image+Not+Found";
                           }}
                         />
@@ -223,24 +223,24 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                     )}
                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
                       <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black pt-1">{winner.projectName}</h3>
-                      <p className="text-xs sm:text-sm font-medium text-gray-600">
+                      <p className="text-xs sm:text-sm font-medium text-slate">
                         <UserIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 inline-block flex-shrink-0" /> Team: {winner.name}
                       </p>
-                      <p className="text-xs sm:text-sm text-gray-600">
+                      <p className="text-xs sm:text-sm text-slate">
                         <TrophyIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 inline-block flex-shrink-0" /> Event: {winner.event} ({winner.year})
                       </p>
-                      <p className="text-gray-600 text-sm sm:text-base mb-4 flex-grow line-clamp-3 sm:line-clamp-4">
+                      <p className="text-slate text-sm sm:text-base mb-4 flex-grow line-clamp-3 sm:line-clamp-4">
                         {winner.description}
                       </p>
                       {winner.devpostLink && winner.devpostLink !== "#" && (
                          <motion.div
-                           className="mt-auto pt-2" 
+                           className="mt-auto pt-2"
                            whileHover={{ scale: 1.05 }}
                            whileTap={{ scale: 0.95 }}
                          >
                           <Button
                             variant="outline"
-                            className="w-full text-sm sm:text-base border-primary text-primary hover:bg-primary/10" 
+                            className="w-full text-sm sm:text-base border-brand-blue-700 text-primary hover:bg-brand-blue-200"
                             onClick={() => window.open(winner.devpostLink, "_blank", "noopener,noreferrer")}
                           >
                             View Project
@@ -257,7 +257,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
         </AnimatePresence>
       </motion.div>
 
-      <button 
+      <button
         onClick={nextSlide}
         className="absolute right-[-15px] sm:right-[-25px] md:right-[-35px] top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-transform p-2 bg-card/50 hover:bg-card/80"
         aria-label="Next winners"
@@ -278,7 +278,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                 setShake(true);
               }}
               className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'bg-primary w-5 sm:w-6' : 'bg-primary/30 hover:bg-primary/50'
+                index === currentIndex ? 'bg-primary w-5 sm:w-6' : 'bg-brand-blue-200 hover:bg-brand-blue-200'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

@@ -38,9 +38,9 @@ export default function LocationMap({ locations }: LocationMapProps) {
   }
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-canvas">
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-4 text-[#1F2937]">Find a Recycled Relief Basket</h3>
+        <h3 className="text-xl font-bold mb-4 text-ink">Find a Recycled Relief Basket</h3>
 
         <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2 mb-6">
           <Input
@@ -50,20 +50,20 @@ export default function LocationMap({ locations }: LocationMapProps) {
             onChange={(e) => setZipCode(e.target.value)}
             className="flex-grow"
           />
-          <Button type="submit" className="bg-[#4CAF50] hover:bg-green-700 text-white">
+          <Button type="submit" className="bg-brand-blue-700 hover:bg-brand-blue-deep text-white">
             Find Locations
           </Button>
         </form>
 
-        <div className="bg-gray-100">
+        <div className="bg-surface">
           <div className="text-center">
-            <MapPin className="h-10 w-10 text-[#4CAF50] mx-auto mb-2" />
-            <p className="text-gray-600">Map would be embedded here</p>
+            <MapPin className="h-10 w-10 text-brand-blue-700 mx-auto mb-2" />
+            <p className="text-slate">Map would be embedded here</p>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-medium text-[#1F2937]">
+          <h4 className="font-medium text-ink">
             {searched && zipCode.trim() !== ""
               ? `${filteredLocations.length} locations found near ${zipCode}`
               : "All Relief Basket Locations:"}
@@ -72,19 +72,19 @@ export default function LocationMap({ locations }: LocationMapProps) {
           {filteredLocations.length > 0 ? (
             <div className="space-y-3">
               {filteredLocations.map((location) => (
-                <div key={location.id} className="border border-gray-200">
+                <div key={location.id} className="border border-hairline">
                   <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-[#4CAF50] mt-0.5 mr-2 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-brand-blue-700 mt-0.5 mr-2 flex-shrink-0" />
                     <div>
-                      <h5 className="font-medium text-[#1F2937]">{location.name}</h5>
-                      <p className="text-gray-600">{location.address}</p>
+                      <h5 className="font-medium text-ink">{location.name}</h5>
+                      <p className="text-slate">{location.address}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           ) : searched ? (
-            <p className="text-gray-600">
+            <p className="text-slate">
               No locations found near this zip code. Please try another zip code or contact us for assistance.
             </p>
           ) : null}

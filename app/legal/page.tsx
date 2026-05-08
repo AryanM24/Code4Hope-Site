@@ -1,9 +1,12 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
+import { useState, useMemo, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { X, FileText, Shield, Scale } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 // Legal policies data
 const legalPolicies = [
@@ -223,43 +226,123 @@ const renderContent = (content: any) => {
 };
 
 // Policy Card Component
-function PolicyCard({ policy }: { policy: typeof legalPolicies[0] }) {
+function PolicyCard({ policy, onReadMore }: { policy: typeof legalPolicies[0]; onReadMore: (policy: typeof legalPolicies[0]) => void }) {
+  const Icon = policy.id === "privacy" ? Shield : Scale;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="bg-white rounded-xl shadow-sm p-8 md:p-12 mb-8"
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-canvas border rounded-lg overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
-      <div className="mb-6">
-        <h2 className="text-3xl font-bold mb-2 text-gray-800 border-l-4 border-primary pl-4">
-          {policy.title}
-        </h2>
-        <p className="text-sm text-gray-500 mb-4">
-          <strong>Last Updated:</strong> {policy.lastUpdated}
-        </p>
-        <p className="text-gray-600 mb-6">{policy.description}</p>
-      </div>
-      
-      <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-        {policy.content.sections.map((section, index) => (
-          <div key={index}>
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">{section.title}</h3>
-            {section.content.map((content, contentIndex) => (
-              <div key={contentIndex}>
-                {renderContent(content)}
-              </div>
-            ))}
+      <div className="flex flex-col md:flex-row">
+        <div className="flex-shrink-0 w-full md:w-52 h-48 md:h-52 relative bg-surface flex items-center justify-center">
+          <div className="bg-canvas p-6 rounded-2xl shadow-sm border border-brand-blue-100">
+            <Icon size={64} className="text-primary" />
           </div>
-        ))}
+        </div>
+        <div className="p-4 md:p-6 flex flex-col justify-between flex-grow">
+          <div className="space-y-3">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+              <h3 className="text-lg md:text-xl font-bold text-ink line-clamp-2">{policy.title}</h3>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-surface text-slate whitespace-nowrap self-start sm:self-auto">
+                {policy.category}
+              </span>
+            </div>
+
+            <div className="text-sm">
+              <p className="font-semibold text-primary">Last Updated: {policy.lastUpdated}</p>
+            </div>
+
+            <p className="text-slate text-sm leading-relaxed line-clamp-3">{policy.description}</p>
+          </div>
+
+          <div className="mt-4 pt-4">
+            <Button
+              onClick={() => onReadMore(policy)}
+              className="w-full sm:w-auto text-sm"
+              size="sm"
+            >
+              Read Policy
+            </Button>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
 }
 
-export default function LegalPage() {
+// Detailed Policy Modal Component
+function PolicyDetailModal({ policy, onClose }: { policy: typeof legalPolicies[0] | null; onClose: () => void }) {
+  if (!policy) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex justify-center items-stretch p-2 md:p-4 overflow-y-auto"
+      style={{ maxHeight: '100vh' }}
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.9, y: 50 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 50 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="bg-canvas rounded-lg md:rounded-xl shadow-2xl w-full max-w-4xl flex flex-col max-h-full overflow-hidden relative"
+        style={{ maxHeight: '100%', minHeight: 0 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Fixed Header */}
+        <div className="sticky top-0 bg-canvas p-4 md:p-6 border-b flex justify-between items-start">
+          <div className="flex-1 mr-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 pr-8">{policy.title}</h2>
+            <div className="text-sm md:text-base">
+              <p className="text-primary font-semibold">Last Updated: {policy.lastUpdated}</p>
+            </div>
+            <p className="text-slate mt-2 text-sm md:text-base">{policy.description}</p>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex-shrink-0 text-slate hover:text-ink p-1"
+          >
+            <X size={20} className="md:w-6 md:h-6" />
+          </button>
+        </div>
+
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto min-h-0">
+          <div className="p-4 md:p-6">
+            <div className="max-w-none space-y-8">
+              {policy.content.sections.map((section, index) => (
+                <section key={index}>
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-brand-blue-700 pl-4 mb-4">
+                    {section.title}
+                  </h3>
+                  <div className="text-slate text-sm md:text-base leading-relaxed space-y-4">
+                    {section.content.map((content, contentIndex) => (
+                      <div key={contentIndex}>
+                        {renderContent(content)}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function LegalPageContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState("All");
+  const [selectedPolicy, setSelectedPolicy] = useState<typeof legalPolicies[0] | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   const policyCategories = useMemo(() => {
@@ -289,10 +372,13 @@ export default function LegalPage() {
                 return content.toLowerCase().includes(query);
               }
               if (content.type === 'list') {
-                return content.items.some((item: string) => item.toLowerCase().includes(query));
+                return Array.isArray(content.items) && content.items.some((item: string) => item.toLowerCase().includes(query));
               }
               if (content.type === 'contact') {
-                return content.text.toLowerCase().includes(query) || content.email.toLowerCase().includes(query);
+                return Boolean(
+                  content.text?.toLowerCase().includes(query) ||
+                  content.email?.toLowerCase().includes(query)
+                );
               }
               return false;
             })
@@ -303,111 +389,168 @@ export default function LegalPage() {
     return result;
   }, [activeTab, searchQuery]);
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-white border-b">
-        <div className="container mx-auto px-4 py-12 md:py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-800">
-              Legal Policies
-            </h1>
-            <p className="text-gray-600 text-lg">
-              Our commitment to transparency and your rights
-            </p>
-          </motion.div>
-        </div>
-      </section>
+  // Handle URL-based modal opening
+  useEffect(() => {
+    const policyId = searchParams.get('policy');
+    if (policyId) {
+      const policy = legalPolicies.find(p => p.id === policyId);
+      if (policy) {
+        setSelectedPolicy(policy);
+      }
+    } else {
+      setSelectedPolicy(null);
+    }
+  }, [searchParams]);
 
-      {/* Policies Content */}
-      <ScrollReveal>
-        <section className="py-8 md:py-12">
-          <div className="container mx-auto px-4">
-            {/* Controls Section */}
-            <div className="max-w-4xl mx-auto mb-8">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
-                {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-2 w-full md:w-auto">
-                  {policyCategories.map(category => (
-                    <button
-                      key={category}
-                      onClick={() => setActiveTab(category)}
-                      className={`px-3 md:px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 flex-shrink-0 ${
-                        activeTab === category 
-                          ? "bg-primary text-primary-foreground shadow-md" 
-                          : "text-gray-600 hover:bg-white/50 hover:text-gray-800"
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
+  const handleReadMore = (policy: typeof legalPolicies[0]) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('policy', policy.id);
+    window.history.pushState({}, '', url.toString());
+    setSelectedPolicy(policy);
+  };
+
+  const handleCloseModal = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('policy');
+    window.history.pushState({}, '', url.toString());
+    setSelectedPolicy(null);
+  };
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const policyId = new URLSearchParams(window.location.search).get('policy');
+      if (policyId) {
+        const policy = legalPolicies.find(p => p.id === policyId);
+        setSelectedPolicy(policy || null);
+      } else {
+        setSelectedPolicy(null);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  return (
+    <>
+      <AnimatePresence>
+        {selectedPolicy && <PolicyDetailModal policy={selectedPolicy} onClose={handleCloseModal} />}
+      </AnimatePresence>
+
+      <div className="flex flex-col min-h-screen">
+        <main className="flex-grow">
+          {/* Hero Section */}
+          <section className="py-20 md:py-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="container mx-auto px-4 text-center"
+            >
+              <h1 className="text-5xl font-semibold leading-[1.1] tracking-[-0.05em] text-ink md:text-6xl lg:text-[80px] mb-4">
+                Legal Policies
+              </h1>
+              <p className="text-slate text-lg max-w-2xl mx-auto">
+                Our commitment to transparency and your rights. Learn more about how we protect your data and the terms of participating in our events.
+              </p>
+            </motion.div>
+          </section>
+
+          {/* Policies Content */}
+          <ScrollReveal>
+            <section className="py-8 md:py-12">
+              <div className="container mx-auto px-4">
+                {/* Controls Section */}
+                <div className="max-w-4xl mx-auto mb-8">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    {/* Tab Navigation */}
+                    <div className="flex flex-wrap gap-2 w-full md:w-auto justify-center md:justify-start">
+                      {policyCategories.map(category => (
+                        <button
+                          key={category}
+                          onClick={() => setActiveTab(category)}
+                          className={`px-3 md:px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 flex-shrink-0 ${
+                            activeTab === category 
+                              ? "bg-primary text-primary-foreground shadow-md" 
+                              : "text-slate hover:bg-canvas/50 hover:text-ink"
+                          }`}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Search Bar */}
+                    <div className="relative w-full md:w-auto md:min-w-[250px]">
+                      <input
+                        type="text"
+                        placeholder="Search policies..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-10 pr-4 py-2 border rounded-full w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-canvas"
+                      />
+                      <svg
+                        className="absolute left-3 top-2.5 h-4 w-4 md:h-5 md:w-5 text-slate"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 
-                {/* Search Bar */}
-                <div className="relative w-full md:w-auto md:min-w-[250px]">
-                  <input
-                    type="text"
-                    placeholder="Search policies..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 pr-4 py-2 border rounded-full w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-                  />
-                  <svg
-                    className="absolute left-3 top-2.5 h-4 w-4 md:h-5 md:w-5 text-gray-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </div>
+                {/* Policies List */}
+                {filteredPolicies.length === 0 ? (
+                  <div className="text-center py-12">
+                    <svg className="mx-auto h-12 w-12 text-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                    <h3 className="mt-2 text-lg font-medium text-ink">No policies found</h3>
+                    <p className="mt-1 text-slate">Try adjusting your search or filter criteria.</p>
+                    <button
+                      onClick={() => {
+                        setActiveTab("All")
+                        setSearchQuery("")
+                      }}
+                      className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-charcoal transition"
+                    >
+                      Reset filters
+                    </button>
+                  </div>
+                ) : (
+                  <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+                    {filteredPolicies.map(policy => (
+                      <PolicyCard key={policy.id} policy={policy} onReadMore={handleReadMore} />
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-            
-            {/* Policies List */}
-            {filteredPolicies.length === 0 ? (
-              <div className="text-center py-12">
-                <svg className="mx-auto h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                <h3 className="mt-2 text-lg font-medium text-gray-800">No policies found</h3>
-                <p className="mt-1 text-gray-600">Try adjusting your search or filter criteria.</p>
-                <button
-                  onClick={() => {
-                    setActiveTab("All")
-                    setSearchQuery("")
-                  }}
-                  className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/80 transition"
-                >
-                  Reset filters
-                </button>
-              </div>
-            ) : (
-              <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
-                {filteredPolicies.map(policy => (
-                  <PolicyCard key={policy.id} policy={policy} />
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-      </ScrollReveal>
-    </div>
+            </section>
+          </ScrollReveal>
+        </main>
+      </div>
+    </>
+  );
+}
+
+export default function LegalPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-surface" />}>
+      <LegalPageContent />
+    </Suspense>
   );
 }

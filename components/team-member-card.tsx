@@ -34,7 +34,7 @@ export function TeamMemberCard({ name, title, image, socials }: TeamMemberCardPr
     const content = (
       <motion.div 
         whileHover={{ scale: 1.1 }} 
-        className="bg-primary/10 p-2 rounded-full cursor-pointer"
+        className="bg-brand-blue-200 p-2 rounded-full cursor-pointer"
       >
         {icon}
       </motion.div>
@@ -91,8 +91,8 @@ export function TeamMemberCard({ name, title, image, socials }: TeamMemberCardPr
         </div>
       </div>
       <div className="p-5 text-center">
-        <h3 className="text-lg font-bold text-gray-800 mb-1">{name}</h3>
-        <p className="text-sm text-gray-600">{title}</p>
+        <h3 className="text-lg font-bold text-ink mb-1">{name}</h3>
+        <p className="text-sm text-slate">{title}</p>
       </div>
     </motion.div>
   )

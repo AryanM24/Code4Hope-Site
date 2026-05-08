@@ -20,7 +20,7 @@ function HeartIcon() {
 
 export default function LoadingScreen() {
   return (
-    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-canvas flex items-center justify-center">
       <div className="flex flex-col items-center space-y-6">
         {/* Pulsing Heart Animation */}
         <motion.div
@@ -38,7 +38,7 @@ export default function LoadingScreen() {
         
         {/* Loading text */}
         <motion.p 
-          className="text-gray-600 font-medium text-lg"
+          className="text-slate font-medium text-lg"
           animate={{
             opacity: [0.5, 1, 0.5],
           }}

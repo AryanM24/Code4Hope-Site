@@ -17,37 +17,39 @@ import impactx25Cover from "@/public/impactx25-cover.png";
 // --- DATA POPULATED WITH ACCURATE, DETAILED CONTENT ---
 const events = [
   {
-    id: "c4h-2026",
-    name: "Code4Hope Hackathon 2026",
+    id: "koda-hacks-2026",
+    name: "KODA Hacks 2026",
     status: "Upcoming",
-    startDate: "2026-07-15",
-    endDate: "2026-07-17",
-    tagline: "Code for Tomorrow. Build for Hope.",
-    cardDescription: "The next iteration of our flagship Code4Hope hackathon, empowering young innovators to create technology solutions for global challenges.",
-    logo: c4h2026,
-    fullDescription: "Building on the tremendous success of Code4Hope 2025, we're excited to announce Code4Hope Hackathon 2026! Following our proven format of empowering high school students to tackle real-world challenges through innovative technology solutions, this year's event promises to be bigger and better than ever. Participants will work on meaningful projects across multiple tracks, with mentorship from industry professionals and the opportunity to make a real impact. Stay tuned for more details about format, prizes, and registration!",
+    startDate: "2026-07-01",
+    endDate: "2026-07-04",
+    tagline: "Develop projects at the intersection of finance, economics, and computer science.",
+    cardDescription: "A 4-day hackathon experience presented by KODA Finance and Code4Hope, focused on fintech, financial literacy, and social impact.",
+    logo: "/placeholder.svg", // Replace with actual logo if available
+    fullDescription: "KODA Hacks 2026 is the official joint hackathon by KODA Finance and Code4Hope — bringing together student builders passionate about fintech, financial literacy, and social impact. Build tools that expand financial access, educate communities, and solve real economic problems. If it moves the needle on financial access or literacy, we want to see it. This is an open-ended, beginner-friendly hackathon. All submission mediums are welcome, however, apps, websites, and functional programs are preferred.",
     prizes: [
-        { tier: "🏆 1st Place", value: "To be announced - stay tuned for exciting prizes!" },
-        { tier: "🥈 2nd Place", value: "To be announced - stay tuned for exciting prizes!" },
-        { tier: "🥉 3rd Place", value: "To be announced - stay tuned for exciting prizes!" },
+        { tier: "🏆 1st Place Winner", value: "Prizes to be determined." },
+        { tier: "🥈 2nd Place Winner", value: "Prizes to be determined." },
+        { tier: "🥉 3rd Place Winner", value: "Prizes to be determined." },
     ],
     sponsors: [
-      { name: "YRI Science", logo: "https://www.yriscience.com/logo.png" },
+        { name: "KODA Finance", logo: "/placeholder.svg" },
+        { name: "Code4Hope", logo: "/c4hlogo_black.PNG" },
     ],
     links: [
-        { name: "Event Website", url: "https://hack.code4hope.net", type: "primary" as const },
         { name: "Join Discord", url: "https://discord.gg/hu8e25c6cy", type: "primary" as const },
+        { name: "Judge Sign Up", url: "https://forms.gle/judgesignup", type: "secondary" as const }, // Placeholder link
     ],
     faq: [
-        { question: "When will registration open?", answer: "Registration details will be announced soon. Visit our website and join our Discord for the latest updates!" },
-        { question: "Who can participate?", answer: "Details about eligibility will be announced closer to the event date." },
-        { question: "What format will the event follow?", answer: "Event format details will be shared as we get closer to the hackathon. Follow our updates for more information!" },
+        { question: "Who can participate?", answer: "Ages 13 to 17 and high school students only. Companies/professional organizations are excluded." },
+        { question: "What should I submit?", answer: "A 1-2 minute video (max 5m) describing your project, the source code, and a pitch deck/presentation PDF." },
+        { question: "Can I reuse previous projects?", answer: "No, all projects must be started during the event. Reusing portfolio projects from Devpost is not permitted." },
+        { question: "How can I become a judge?", answer: "Sign up via our form and email aryan.mittal@code4hope.net with your inquiry." },
     ],
   },
   {
     id: "impactx-25",
     name: "ImpactX'25",
-    status: "Upcoming",
+    status: "Completed",
     startDate: "2025-12-05",
     endDate: "2025-12-07",
     tagline: "Building on our success, innovating for tomorrow!",
@@ -66,7 +68,6 @@ const events = [
         { name: "AidSnap", logo: "https://www.aidsnap.com/logo2.png?height=32&width=120&text=AidSnap+Logo" },
     ],
     links: [
-        { name: "Register Now", url: "https://forms.gle/7u54tvfrMfr6kvvc8", type: "primary" as const },
         { name: "Join Discord", url: "https://discord.gg/hu8e25c6cy", type: "primary" as const },
         { name: "Learn More", url: "https://impactx2025.devpost.com/", type: "secondary" as const },
     ],
@@ -190,13 +191,13 @@ const events = [
 function formatEventDate(start: string, end: string) {
     const startDate = new Date(start);
     const endDate = new Date(end);
-    
+
     // If it's a single day event
     if (start === end) {
         const month = startDate.toLocaleString('default', { month: 'short' });
         return `${month} ${startDate.getUTCDate()}, ${startDate.getFullYear()}`;
     }
-    
+
     // Multi-day event
     const startMonth = startDate.toLocaleString('default', { month: 'short' });
     const endMonth = endDate.toLocaleString('default', { month: 'short' });
@@ -248,13 +249,13 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+      className="bg-canvas border rounded-lg overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
       <div className="flex flex-col md:flex-row">
-        <div className="flex-shrink-0 w-full md:w-52 h-48 md:h-52 relative bg-gray-50 flex items-center justify-center">
-          <Image 
-            src={event.logo} 
-            alt={`${event.name} logo`} 
+        <div className="flex-shrink-0 w-full md:w-52 h-48 md:h-52 relative bg-surface flex items-center justify-center">
+          <Image
+            src={event.logo}
+            alt={`${event.name} logo`}
             width={200}
             height={200}
             className="object-contain max-w-full max-h-full p-4"
@@ -263,16 +264,16 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
         <div className="p-4 md:p-6 flex flex-col justify-between flex-grow">
           <div className="space-y-3">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 line-clamp-2">{event.name}</h3>
+              <h3 className="text-lg md:text-xl font-bold text-ink line-clamp-2">{event.name}</h3>
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap self-start sm:self-auto ${
-                event.status === "Upcoming" 
-                  ? "bg-primary/10 text-primary" 
-                  : "bg-gray-100 text-gray-600"
+                event.status === "Upcoming"
+                  ? "bg-brand-blue-200 text-brand-blue-deep"
+                  : "bg-surface text-slate"
               }`}>
                 {event.status}
               </span>
             </div>
-            
+
             <div className="text-sm">
               {event.rounds ? (
                 formatRounds(event.rounds)
@@ -282,12 +283,12 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
                 )
               )}
             </div>
-            
-            <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{event.cardDescription}</p>
+
+            <p className="text-slate text-sm leading-relaxed line-clamp-3">{event.cardDescription}</p>
           </div>
-          
+
           <div className="mt-4 pt-4">
-            <Button 
+            <Button
               onClick={() => onLearnMore(event)}
               className="w-full sm:w-auto text-sm"
               size="sm"
@@ -319,12 +320,12 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 50 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="bg-white rounded-lg md:rounded-xl shadow-2xl w-full max-w-4xl flex flex-col max-h-full overflow-hidden relative"
+                className="bg-canvas rounded-lg md:rounded-xl shadow-2xl w-full max-w-4xl flex flex-col max-h-full overflow-hidden relative"
                 style={{ maxHeight: '100%', minHeight: 0 }}
-                onClick={(e) => e.stopPropagation()} 
+                onClick={(e) => e.stopPropagation()}
             >
                 {/* Fixed Header */}
-                <div className="sticky top-0 bg-white p-4 md:p-6 border-b flex justify-between items-start">
+                <div className="sticky top-0 bg-canvas p-4 md:p-6 border-b flex justify-between items-start">
                     <div className="flex-1 mr-4">
                         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 pr-8">{event.name}</h2>
                         <div className="text-sm md:text-base">
@@ -336,11 +337,11 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                 )
                             )}
                         </div>
-                        <p className="text-gray-600 mt-2 text-sm md:text-base">{event.tagline}</p>
+                        <p className="text-slate mt-2 text-sm md:text-base">{event.tagline}</p>
                     </div>
-                    <button 
-                        onClick={onClose} 
-                        className="flex-shrink-0 text-gray-600 hover:text-gray-800 p-1"
+                    <button
+                        onClick={onClose}
+                        className="flex-shrink-0 text-slate hover:text-ink p-1"
                     >
                         <X size={20} className="md:w-6 md:h-6" />
                     </button>
@@ -369,14 +370,14 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                             )}
 
                             <section>
-                                <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-primary pl-4 mb-4">About</h3>
-                                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{event.fullDescription}</p>
+                                <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-brand-blue-700 pl-4 mb-4">About</h3>
+                                <p className="text-slate text-sm md:text-base leading-relaxed">{event.fullDescription}</p>
                             </section>
 
                             {/* Links Section */}
                             {event.links && event.links.length > 0 && (
                                 <section>
-                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-primary pl-4 mb-4">Quick Links</h3>
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-brand-blue-700 pl-4 mb-4">Quick Links</h3>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {event.links.map((link) => (
                                             <a
@@ -385,9 +386,9 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className={`flex items-center justify-between p-3 rounded-lg transition-all duration-200 hover:scale-[1.02] text-sm md:text-base ${
-                                                    link.type === 'primary' 
-                                                        ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
-                                                        : 'bg-gray-100 hover:bg-gray-100/80 text-gray-800'
+                                                    link.type === 'primary'
+                                                        ? 'bg-primary text-primary-foreground hover:bg-primary'
+                                                        : 'bg-surface hover:bg-surface/80 text-ink'
                                                 }`}
                                             >
                                                 <span className="font-medium">{link.name}</span>
@@ -397,10 +398,10 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                     </div>
                                 </section>
                             )}
-                            
+
                             {event.schedule && event.schedule.length > 0 && (
                                 <section>
-                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-primary pl-4 mb-4">Schedule</h3>
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-brand-blue-700 pl-4 mb-4">Schedule</h3>
                                     <div className="space-y-3">
                                         {(event.schedule ?? []).map((item: { time: string; event: string }) => (
                                             <div key={item.event} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
@@ -411,72 +412,72 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                     </div>
                                 </section>
                             )}
-                            
+
                             {event.faq?.length > 0 && (
                                 <section>
-                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-primary pl-4 mb-4">FAQ</h3>
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold border-l-4 border-brand-blue-700 pl-4 mb-4">FAQ</h3>
                                     <div className="space-y-4">
                                         {event.faq.map((item: { question: string; answer: string }) => (
                                             <div key={item.question} className="space-y-2">
                                                 <h4 className="font-semibold text-sm md:text-base">{item.question}</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">{item.answer}</p>
+                                                <p className="text-slate text-sm leading-relaxed">{item.answer}</p>
                                             </div>
                                         ))}
                                     </div>
                                 </section>
                             )}
                         </div>
-                        
+
                         {/* Sidebar */}
                         <div className="lg:col-span-1 space-y-4 md:space-y-6">
                             {event.prizes?.length > 0 && (
-                                <section className="bg-gray-50 p-4 rounded-lg border">
+                                <section className="bg-surface p-4 rounded-lg border">
                                     <h3 className="text-base md:text-lg font-bold mb-3">Prizes</h3>
                                     <div className="space-y-3">
                                         {event.prizes.map((p: { tier: string; value: string }) => (
                                             <div key={p.tier} className="space-y-1">
                                                 <div className="font-semibold text-sm">{p.tier}</div>
-                                                <div className="text-gray-600 text-xs leading-relaxed">{p.value}</div>
+                                                <div className="text-slate text-xs leading-relaxed">{p.value}</div>
                                             </div>
                                         ))}
                                     </div>
                                 </section>
                             )}
-                            
+
                             {event.judges && event.judges.length > 0 && (
                                 <section>
                                     <h3 className="text-base md:text-lg font-bold mb-4">Judges</h3>
                                     <div className="space-y-3 md:space-y-4">
                                         {(event.judges ?? []).map((j: { name: string; title: string; image: string }) => (
                                             <div key={j.name} className="flex items-center gap-3">
-                                                <Image 
-                                                    src={j.image} 
-                                                    alt={j.name} 
-                                                    width={36} 
-                                                    height={36} 
-                                                    className="rounded-full flex-shrink-0 md:w-10 md:h-10" 
+                                                <Image
+                                                    src={j.image}
+                                                    alt={j.name}
+                                                    width={36}
+                                                    height={36}
+                                                    className="rounded-full flex-shrink-0 md:w-10 md:h-10"
                                                 />
                                                 <div className="min-w-0 flex-1">
                                                     <p className="font-semibold text-xs md:text-sm truncate">{j.name}</p>
-                                                    <p className="text-xs text-gray-600 leading-tight">{j.title}</p>
+                                                    <p className="text-xs text-slate leading-tight">{j.title}</p>
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
                                 </section>
                             )}
-                            
+
                             {event.sponsors?.length > 0 && (
                                 <section>
                                     <h3 className="text-base md:text-lg font-bold mb-4">Sponsors</h3>
                                     <div className="flex flex-wrap gap-3 md:gap-4 items-center">
                                         {event.sponsors.map((s: { name: string; logo: string }) => (
                                             <div key={s.name} className="relative w-8 h-8 md:w-10 md:h-10">
-                                                <Image 
-                                                    src={s.logo} 
-                                                    alt={s.name} 
+                                                <Image
+                                                    src={s.logo}
+                                                    alt={s.name}
                                                     fill
-                                                    title={s.name} 
+                                                    title={s.name}
                                                     className="object-contain"
                                                 />
                                             </div>
@@ -513,12 +514,12 @@ function EventsPageContent() {
 
   const filteredEvents = useMemo(() => {
     let result = events;
-    
+
     // Filter by tab
     if (activeTab !== "All") {
       result = result.filter(event => event.name.includes(activeTab));
     }
-    
+
     // Filter by search query
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
@@ -530,7 +531,7 @@ function EventsPageContent() {
           event.fullDescription.toLowerCase().includes(query)
       );
     }
-    
+
     return result;
   }, [activeTab, searchQuery]);
 
@@ -588,20 +589,20 @@ function EventsPageContent() {
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="py-8 md:py-12">
+          <section className="py-20 md:py-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="container mx-auto px-4 text-center"
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-800">Events</h1>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              <h1 className="text-5xl font-semibold leading-[1.1] tracking-[-0.05em] text-ink md:text-6xl lg:text-[80px] mb-4">Events</h1>
+              <p className="text-slate text-lg max-w-2xl mx-auto">
                 Here is where you can find info about our previous and upcoming events!
               </p>
             </motion.div>
           </section>
-          
+
           {/* Events Content */}
           <ScrollReveal>
             <section className="py-8 md:py-12">
@@ -616,16 +617,16 @@ function EventsPageContent() {
                           key={type}
                           onClick={() => setActiveTab(type)}
                           className={`px-3 md:px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 flex-shrink-0 ${
-                            activeTab === type 
-                              ? "bg-primary text-primary-foreground shadow-md" 
-                              : "text-gray-600 hover:bg-white/50 hover:text-gray-800"
+                            activeTab === type
+                              ? "bg-primary text-primary-foreground shadow-md"
+                              : "text-slate hover:bg-canvas/50 hover:text-ink"
                           }`}
                         >
                           {type}
                         </button>
                       ))}
                     </div>
-                    
+
                     {/* Search Bar */}
                     <div className="relative w-full md:w-auto md:min-w-[250px]">
                       <input
@@ -636,7 +637,7 @@ function EventsPageContent() {
                         className="pl-10 pr-4 py-2 border rounded-full w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                       />
                       <svg
-                        className="absolute left-3 top-2.5 h-4 w-4 md:h-5 md:w-5 text-gray-600"
+                        className="absolute left-3 top-2.5 h-4 w-4 md:h-5 md:w-5 text-slate"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -652,11 +653,11 @@ function EventsPageContent() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Events Grid */}
                 {filteredEvents.length === 0 ? (
                   <div className="text-center py-12">
-                    <svg className="mx-auto h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="mx-auto h-12 w-12 text-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -664,14 +665,14 @@ function EventsPageContent() {
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <h3 className="mt-2 text-lg font-medium text-gray-800">No events found</h3>
-                    <p className="mt-1 text-gray-600">Try adjusting your search or filter criteria.</p>
+                    <h3 className="mt-2 text-lg font-medium text-ink">No events found</h3>
+                    <p className="mt-1 text-slate">Try adjusting your search or filter criteria.</p>
                     <button
                       onClick={() => {
                         setActiveTab("All")
                         setSearchQuery("")
                       }}
-                      className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/80 transition"
+                      className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-charcoal transition"
                     >
                       Reset filters
                     </button>
@@ -679,10 +680,10 @@ function EventsPageContent() {
                 ) : (
                   <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
                     {filteredEvents.map(event => (
-                      <EventCard 
-                        key={event.id} 
-                        event={event} 
-                        onLearnMore={handleLearnMore} 
+                      <EventCard
+                        key={event.id}
+                        event={event}
+                        onLearnMore={handleLearnMore}
                       />
                     ))}
                   </div>

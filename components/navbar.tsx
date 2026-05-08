@@ -6,7 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Code, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import Image from "next/image"
 
 export default function Navbar() {
@@ -35,7 +35,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-200 bg-white/95 backdrop-blur-md shadow-sm">
+    <header className="z-50 w-full bg-canvas/95 backdrop-blur-md">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -53,28 +53,32 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href ? "text-primary" : "text-[#1F2937]"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Button asChild size="sm" className="bg-primary hover:bg-primary/80 text-primary-foreground">
+          <nav className="hidden lg:flex items-center gap-7">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href))
+
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`rounded-full px-1 text-sm font-medium transition-colors ${
+                    isActive ? "text-brand-blue-700" : "text-charcoal hover:text-ink"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            })}
+            <Button asChild size="sm">
               <Link href="https://hcb.hackclub.com/donations/start/code-4-hope">Donate</Link>
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-2">
+          <div className="flex lg:hidden items-center space-x-2">
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-md text-[#1F2937]"
+              className="grid h-11 w-11 place-items-center rounded-full border border-hairline text-ink"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -94,7 +98,7 @@ export default function Navbar() {
                 animate={{ opacity: 0.5 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black md:hidden"
+                className="fixed inset-0 bg-black lg:hidden"
                 style={{ zIndex: 9998 }}
                 onClick={() => setIsMenuOpen(false)}
               />
@@ -105,13 +109,13 @@ export default function Navbar() {
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "tween", duration: 0.25 }}
-                className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-xl md:hidden flex flex-col"
+                className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-canvas shadow-modal lg:hidden flex flex-col"
                 style={{ zIndex: 9999 }}
               >
                 <div className="flex justify-end p-4">
                   <button
                     onClick={toggleMenu}
-                    className="p-2 rounded-md text-[#1F2937]"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-hairline text-ink"
                     aria-label="Close menu"
                   >
                     <X className="h-5 w-5" />
@@ -120,28 +124,32 @@ export default function Navbar() {
                 
                 <div className="flex-1 overflow-y-auto px-4 py-2">
                   <nav className="flex flex-col space-y-1">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className={`text-base font-medium py-3 px-2 rounded-md transition-colors hover:bg-gray-100 ${
-                          pathname === link.href 
-                            ? "text-primary font-semibold bg-gray-50" 
-                            : "text-[#1F2937]"
-                        }`}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                      const isActive = pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href))
+
+                      return (
+                        <Link
+                          key={link.name}
+                          href={link.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+                            isActive
+                              ? "bg-surface text-ink"
+                              : "text-charcoal hover:bg-surface"
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                      )
+                    })}
                   </nav>
                 </div>
                 
-                <div className="p-4 border-t">
+                <div className="border-t border-hairline p-4">
                   <Button 
                     asChild 
                     size="default" 
-                    className="bg-primary hover:bg-primary/80 text-primary-foreground w-full"
+                    className="w-full"
                   >
                     <Link href="https://hcb.hackclub.com/donations/start/code-4-hope" onClick={() => setIsMenuOpen(false)}>
                       Donate

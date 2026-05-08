@@ -1,11 +1,14 @@
 import type React from "react"
 import "@/app/globals.css"
-import { Inter } from "next/font/google"
+import { DM_Sans } from "next/font/google"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import LoadingProvider from "@/components/loading-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+})
 
 export const metadata = {
   title: "Code4Hope",
@@ -25,7 +28,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${inter.className} min-h-screen flex flex-col dynamic-bg`}>
+      <body className={`${dmSans.className} ${dmSans.variable} min-h-screen flex flex-col dynamic-bg`}>
         <LoadingProvider>
           <Navbar />
           <main className="flex-grow">

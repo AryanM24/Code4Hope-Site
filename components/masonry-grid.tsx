@@ -5,10 +5,39 @@ import React from "react"
 import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
+type MasonryColumns =
+  | number
+  | {
+      default?: number
+      sm?: number
+      md?: number
+      lg?: number
+    }
+
 interface MasonryGridProps extends React.HTMLAttributes<HTMLDivElement> {
-  columns?: number
+  columns?: MasonryColumns
   gap?: number
   children: React.ReactNode
+}
+
+function resolveColumnCount(columns: MasonryColumns, width = 0) {
+  if (typeof columns === "number") {
+    return columns
+  }
+
+  if (width >= 1024 && columns.lg) {
+    return columns.lg
+  }
+
+  if (width >= 768 && columns.md) {
+    return columns.md
+  }
+
+  if (width >= 640 && columns.sm) {
+    return columns.sm
+  }
+
+  return columns.default ?? 1
 }
 
 export default function MasonryGrid({
@@ -19,7 +48,7 @@ export default function MasonryGrid({
   ...props
 }: MasonryGridProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [columnCount, setColumnCount] = useState(columns.default || 1)
+  const [columnCount, setColumnCount] = useState(() => resolveColumnCount(columns))
   const [childrenArray, setChildrenArray] = useState<React.ReactNode[]>([])
 
   // Convert children to array
@@ -30,16 +59,7 @@ export default function MasonryGrid({
   // Update column count based on screen size
   useEffect(() => {
     const updateColumnCount = () => {
-      const width = window.innerWidth
-      if (width >= 1024 && columns.lg) {
-        setColumnCount(columns.lg)
-      } else if (width >= 768 && columns.md) {
-        setColumnCount(columns.md)
-      } else if (width >= 640 && columns.sm) {
-        setColumnCount(columns.sm)
-      } else {
-        setColumnCount(columns.default || 1)
-      }
+      setColumnCount(resolveColumnCount(columns, window.innerWidth))
     }
 
     updateColumnCount()
@@ -70,4 +90,3 @@ export default function MasonryGrid({
     </div>
   )
 }
-

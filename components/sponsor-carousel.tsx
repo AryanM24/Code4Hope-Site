@@ -51,7 +51,7 @@ const SponsorCarousel = () => {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
+                <div className="bg-canvas rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
@@ -76,7 +76,7 @@ const SponsorCarousel = () => {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
+                <div className="bg-canvas rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}

@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -30,7 +31,7 @@ export function JoinSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button 
-                      className="bg-background text-gray-800 hover:bg-background/90 px-6 font-medium"
+                      className="bg-background text-ink hover:bg-background/90 px-6 font-medium"
                       onClick={() => window.open("https://discord.gg/7ssCZx8Hme", "_blank")}
                     >
                       Join Our Community
@@ -44,7 +45,7 @@ export function JoinSection() {
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
                 Explore Our Resources
               </h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-slate mb-8 leading-relaxed">
                 We've prepared comprehensive documentation to help you get started and understand everything about Code4Hope's mission, events, and how you can contribute.
               </p>
               
@@ -79,7 +80,7 @@ export function JoinSection() {
                       boxShadow: "0 10px 25px -5px rgba(130, 108, 184, 0.2), 0 8px 10px -6px rgba(130, 108, 184, 0.1)",
                       transition: { duration: 0.3 }
                     }}
-                    className="bg-background rounded-lg border border-gray-200 shadow-sm"
+                    className="bg-background rounded-lg border border-hairline shadow-sm"
                   >
                     <Link
                       href={resource.href}
@@ -87,13 +88,13 @@ export function JoinSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
+                      <div className="rounded-full bg-brand-blue-200 p-3 w-fit mb-4">
                         <div className="text-primary">
                           {resource.icon}
                         </div>
                       </div>
-                      <h4 className="font-semibold mb-2 text-gray-800">{resource.label}</h4>
-                      <p className="text-sm text-gray-600 mb-2">{resource.description}</p>
+                      <h4 className="font-semibold mb-2 text-ink">{resource.label}</h4>
+                      <p className="text-sm text-slate mb-2">{resource.description}</p>
                       <div className="mt-auto pt-2 flex items-center text-sm font-medium text-primary">
                         <span>View</span>
                         <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -110,7 +111,7 @@ export function JoinSection() {
   );
 }
 
-function DocumentIcon(props) {
+function DocumentIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +134,7 @@ function DocumentIcon(props) {
   );
 }
 
-function UserPlusIcon(props) {
+function UserPlusIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +156,7 @@ function UserPlusIcon(props) {
   );
 }
 
-function CalendarIcon(props) {
+function CalendarIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +178,7 @@ function CalendarIcon(props) {
   );
 }
 
-function ArrowRightIcon(props) {
+function ArrowRightIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

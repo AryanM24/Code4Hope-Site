@@ -4,57 +4,150 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
-    --foreground: 0 0% 10%;
-    --card: 0 0% 90%;
-    --card-foreground: 0 0% 10%;
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 262 38% 57%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 0 0% 80%;
-    --secondary-foreground: 0 0% 12%;
-    --muted: 0 0% 88%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 0 0% 84%;
-    --accent-foreground: 0 0% 12%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 82%;
-    --input: 0 0% 82%;
-    --ring: 262 38% 57%;
-    --radius: 0.5rem;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+    --canvas: 0 0% 100%;
+    --surface: 220 20% 97%;
+    --surface-soft: 220 18% 94%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+    --primary: 240 10% 4%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 240 8% 10%;
+    --muted: 220 9% 46%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 227 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 231 78% 45%;
+    --hairline: 220 14% 90%;
+    --hairline-soft: 220 16% 94%;
+    --ink: 240 10% 4%;
+    --ink-strong: 0 0% 0%;
+    --charcoal: 220 10% 22%;
+    --slate: 220 9% 42%;
+    --steel: 220 8% 55%;
+    --stone: 220 6% 62%;
+    --brand-coral: 7 100% 61%;
+    --brand-magenta: 322 100% 58%;
+    --brand-blue: 228 100% 58%;
+    --brand-blue-deep: 232 78% 42%;
+    --brand-blue-700: 227 100% 56%;
+    --brand-cyan: 193 100% 54%;
+    --brand-blue-200: 220 100% 93%;
+    --brand-purple: 258 100% 61%;
+    --success-bg: 136 58% 93%;
+    --success-text: 145 58% 28%;
+    --radius: 16px;
   }
 
   .dark {
-    --background: 0 0% 15%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 20%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 15%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 262 38% 57%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 0 0% 25%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 0 0% 28%;
-    --accent-foreground: 0 0% 95%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 95%;
-    --border: 0 0% 28%;
-    --input: 0 0% 28%;
-    --ring: 262 38% 57%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+    --primary: 240 10% 4%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 240 8% 10%;
+    --muted: 220 9% 46%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 227 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 231 78% 45%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-canvas text-ink antialiased;
+    font-family: var(--font-dm-sans), Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  main {
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-ink;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    @apply text-charcoal;
+  }
+
+  a {
+    text-underline-offset: 4px;
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 1280px;
+  }
+
+  .card,
+  .bg-card {
+    @apply border border-hairline bg-canvas shadow-none;
+  }
+
+  .product-gradient-coral {
+    background:
+      radial-gradient(circle at 85% 20%, hsl(var(--brand-cyan) / 0.32), transparent 32%),
+      linear-gradient(135deg, hsl(var(--brand-coral)), #ff7a45);
+  }
+
+  .product-gradient-magenta {
+    background:
+      radial-gradient(circle at 78% 16%, hsl(var(--brand-purple) / 0.42), transparent 34%),
+      linear-gradient(135deg, hsl(var(--brand-magenta)), #ff4f9f);
+  }
+
+  .product-gradient-blue {
+    background:
+      radial-gradient(circle at 80% 18%, hsl(var(--brand-cyan) / 0.44), transparent 34%),
+      linear-gradient(135deg, hsl(var(--brand-blue-deep)), hsl(var(--brand-blue)));
+  }
+
+  .product-gradient-purple {
+    background:
+      radial-gradient(circle at 82% 18%, hsl(var(--brand-coral) / 0.32), transparent 34%),
+      linear-gradient(135deg, hsl(var(--brand-purple)), #8b5cff);
+  }
+
+  .section-heading {
+    @apply text-4xl font-semibold leading-tight md:text-5xl;
+  }
+
+  .section-copy {
+    @apply text-base leading-7 text-slate md:text-lg;
+  }
+
+  .surface-card {
+    @apply rounded-3xl border border-hairline bg-canvas p-6 shadow-none;
+  }
+
+  .pill-control {
+    @apply rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-steel;
   }
 }
 
@@ -82,16 +175,49 @@
   animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
-/* Dynamic background gradient animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 .dynamic-bg {
-  background: linear-gradient(135deg, #f9fafb, #ffffff, #f3f4f6, #fdfeff, #f1f5f9);
-  background-size: 300% 300%;
-  animation: gradientShift 20s ease infinite;
+  background:
+    radial-gradient(circle at 8% 6%, hsl(var(--brand-blue-200) / 0.5), transparent 28rem),
+    radial-gradient(circle at 88% 12%, hsl(var(--brand-coral) / 0.08), transparent 24rem),
+    hsl(var(--canvas));
 }
 
+.text-primary {
+  color: hsl(var(--brand-blue-700)) !important;
+}
+
+.bg-primary {
+  background-color: hsl(var(--primary)) !important;
+}
+
+.text-primary-foreground {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 6px 0 !important;
+}
+
+.rounded-md,
+.rounded-lg {
+  border-radius: 16px;
+}
+
+button,
+[role="button"],
+.inline-flex {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+::selection {
+  background: hsl(var(--brand-blue-200));
+  color: hsl(var(--ink));
+}

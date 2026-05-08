@@ -20,7 +20,7 @@ export default function ScrollingNewsTicker({ news }: ScrollingNewsTickerProps) 
   const duplicatedNews = [...news, ...news]
 
   return (
-    <div className="w-full overflow-hidden bg-gray-100">
+    <div className="w-full overflow-hidden bg-surface">
       <div className="relative flex">
         <motion.div
           ref={tickerRef}
@@ -44,12 +44,12 @@ export default function ScrollingNewsTicker({ news }: ScrollingNewsTickerProps) 
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#4CAF50] hover:underline font-medium"
+                  className="text-brand-blue-700 hover:underline font-medium"
                 >
                   {item.text}
                 </a>
               ) : (
-                <span className="text-gray-800">{item.text}</span>
+                <span className="text-ink">{item.text}</span>
               )}
             </div>
           ))}

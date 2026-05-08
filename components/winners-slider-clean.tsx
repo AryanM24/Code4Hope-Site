@@ -70,7 +70,7 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
   }
 
   if (!winners || winners.length === 0) {
-    return <p className="text-center text-gray-600 py-8">No past winners to display at the moment.</p>
+    return <p className="text-center text-slate py-8">No past winners to display at the moment.</p>
   }
 
   const startIndex = currentSlideIndex * itemsPerSlide
@@ -94,8 +94,8 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentWinners.map((winner) => (
-            <div key={winner.id} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col h-full">
-              <div className="aspect-[4/3] w-full bg-gray-50 rounded-lg relative overflow-hidden mb-4">
+            <div key={winner.id} className="bg-canvas rounded-xl p-4 shadow-sm border border-hairline-soft flex flex-col h-full">
+              <div className="aspect-[4/3] w-full bg-surface rounded-lg relative overflow-hidden mb-4">
                 {winner.image ? (
                   <Image
                     src={winner.image}
@@ -109,8 +109,8 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
                     }}
                   />
                 ) : (
-                  <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">Project Image</span>
+                  <div className="w-full h-full bg-surface-soft rounded-lg flex items-center justify-center">
+                    <span className="text-stone text-sm">Project Image</span>
                   </div>
                 )}
                 {winner.awardName && (
@@ -122,25 +122,25 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
               
               <div className="flex-grow space-y-3">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-2 line-clamp-2">
+                  <h3 className="text-lg font-bold text-ink mb-2 line-clamp-2">
                     {winner.projectName}
                   </h3>
-                  <p className="text-xs text-gray-600 mb-1">
+                  <p className="text-xs text-slate mb-1">
                     <strong>Team:</strong> {winner.name}
                   </p>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-slate">
                     <strong>Event:</strong> {winner.event} ({winner.year})
                   </p>
                 </div>
                 
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 flex-grow">
+                <p className="text-slate text-sm leading-relaxed line-clamp-3 flex-grow">
                   {winner.description}
                 </p>
                 
                 <div className="pt-2">
                   {winner.devpostLink && winner.devpostLink !== "#" ? (
                     <Button 
-                      className="w-full bg-primary hover:bg-primary/80 text-primary-foreground transition-all duration-300"
+                      className="w-full bg-primary hover:bg-charcoal text-primary-foreground transition-all duration-300"
                       size="sm"
                       asChild
                     >
@@ -150,7 +150,7 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
                     </Button>
                   ) : (
                     <Button 
-                      className="w-full bg-gray-100 text-gray-600 cursor-not-allowed"
+                      className="w-full bg-surface text-slate cursor-not-allowed"
                       size="sm"
                       disabled
                     >
@@ -184,7 +184,7 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
                 setShake(true)
               }}
               className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                index === currentSlideIndex ? 'bg-primary w-6' : 'bg-primary/30'
+                index === currentSlideIndex ? 'bg-primary w-6' : 'bg-brand-blue-200'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

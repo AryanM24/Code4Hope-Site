@@ -1,19 +1,11 @@
 "use client";
 
 import type React from "react";
-// Removed useRef, useScroll, useTransform, useSpring, useAnimation as they are not directly used in this file anymore for the slider
-import { motion, AnimatePresence } from "framer-motion"; // Kept for other animations if any
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useState, useEffect } from "react";
-import ImageComparisonSlider from "@/components/image-comparison-slider";
-import ScrollingNewsTicker from "@/components/scrolling-ticker";
-import LocationMap from "@/components/location-map";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import Footer from "@/components/footer";
 import SponsorCarousel from "../components/sponsor-carousel";
 
 // Import the new WinnersSlider component
@@ -31,7 +23,6 @@ import ImageCarousel from "@/components/heroimagescarousel";
 import blog1 from "@/public/1.jpg";
 import blog2 from "@/public/2.jpg";
 import blog3 from "@/public/3.jpg";
-import impactX from "@/public/ImpactX (1).png";
 import c4h2025 from "@/public/c4h2025.png";
 
 // Icon components (HeartIcon, InstagramIcon, etc. are defined in page.tsx or a shared icons file)
@@ -228,7 +219,7 @@ const previousWinnersData: Winner[] = [
     projectName: "LingoBuddy",
     event: "Code4Hope '25",
     year: "2025",
-    awardName: "1st Place Winner", 
+    awardName: "1st Place Winner",
     description: "An innovative language learning platform that connects users with native speakers for personalized conversational practice and cultural exchange.",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/solution_photos/003/546/964/datas/xlarge.png",
     devpostLink: "https://devpost.com/software/lingobuddy-zy8v06",
@@ -239,7 +230,7 @@ const previousWinnersData: Winner[] = [
     projectName: "ClimaGrid",
     event: "Code4Hope '25",
     year: "2025",
-    awardName: "2nd Place Winner", 
+    awardName: "2nd Place Winner",
     description: "A comprehensive climate monitoring and prediction system that helps communities prepare for and adapt to climate change impacts.",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/solution_photos/003/552/901/datas/xlarge.png",
     devpostLink: "https://www.youtube.com/embed/3jUIG-Xd95I",
@@ -250,7 +241,7 @@ const previousWinnersData: Winner[] = [
     projectName: "TheraBot",
     event: "Code4Hope '25",
     year: "2025",
-    awardName: "3rd Place Winner", 
+    awardName: "3rd Place Winner",
     description: "An AI-powered therapeutic companion that provides mental health support and resources through conversational interfaces and personalized care plans.",
     image: "https://d112y698adiu2z.cloudfront.net/photos/production/solution_photos/003/556/730/datas/xlarge.png",
     devpostLink: "https://www.youtube.com/embed/FPXkf4AanCg",
@@ -261,7 +252,7 @@ const previousWinnersData: Winner[] = [
     projectName: "Quare AI",
     event: "ImpactX '24",
     year: "2024",
-    awardName: "1st Place Overall", 
+    awardName: "1st Place Overall",
     description: "An AI-powered tool that simplifies health decisions, empowers users with accurate insights, and bridges the gap between symptoms and professional care.",
     image: "/QuareAI.png",
     devpostLink: "https://devpost.com/software/quare-ai?_gl=1*1v3yyp9*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1MzYxNCRqMCRsMCRoMA..",
@@ -272,9 +263,9 @@ const previousWinnersData: Winner[] = [
     projectName: "CourseVerse",
     event: "ImpactX '24",
     year: "2024",
-    awardName: "2nd Place Overall", 
+    awardName: "2nd Place Overall",
     description: "CourseVerse is a Flutter-based application that enables users to effortlessly create and share personalized courses by simply providing a title and description, making educational content creation accessible to all.",
-    image: "/CourseVerse.png", 
+    image: "/CourseVerse.png",
     devpostLink: "https://devpost.com/software/codeverse-d0z5sb?_gl=1*apqm0r*_gcl_au*MTY0NTM5MTU2My4xNzQ0OTA2NjI0*_ga*MjA4MDkzMTE1NC4xNzMwNzk4NDkz*_ga_0YHJK3Y10M*czE3NDc5NTMzMzckbzE3OCRnMSR0MTc0Nzk1NDEyNyRqMCRsMCRoMA..",
   },
   {
@@ -283,37 +274,15 @@ const previousWinnersData: Winner[] = [
     projectName: "Paywell",
     event: "ImpactX '24",
     year: "2024",
-    awardName: "3rd Place Overall", 
+    awardName: "3rd Place Overall",
     description: "A comprehensive solution designed to help users reduce or eliminate medical debt through personalized financial assistance tools.",
-    image: "/PayWell.png", 
+    image: "/PayWell.png",
     devpostLink: "https://devpost.com/software/paywell",
   },
 ];
 
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-    }
-  };
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email && message) {
-      setContactSubmitted(true);
-      setEmail("");
-      setMessage("");
-    }
-  };
-
   const galleryImages = [
     {
       src: "/c4h@hackjps25/c4h@hackjps1.jpeg",
@@ -339,71 +308,72 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Event Popup - Add this component here */}
-      {/* You can customize the props for your specific event */}
-      <EventPopup 
+      {/* Event Popup - Commented out as requested */}
+      {/* <EventPopup
         eventName="ImpactX '25"
         eventDate="Dec 5 – 7, 2025"
         eventPageUrl="https://impactx2025.devpost.com/"
-      />
+      /> */}
 
       {/* Hero Section */}
       <ScrollReveal>
-        <section className="w-full py-24 md:py-32 lg:py-40 relative">
+        <section className="relative w-full overflow-hidden py-32 md:py-48 lg:py-64">
+          {/* Background Image restored */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=1080&width=1920"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Students coding together"
               fill
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-black/40" />
           </div>
-          <div className="container mx-auto px-4 md:px-6 relative z-10">
-            <motion.div 
-              className="flex flex-col items-center space-y-8 text-center"
+          <div className="absolute left-[-8rem] top-16 h-80 w-80 rounded-full bg-brand-blue-200/70 blur-3xl" />
+          <div className="absolute right-[-10rem] top-8 h-96 w-96 rounded-full bg-brand-coral/10 blur-3xl" />
+          <div className="container relative z-10 mx-auto px-4 md:px-6">
+            <motion.div
+              className="mx-auto flex max-w-5xl flex-col items-center space-y-8 text-center"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.h1 
-                className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white"
+              <motion.h1
+                className="text-5xl font-bold leading-[1.1] tracking-[-0.05em] text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:text-7xl lg:text-[80px]"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
                 Code4Hope
               </motion.h1>
-              <motion.p 
-                className="mx-auto max-w-[700px] text-lg md:text-xl pt-2 text-white"
+              <motion.p
+                className="mx-auto max-w-[760px] pt-2 text-lg font-medium leading-8 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] md:text-xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
                 A not-for-profit organization that hosts hackathons throughout the year, empowering students to innovate and make an impact for charitable causes.
               </motion.p>
-              <motion.div 
-                className="space-x-2 sm:space-x-6 pt-6"
+              <motion.div
+                className="flex flex-col items-center gap-3 pt-4 sm:flex-row sm:gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                <motion.div 
+                <motion.div
                   className="inline-block mb-2 sm:mb-0"
-                  whileHover={{ scale: 1.05 }} 
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-primary hover:bg-primary/90 text-white px-5 sm:px-8 py-5 sm:py-6 text-base sm:text-lg" onClick={() => window.open("/about", "_self")}>
+                  <Button size="lg" onClick={() => window.open("/about", "_self")}>
                     Learn More
                   </Button>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="inline-block"
-                  whileHover={{ scale: 1.05 }} 
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-white text-primary hover:bg-white/90 px-5 sm:px-8 py-5 sm:py-6 text-base sm:text-lg" onClick={() => window.open("/events", "_self")}>
+                  <Button variant="secondary" size="lg" className="bg-white/90 hover:bg-white text-brand-blue-900 border-none shadow-lg" onClick={() => window.open("/events", "_self")}>
                     Get Involved
                   </Button>
                 </motion.div>
@@ -424,14 +394,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Story</h2>
-              <p className="text-gray-600 text-lg">
-                Uniting technology and creativity to drive social change and empower the next generation of innovators.
-              </p>
+              
             </motion.div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
-              <motion.div 
+              <motion.div
                 className="lg:col-span-7 space-y-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -439,25 +406,24 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <div>
-                  <div className="h-1 w-12 bg-primary mb-6"></div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-ink leading-tight">
                     Empowering students to create technology <span className="text-primary">with purpose</span>
                   </h3>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                  <p className="text-slate text-lg leading-relaxed mb-6">
                     Code4Hope is a not-for-profit organization dedicated to empowering students to leverage technology for social good. Our mission is to unite technology and creativity to drive social change, fostering a global community of young innovators addressing real-world challenges.
                   </p>
-                  <p className="text-gray-600 text-lg leading-relaxed">
+                  <p className="text-slate text-lg leading-relaxed">
                     Through our regular hackathons, we create opportunities for students to develop their skills while making a meaningful impact for charitable causes. We believe in the power of young minds to shape a better future through code.
                   </p>
                 </div>
-                
-                <motion.div 
+
+                <motion.div
                   className="pt-4"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Button 
-                    className="bg-primary hover:bg-primary/90 text-white" 
+                  <Button
+                    className="bg-primary hover:bg-primary text-white"
                     onClick={() => window.open("/about", "_self")}
                   >
                     Learn more about our journey
@@ -479,8 +445,8 @@ export default function Home() {
                   </Button>
                 </motion.div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="lg:col-span-5 space-y-6"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -510,8 +476,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-4"
             >
-              <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Sponsors</h2>
-              <p className="text-gray-600">
+              <h2 className="text-3xl font-bold mb-4 text-ink">Our Sponsors</h2>
+              <p className="text-slate">
                 We're grateful to partner with these amazing organizations who make our hackathons possible.
               </p>
             </motion.div>
@@ -531,8 +497,8 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Upcoming Events</h2>
-            <p className="text-gray-600">
+          <h2 className="text-3xl font-bold mb-4 text-ink">Upcoming Events</h2>
+            <p className="text-slate">
           Throughout the year, we host multiple hackathons, each focusing on a different technology trend
           that supports charitable causes.
             </p>
@@ -543,7 +509,7 @@ export default function Home() {
             >
             </motion.div>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
             {[
           {
@@ -556,32 +522,31 @@ export default function Home() {
             isOver: true
           },
           {
+            image: "/placeholder.svg", // Replace with KODA Hacks logo if available
+            title: "KODA Hacks 2026",
+            date: "Jul 1-4, 2026",
+            location: "Online",
+            description: "Develop projects at the intersection of finance, economics, and computer science in a 4-day hackathon experience. Presented by KODA Finance and Code4Hope.",
+            link: "/events?event=koda-hacks-2026",
+            isOver: false
+          },
+          {
             image: "/impactx25-thumbnail.png",
             title: "ImpactX '25",
             date: "Dec 5-7, 2025",
             location: "Virtual Event",
             description: "In the second annual ImpactX by Code4Hope, build projects for a better world by solving real-world problems—whether they be health, wellness, and education—where your ideas today shape a brighter, more sustainable tomorrow.",
             link: "https://impactx2025.devpost.com/",
-            isOver: false
-          },
-          {
-            image: "/placeholder.svg",
-            title: "Code4Hope '26",
-            date: "TBD",
-            location: "TBD",
-            description: "Coming Soon. Stay tuned for updates on our next hackathon event!",
-            link: "/",
-            isOver: false,
-            isComingSoon: true
+            isOver: true
           },
             ].map((event, index) => (
           <div
             key={index}
             className={`flex flex-col h-full ${
-              (event.isOver || event.isComingSoon) ? 'hidden md:flex' : ''
+              (event.isOver) ? 'hidden md:flex' : ''
             }`}
           >
-            <div className="card rounded-lg overflow-hidden h-full shadow-md bg-white">
+            <div className="card rounded-lg overflow-hidden h-full shadow-md bg-canvas">
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden">
           <Image
@@ -596,31 +561,24 @@ export default function Home() {
           {event.date}
             </div>
           </div>
-          
+
           <div className="p-4 flex flex-col flex-1">
-            <h3 className="text-lg font-semibold mb-1 text-gray-800">{event.title}</h3>
-            <div className="flex items-center text-gray-600 mb-2">
+            <h3 className="text-lg font-semibold mb-1 text-ink">{event.title}</h3>
+            <div className="flex items-center text-slate mb-2">
           <LocationIcon className="h-4 w-4 mr-1" />
           <span className="text-xs">{event.location}</span>
             </div>
-            <p className="text-gray-600 mb-4 text-sm line-clamp-3">
+            <p className="text-slate mb-4 text-sm line-clamp-3">
           {event.description}
             </p>
             <div className="mt-auto pt-2 flex">
           <div className="w-full">
             {event.isOver ? (
-            <Button 
-            className="w-full bg-gray-400 text-white cursor-not-allowed text-sm py-1.5"
+            <Button
+            className="w-full bg-hairline text-muted cursor-not-allowed text-sm py-1.5"
             disabled
             >
             Event Over
-            </Button>
-            ) : event.isComingSoon ? (
-            <Button 
-            className="w-full bg-gray-400 text-gray-300 cursor-not-allowed text-sm py-1.5"
-            disabled
-            >
-            Coming soon
             </Button>
             ) : (
             <motion.div
@@ -628,8 +586,8 @@ export default function Home() {
               whileTap={{ scale: 0.97 }}
               className="w-full"
             >
-              <Button 
-              className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-1.5" 
+              <Button
+              className="w-full bg-primary hover:bg-primary text-white text-sm py-1.5"
               onClick={() => window.open(event.link, "_self")}
               >
               Register Now
@@ -647,166 +605,9 @@ export default function Home() {
           </section>
           </ScrollReveal>
 
-      {/* Workshops Section */}
-      <ScrollReveal>
-        <section id="workshops" className="hidden md:block w-full py-12 md:py-16 lg:py-20">
-          <div className="container mx-auto px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Recent Workshops</h2>
-          <p className="text-gray-600">
-            Learn from industry professionals through our workshop recordings. These sessions from our past hackathons
-            provide valuable insights and skills for aspiring developers.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-          {/* Workshop Card 1 */}
-          <div className="h-full">
-            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-white flex flex-col">
-          <div className="relative">
-            <Image
-              src={blog1}
-              alt="Build Your Best Projects Faster with Refact.ai"
-              width={400}
-              height={225}
-              className="w-full h-48 object-cover"
-            />
-          </div>
-          <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-gray-800">
-              Build Your Best Projects Faster with Refact.ai
-            </h3>
-            <p className="text-sm text-gray-600 mb-4 flex items-center">
-              <UserIcon className="h-4 w-4 mr-1 inline" />
-              Refact AI @ ImpactX'24
-            </p>
-            <div className="flex-grow"></div>
-            <div className="mt-auto">
-              <a
-            href="https://www.youtube.com/watch?v=aZquJC9YlXA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full"
-              >
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4">
-              Watch Now
-            </Button>
-              </a>
-            </div>
-          </div>
-            </div>
-          </div>
-
-          {/* Workshop Card 2 */}
-          <div className="h-full">
-            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-white flex flex-col">
-          <div className="relative">
-            <Image
-              src={blog2}
-              alt="Unleashing the Power of Data and AI"
-              width={400}
-              height={225}
-              className="w-full h-48 object-cover"
-            />
-          </div>
-          <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-gray-800">
-              Unleashing the Power of Data and AI
-            </h3>
-            <p className="text-sm text-gray-600 mb-4 flex items-center">
-              <UserIcon className="h-4 w-4 mr-1 inline" />
-              Rajesh Mittal, PrismView EHS @ ImpactX'24
-            </p>
-            <div className="flex-grow"></div>
-            <div className="mt-auto">
-              <a
-            href="/HighSchool_Data_Conversation.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full"
-              >
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4">
-              Watch Now
-            </Button>
-              </a>
-            </div>
-          </div>
-            </div>
-          </div>
-
-          {/* Workshop Card 3 */}
-          <div className="h-full">
-            <div className="card rounded-xl overflow-hidden h-full shadow-md bg-white flex flex-col">
-          <div className="relative">
-            <Image
-              src="/c4hxhackjps.png"
-              alt="Hackathon Projects to Business Ventures with Code4Hope"
-              width={400}
-              height={225}
-              className="w-full h-48 object-cover"
-            />
-          </div>
-          <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-2xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors text-gray-800">
-              Hackathon Projects to Business Ventures with Code4Hope
-            </h3>
-            <p className="text-sm text-gray-600 mb-4 flex items-center">
-              <UserIcon className="h-4 w-4 mr-1 inline" />
-              C4H E-Board @ HackJPS 2025
-            </p>
-            <div className="flex-grow"></div>
-            <div className="mt-auto">
-              <a
-            href="https://youtu.be/kVIHTpSUaTw?t=7707"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full"
-              >
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm py-2 px-4">
-              Watch Now
-            </Button>
-              </a>
-            </div>
-          </div>
-            </div>
-          </div>
-        </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* Previous Winners Section - Now uses WinnersSlider */}
-      <ScrollReveal>
-        <section id="previous-winners" className="hidden md:block w-full py-12 md:py-16 lg:py-20">
-          <div className="container mx-auto px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Past Winners</h2>
-          <p className="text-gray-600">
-            Celebrating the innovative projects and talented minds from our previous hackathons.
-          </p>
-        </motion.div>
-        
-        <WinnersSliderClean winners={previousWinnersData} />
-
-          </div>
-        </section>
-      </ScrollReveal>
-
       {/* Photo Gallery - Adjusted background */}
       <ScrollReveal>
-        <section className="py-16"> 
+        <section className="py-16">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -815,11 +616,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-3xl mx-auto text-center mb-12"
             >
-              <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Impact in Pictures</h2>
-              <p className="text-gray-600">Glimpses of our work and the students we serve</p>
+              <h2 className="text-3xl font-bold mb-4 text-ink">Our Impact in Pictures</h2>
+              <p className="text-slate">Glimpses of our work and the students we serve</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
               {galleryImages.map((image, index) => (
                 <motion.div
                   key={index}
@@ -830,7 +631,7 @@ export default function Home() {
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
                   className="relative overflow-hidden rounded-lg shadow-md group"
                 >
-                  <div className="aspect-square relative">
+                  <div className="aspect-[3/4] relative">
                     <Image
                       src={image.src || "https://placehold.co/400x400/CCCCCC/FFFFFF?text=Image+Missing"}
                       alt={image.alt}
@@ -838,7 +639,7 @@ export default function Home() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                        onError={(e) => {
                             const target = e.target as HTMLImageElement;
-                            target.onerror = null; 
+                            target.onerror = null;
                             target.src = `https://placehold.co/${target.width || 400}x${target.height || 400}/CCCCCC/FFFFFF?text=Error`;
                        }}
                     />
@@ -846,7 +647,7 @@ export default function Home() {
                       <h3 className="text-white font-medium text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         {image.alt}
                       </h3>
-                      <p className="text-gray-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                      <p className="text-white/70 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                         {image.caption}
                       </p>
                     </div>
@@ -862,84 +663,10 @@ export default function Home() {
               viewport={{ once: true }}
               className="mt-10 text-center"
             >
-              <Button asChild className="bg-primary hover:bg-primary/90 text-white">
+              <Button asChild className="bg-primary hover:bg-primary text-white">
                 <Link href="/gallery">See Full Gallery</Link>
               </Button>
             </motion.div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* Social Media Section - Adjusted background */}
-      <ScrollReveal>
-        <section className="w-full py-16 md:py-20 lg:py-24"> 
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="card rounded-3xl overflow-hidden"> 
-              <div className="grid grid-cols-1 lg:grid-cols-5">
-                <div className="lg:col-span-2 p-8 md:p-12 bg-primary">
-                  <div className="h-full flex flex-col justify-center">
-                    <h2 className="text-3xl font-bold mb-4 text-white">
-                      Connect With Our Community
-                    </h2>
-                    <p className="text-white/90 text-lg mb-8 leading-relaxed">
-                      Stay connected for real-time updates, announcements, and behind-the-scenes content from our hackathons and workshops.
-                    </p>
-                    <div className="mt-auto">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Button 
-                          className="bg-white text-primary hover:bg-gray-100 px-6"
-                          onClick={() => window.open("https://discord.gg/7ssCZx8Hme", "_blank", "noopener,noreferrer")}
-                        >
-                          Join Discord
-                        </Button>
-                      </motion.div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="lg:col-span-3 p-8 md:p-12 bg-white flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold mb-2 text-gray-800">
-                    Follow Us On Social Media
-                  </h3>
-                  <p className="text-gray-600 mb-8">
-                    We post regularly on our social channels with event updates, tech tips, and success stories from our community.
-                  </p>
-                  
-                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
-                    {[
-                      { href: "https://www.instagram.com/code4hope_/?hl=en", icon: <InstagramIcon className="h-6 w-6" />, label: "Instagram" },
-                      { href: "https://discord.gg/7ssCZx8Hme", icon: <DiscordIcon className="h-6 w-6" />, label: "Discord" },
-                      { href: "https://www.tiktok.com/@code4hopeofficial", icon: <TiktokIcon className="h-6 w-6" />, label: "TikTok" },
-                      { href: "https://x.com/code4hope_", icon: <TwitterIcon className="h-6 w-6" />, label: "Twitter" },
-                      { href: "https://github.com/Code4Hope", icon: <GithubIcon className="h-6 w-6" />, label: "GitHub" },
-                      { href: "https://linkedin.com/company/code4hope", icon: <LinkedinIcon className="h-6 w-6" />, label: "LinkedIn" }
-                    ].map((social, index) => (
-                      <motion.div
-                        key={index}
-                        whileHover={{ 
-                          scale: 1.1,
-                          y: -5,
-                          transition: { duration: 0.3 }
-                        }}
-                      >
-                        <Link
-                          href={social.href}
-                          className="flex flex-col items-center justify-center p-3 rounded-lg border border-border"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {social.icon}
-                          <span className="text-xs mt-2 hidden sm:block">{social.label}</span>
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </ScrollReveal>

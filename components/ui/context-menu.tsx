@@ -144,7 +144,7 @@ const ContextMenuLabel = React.forwardRef<
   <ContextMenuPrimitive.Label
     ref={ref}
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold text-gray-800",
+      "px-2 py-1.5 text-sm font-semibold text-ink",
       inset && "pl-8",
       className
     )}
@@ -172,7 +172,7 @@ const ContextMenuShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-gray-600",
+        "ml-auto text-xs tracking-widest text-slate",
         className
       )}
       {...props}

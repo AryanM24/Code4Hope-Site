@@ -86,11 +86,11 @@ export default function ImageComparisonSlider({
 
       {/* Slider Control */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
+        className="absolute top-0 bottom-0 w-1 bg-canvas cursor-ew-resize"
         style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
       >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
-          <div className="w-6 h-6 bg-[#4CAF50] rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-canvas rounded-full shadow-lg flex items-center justify-center">
+          <div className="w-6 h-6 bg-brand-blue-700 rounded-full"></div>
         </div>
       </div>
     </div>

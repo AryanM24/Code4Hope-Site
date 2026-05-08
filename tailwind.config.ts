@@ -25,6 +25,27 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        canvas: "hsl(var(--canvas))",
+        surface: "hsl(var(--surface))",
+        "surface-soft": "hsl(var(--surface-soft))",
+        hairline: "hsl(var(--hairline))",
+        "hairline-soft": "hsl(var(--hairline-soft))",
+        ink: "hsl(var(--ink))",
+        "ink-strong": "hsl(var(--ink-strong))",
+        charcoal: "hsl(var(--charcoal))",
+        slate: "hsl(var(--slate))",
+        steel: "hsl(var(--steel))",
+        stone: "hsl(var(--stone))",
+        "brand-coral": "hsl(var(--brand-coral))",
+        "brand-magenta": "hsl(var(--brand-magenta))",
+        "brand-blue": "hsl(var(--brand-blue))",
+        "brand-blue-deep": "hsl(var(--brand-blue-deep))",
+        "brand-blue-700": "hsl(var(--brand-blue-700))",
+        "brand-cyan": "hsl(var(--brand-cyan))",
+        "brand-blue-200": "hsl(var(--brand-blue-200))",
+        "brand-purple": "hsl(var(--brand-purple))",
+        "success-bg": "hsl(var(--success-bg))",
+        "success-text": "hsl(var(--success-text))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -55,9 +76,21 @@ const config = {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xs: "4px",
+        sm: "6px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+        "2xl": "20px",
+        "3xl": "24px",
+        hero: "32px",
+        full: "9999px",
+      },
+      boxShadow: {
+        subtle: "rgba(0, 0, 0, 0.04) 0px 1px 2px 0px",
+        card: "rgba(0, 0, 0, 0.08) 0px 4px 6px 0px",
+        atmospheric: "rgba(0, 0, 0, 0.08) 0px 0px 22px 0px",
+        modal: "rgba(36, 36, 36, 0.08) 0px 12px 16px -4px",
       },
       keyframes: {
         "accordion-down": {
@@ -79,4 +112,3 @@ const config = {
 } satisfies Config
 
 export default config
-

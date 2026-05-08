@@ -207,7 +207,7 @@ const MenubarShortcut = ({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-gray-600",
+        "ml-auto text-xs tracking-widest text-slate",
         className
       )}
       {...props}

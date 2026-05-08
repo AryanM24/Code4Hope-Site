@@ -65,7 +65,7 @@ const ImageCarousel = () => {
       transform: `translateX(${translateX}px) translateZ(${translateZ}px) scale(${scale})`,
       opacity,
       zIndex,
-      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+      transition: 'all 0.8s cubic-bezier(0.25, 1, 0.5, 1)'
     };
   };
 
@@ -104,10 +104,10 @@ const ImageCarousel = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'bg-primary scale-125'
-                : 'bg-primary/40'
+                ? 'bg-primary w-6'
+                : 'bg-brand-blue-200 w-2'
             }`}
           />
         ))}

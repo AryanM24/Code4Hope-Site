@@ -67,7 +67,7 @@ const EventPopup: React.FC<EventPopupProps> = ({
         >
           <button
             onClick={handleClose}
-            className="absolute top-3 right-3 p-1 rounded-full text-gray-600 hover:bg-gray-100"
+            className="absolute top-3 right-3 p-1 rounded-full text-slate hover:bg-surface"
             aria-label="Close event notification"
           >
             <X size={20} />
@@ -81,22 +81,22 @@ const EventPopup: React.FC<EventPopupProps> = ({
               <h2 id="event-popup-title" className="text-xl font-semibold mb-1">
                 {eventName}
               </h2>
-              <div className="flex items-center text-sm text-gray-600 mb-3">
+              <div className="flex items-center text-sm text-slate mb-3">
                 <CalendarDays size={16} className="mr-2" />
                 <span>{eventDate}</span>
               </div>
-              <p id="event-popup-description" className="text-sm text-gray-600 mb-5">
+              <p id="event-popup-description" className="text-sm text-slate mb-5">
                 Don't miss out on our upcoming event! Join us for an exciting experience.
               </p>
               <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-2 sm:space-y-0">
-                <Link href={eventPageUrl} passHref legacyBehavior>
-                  <Button
-                    onClick={handleRedirect}
-                    className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
+                <Button
+                  asChild
+                  className="w-full sm:w-auto bg-primary hover:bg-primary text-primary-foreground"
+                >
+                  <Link href={eventPageUrl} onClick={handleRedirect}>
                     Learn More & Register
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
                 <Button
                   variant="outline"
                   onClick={handleClose}
