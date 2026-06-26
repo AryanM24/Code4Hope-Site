@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-sm text-white/55">© 2025 Code4Hope 501(c)(3). All rights reserved.</p>
+          <p className="text-sm text-white/55">© 2025 Code4Hope. All rights reserved.</p>
         </div>
       </div>
     </footer>
