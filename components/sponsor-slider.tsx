@@ -5,13 +5,7 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
-
-interface Sponsor {
-  name: string
-  description: string
-  logo: string
-  devpostLink: string
-}
+import type { Sponsor } from '@/lib/sponsors'
 
 interface SponsorSliderProps {
   sponsors: Sponsor[]
@@ -81,7 +75,7 @@ export function SponsorSlider({ sponsors }: SponsorSliderProps) {
               className="w-full bg-[#826CB8] hover:bg-[#6f5c9d] text-white"
               asChild
             >
-              <a href={sponsors[currentIndex].devpostLink} target="_blank" rel="noopener noreferrer">
+              <a href={sponsors[currentIndex].link} target="_blank" rel="noopener noreferrer">
                 See more...
               </a>
             </Button>

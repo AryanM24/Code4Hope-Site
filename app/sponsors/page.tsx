@@ -2,21 +2,7 @@ import { SponsorSlider } from "@/components/sponsor-slider"
 import { BecomeSponsorSection } from "@/components/become-sponsor-section"
 import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
-
-const sponsors = [
-  {
-    name: "Nord Security",
-    description: "World-leading cybersecurity tools for people and global businesses.",
-    logo: "/placeholder.svg",
-    devpostLink: "#"
-  },
-  {
-    name: "Flatlogic",
-    description: "Business Software: AI Solutions at Speed",
-    logo: "/placeholder.svg",
-    devpostLink: "#"
-  }
-]
+import { sponsors } from "@/lib/sponsors"
 
 export default function SponsorsPage() {
   return (

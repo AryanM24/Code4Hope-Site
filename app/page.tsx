@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Footer } from "@/components/footer"
+import { sponsors } from "@/lib/sponsors"
 
 export default function Home() {
   return (
@@ -132,7 +133,9 @@ export default function Home() {
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Sponsors provide our hackathons with funding so that young developers who participate can receive awards, prizes, and workshops that can help them further develop their skills.
             </p>
-            <Button variant="outline" className="rounded-full">See more...</Button>
+            <Button variant="outline" className="rounded-full" asChild>
+              <Link href="/sponsors">See more...</Link>
+            </Button>
           </div>
           <div className="relative mt-12">
             <div className="container mx-auto px-4 md:px-6 relative">
@@ -140,16 +143,15 @@ export default function Home() {
                 <ChevronLeft className="h-4 w-4" />
               </Button>
               <div className="flex overflow-hidden">
-                {/* Placeholder sponsors */}
-                {[1, 2, 3, 4].map((index) => (
-                  <div key={index} className="flex-none w-1/4 px-4">
-                    <div className="bg-gray-200 aspect-video rounded-lg overflow-hidden">
+                {sponsors.map((sponsor) => (
+                  <div key={sponsor.name} className="flex-none w-1/4 px-4">
+                    <div className="bg-gray-100 aspect-video rounded-lg overflow-hidden p-4">
                       <Image
-                        src={`/placeholder.svg?text=Sponsor${index}`}
-                        alt={`Sponsor ${index}`}
+                        src={sponsor.logo}
+                        alt={`${sponsor.name} logo`}
                         width={300}
                         height={169}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>
