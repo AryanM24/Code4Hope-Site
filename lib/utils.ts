@@ -15,6 +15,12 @@ declare  global {
 }
 globalThis.sponsors = [
   {
+    name: "Drift",
+    description: "A calm personal planning app that brings your calendar, email, and tasks together into one clear view of what's next.",
+    logo: "/drift.png",
+    devpostLink: "https://usedrift.us",
+  },
+  {
     name: "Gradescout",
     description: "GradeScout is a student-focused platform that enhances K–12 grade portals by offering real-time grade notifications, GPA calculations, and predictive tools within a sleek, user-friendly interface. ",
     logo: "https://digitalpress.fra1.cdn.digitaloceanspaces.com/4at5wal/2023/06/GradeScout-Logo.png",
