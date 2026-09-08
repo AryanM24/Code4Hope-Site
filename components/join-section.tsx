@@ -1,30 +1,199 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+"use client";
+
+import type React from "react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function JoinSection() {
   return (
-    <div className="border-2 border-[#826CB8] rounded-[32px] p-8 shadow-md">
-      <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-        <div className="space-y-4">
-          <div className="flex items-center gap-4">
-            <Image
-              src="/placeholder.svg"
-              alt="Code4Hope Logo"
-              width={120}
-              height={40}
-              className="h-10"
-            />
-            <h2 className="text-2xl font-bold">Interested in joining Code4Hope?</h2>
+    <section className="w-full py-20">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="rounded-2xl overflow-hidden shadow-xl"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-5">
+            <div className="lg:col-span-2 p-8 md:p-12 bg-primary">
+              <div className="h-full flex flex-col justify-center">
+                <h2 className="text-3xl font-bold text-primary-foreground mb-6">
+                  Join Code4Hope
+                </h2>
+                <p className="text-primary-foreground/90 text-lg mb-8 leading-relaxed">
+                  Become part of our vibrant community and help create technology solutions that make a real difference for charitable causes.
+                </p>
+                <div className="mt-auto">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button 
+                      className="bg-background text-ink hover:bg-background/90 px-6 font-medium"
+                      onClick={() => window.open("https://discord.gg/7ssCZx8Hme", "_blank")}
+                    >
+                      Join Our Community
+                    </Button>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-3 p-8 md:p-12 bg-card">
+              <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
+                Explore Our Resources
+              </h3>
+              <p className="text-slate mb-8 leading-relaxed">
+                We've prepared comprehensive documentation to help you get started and understand everything about Code4Hope's mission, events, and how you can contribute.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { 
+                    href: "https://docs.code4hope.net/", 
+                    icon: <DocumentIcon className="h-6 w-6" />, 
+                    label: "Official Documentation",
+                    description: "Everything you need to know about Code4Hope"
+                  },
+                  { 
+                    href: "https://docs.code4hope.net/get-started/join", 
+                    icon: <UserPlusIcon className="h-6 w-6" />, 
+                    label: "Join the Team",
+                    description: "Apply to become a team member"
+                  },
+                  { 
+                    href: "/events", 
+                    icon: <CalendarIcon className="h-6 w-6" />, 
+                    label: "Upcoming Events",
+                    description: "Check out our event schedule"
+                  }
+                ].map((resource, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index, duration: 0.4 }}
+                    whileHover={{ 
+                      scale: 1.03,
+                      boxShadow: "0 10px 25px -5px rgba(130, 108, 184, 0.2), 0 8px 10px -6px rgba(130, 108, 184, 0.1)",
+                      transition: { duration: 0.3 }
+                    }}
+                    className="bg-background rounded-lg border border-hairline shadow-sm"
+                  >
+                    <Link
+                      href={resource.href}
+                      className="flex flex-col h-full p-5 hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="rounded-full bg-brand-blue-200 p-3 w-fit mb-4">
+                        <div className="text-primary">
+                          {resource.icon}
+                        </div>
+                      </div>
+                      <h4 className="font-semibold mb-2 text-ink">{resource.label}</h4>
+                      <p className="text-sm text-slate mb-2">{resource.description}</p>
+                      <div className="mt-auto pt-2 flex items-center text-sm font-medium text-primary">
+                        <span>View</span>
+                        <ArrowRightIcon className="ml-2 h-4 w-4" />
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
-          <p className="text-gray-600 max-w-[600px]">
-            Click the button below to view our detailed documentation of EVERYTHING you need to know about Code4Hope!
-          </p>
-        </div>
-        <Button className="bg-[#826CB8] hover:bg-[#6f5c9d] text-white px-8 py-6 text-lg h-auto">
-          Official Documentation
-        </Button>
+        </motion.div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
+function DocumentIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+      <line x1="10" y1="9" x2="8" y2="9" />
+    </svg>
+  );
+}
+
+function UserPlusIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <line x1="19" y1="8" x2="19" y2="14" />
+      <line x1="22" y1="11" x2="16" y2="11" />
+    </svg>
+  );
+}
+
+function CalendarIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
+function ArrowRightIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </svg>
+  );
+}

@@ -1,31 +1,42 @@
-import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
-import "./globals.css"
-import { Header } from "@/components/header"
+import type React from "react"
+import "@/app/globals.css"
+import { DM_Sans } from "next/font/google"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import LoadingProvider from "@/components/loading-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+})
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Code4Hope",
-  description: "A not-for-profit organization that hosts hackathons throughout the year",
+  description:
+    "Code4Hope is a non-profit organization dedicated to providing free coding education and technology access to underserved communities.",
+  keywords: "coding, education, technology, non-profit, digital literacy, computer science",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
-                                     children,
-                                   }: {
+  children,
+}: {
   children: React.ReactNode
 }) {
   return (
-      <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-      <div className="max-w-[1920px] mx-auto">
-        <Header />
-        <div className="flex flex-col min-h-screen">
-          {children}
-        </div>
-      </div>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className={`${dmSans.className} ${dmSans.variable} min-h-screen flex flex-col dynamic-bg`}>
+        <LoadingProvider>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </LoadingProvider>
       </body>
-      </html>
+    </html>
   )
 }
-

@@ -1,10 +1,9 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+"use client";
+
 import { TeamMemberCard } from "@/components/team-member-card"
 import { JoinSection } from "@/components/join-section"
-import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
+import { motion } from "framer-motion";
 
 export default function TeamPage() {
   const executiveBoard = [
@@ -13,7 +12,7 @@ export default function TeamPage() {
       title: "Founder & Executive Director",
       image: "https://docs.code4hope.net/img/team-1.jpg",
       socials: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/aryan-mittal11/",
         instagram: "#",
         tiktok: "#"
       }
@@ -23,7 +22,7 @@ export default function TeamPage() {
       title: "Executive Director of Outreach",
       image: "https://docs.code4hope.net/img/team-2.jpg",
       socials: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/krish-tated-388198293/",
         instagram: "#",
         tiktok: "#"
       }
@@ -33,7 +32,7 @@ export default function TeamPage() {
       title: "Executive Director of Marketing",
       image: "https://docs.code4hope.net/img/team-3.jpg",
       socials: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/maira-batra-054746352/",
         instagram: "#",
         tiktok: "#"
       }
@@ -41,20 +40,30 @@ export default function TeamPage() {
     {
       name: "Ranya Chaudhary",
       title: "Executive Event Director",
-      image: "https://docs.code4hope.net/img/team-4.jpg",
+      image: "/team1.jpeg",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/ranya-chaudhary-b41169375/",
+        instagram: "#",
+        tiktok: "#"
+      }
+    },
+    {
+      name: "Sarvin Bhutani",
+      title: "Executive Director of Community",
+      image: "/exec_director_community.jpeg",
       socials: {
         linkedin: "#",
         instagram: "#",
         tiktok: "#"
       }
-    }
+    },
   ]
 
   const generalTeam = [
     {
-      name: "Amogh Sheth",
-      title: "Event Director",
-      image: "https://docs.code4hope.net/img/team-5.jpg",
+      name: "Aryan Varshney",
+      title: "Outreach Director",
+      image: "https://myainak.org/wp-content/uploads/2024/08/aryan.png",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -62,9 +71,9 @@ export default function TeamPage() {
       }
     },
     {
-      name: "Shivali Sood",
-      title: "Event Director",
-      image: "/placeholder.svg",
+      name: "Aakansha Sharma",
+      title: " Director of Outreach & Legal Operations",
+      image: "/team5.JPG",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -72,9 +81,9 @@ export default function TeamPage() {
       }
     },
     {
-      name: "Dhriti Vohra",
-      title: "Event Director",
-      image: "/placeholder.svg",
+      name: "Madhav Kuruba",
+      title: "Outreach Director",
+      image: "/madhav.jpeg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -82,9 +91,19 @@ export default function TeamPage() {
       }
     },
     {
-      name: "Anvita Somisetty",
-      title: "Merch Designer",
-      image: "/placeholder.svg",
+      name: "Adit Mehta",
+      title: "Outreach Director",
+      image: "https://media.licdn.com/dms/image/v2/D4E03AQGHm4JluculWw/profile-displayphoto-shrink_200_200/B4EZdCv9xgH0AY-/0/1749171559832?e=1759363200&v=beta&t=rHHHj46VejKr_VjRYpawpxT643gCx8D_GKmHulC4DQw",
+      socials: {
+        linkedin: "#",
+        instagram: "#",
+        tiktok: "#"
+      }
+    },
+    {
+      name: "Pranav Gaddipati",
+      title: "Media Specialist",
+      image: "/pranav.jpeg",
       socials: {
         linkedin: "#",
         instagram: "#",
@@ -94,16 +113,6 @@ export default function TeamPage() {
   ]
 
   const operationsTeam = [
-    {
-      name: "Shlok Patel",
-      title: "Operations Director",
-      image: "https://docs.code4hope.net/img/team-6.jpg",
-      socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
-      }
-    },
     {
       name: "Malay Patel",
       title: "Operations Director",
@@ -126,81 +135,152 @@ export default function TeamPage() {
     }
   ]
 
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4
+      }
+    }
+  }
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  }
+
+  // Common layout for all team sections - switching from grid to flex for better centering
+  const teamLayoutClass = "flex flex-wrap justify-center gap-4 sm:gap-6";
+
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
+        {/* Parallax Hero Section */}
+        <section className="py-20 md:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center mb-8"
+          >
+            <h1 className="text-5xl font-semibold leading-[1.1] tracking-[-0.05em] text-ink md:text-6xl lg:text-[80px] mb-6">Our Team</h1>
+            <p className="text-slate">
+            Meet the dedicated team behind Code4Hope! We are a group of passionate individuals committed to driving social change through technology and innovation.
+            </p>
+          </motion.div>
+        </section>
+        
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-titleSectionBackground">
+          <section className="py-6 md:py-8">
             <div className="container mx-auto px-4">
-              <h1 className="text-4xl font-bold mb-4">Our Amazing Team</h1>
-              <p className="text-gray-600 max-w-3xl">
-                Meet the dedicated team behind Code4Hope! We are a group of passionate individuals committed to driving social change through technology and innovation.
-              </p>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-white">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-2">The Executive Board</h2>
-                <p className="text-gray-600">This is our 2024-2025 Code4Hope Executive Board</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {executiveBoard.map((member) => (
-                  <TeamMemberCard key={member.name} {...member} />
+              <motion.div 
+                className="mb-8 text-center"
+                variants={headingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <h2 className="text-2xl font-bold text-ink mb-4">The Executive Board</h2>
+                <p className="text-slate">Our 2024-2025 Code4Hope Executive Board</p>
+              </motion.div>
+              <motion.div 
+                className={teamLayoutClass}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {executiveBoard.map((member, index) => (
+                  <motion.div key={member.name} variants={itemVariants} custom={index} className="w-[160px] sm:w-[180px] md:w-[200px]">
+                    <TeamMemberCard {...member} />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <section className="py-8 md:py-12">
             <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-2">General Team</h2>
-                <p className="text-gray-600">Our dedicated event organizers</p>
-              </div>
-              <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {generalTeam.map((member) => (
-                    <TeamMemberCard key={member.name} {...member} />
-                  ))}
-                </div>
-              </div>
+              <motion.div 
+                className="mb-8 text-center"
+                variants={headingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <h2 className="text-2xl font-bold text-ink mb-4">General Team</h2>
+                <p className="text-slate">Our dedicated event organizers and creative minds</p>
+              </motion.div>
+              <motion.div 
+                className={teamLayoutClass}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.08 }}
+              >
+                {generalTeam.map((member, index) => (
+                  <motion.div key={member.name} variants={itemVariants} custom={index} className="w-[160px] sm:w-[180px] md:w-[200px]">
+                    <TeamMemberCard {...member} />
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </section>
         </ScrollReveal>
 
         <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-white">
+          <section className="py-8 md:py-12">
             <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-2">Operations Subteam</h2>
-                <p className="text-gray-600">The backbone of our technical infrastructure</p>
-              </div>
-              <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {operationsTeam.map((member) => (
-                    <TeamMemberCard key={member.name} {...member} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-              <JoinSection />
+              <motion.div 
+                className="mb-8 text-center"
+                variants={headingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <h2 className="text-2xl font-bold text-ink mb-4">Operations Team</h2>
+                <p className="text-slate">The backbone of our technical infrastructure</p>
+              </motion.div>
+              <motion.div 
+                className={teamLayoutClass}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {operationsTeam.map((member, index) => (
+                  <motion.div key={member.name} variants={itemVariants} custom={index} className="w-[160px] sm:w-[180px] md:w-[200px]">
+                    <TeamMemberCard {...member} />
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </section>
         </ScrollReveal>
       </main>
-      <Footer />
     </div>
   )
 }
