@@ -10,7 +10,7 @@ export const sponsors: Sponsor[] = [
     name: "Drift",
     description:
       "A calm personal planning app that brings your calendar, email, and tasks together into one clear view of what's next.",
-    logo: "/sponsors/drift.svg",
+    logo: "/sponsors/drift.png",
     link: "https://usedrift.us",
   },
   {

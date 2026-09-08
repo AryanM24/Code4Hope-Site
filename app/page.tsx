@@ -145,7 +145,7 @@ export default function Home() {
               <div className="flex overflow-hidden">
                 {sponsors.map((sponsor) => (
                   <div key={sponsor.name} className="flex-none w-1/4 px-4">
-                    <div className="bg-gray-100 aspect-video rounded-lg overflow-hidden p-4">
+                    <div className="bg-white border aspect-video rounded-lg overflow-hidden p-4">
                       <Image
                         src={sponsor.logo}
                         alt={`${sponsor.name} logo`}
