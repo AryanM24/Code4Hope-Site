@@ -9,16 +9,21 @@ export function HeroSection() {
   return (
     <ScrollReveal>
       <section className="relative w-full overflow-hidden py-32 md:py-48 lg:py-64">
-        {/* Background Image restored */}
-        <div className="absolute inset-0 z-0">
+        {/* Background image, over a dark base so the white hero text stays
+            legible even if the remote image fails to load. */}
+        <div className="absolute inset-0 z-0 bg-ink">
           <Image
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+            unoptimized
             alt="Students coding together"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
         </div>
+        {/* Scrim: guarantees contrast for the white text on any background photo. */}
+        <div className="absolute inset-0 z-0 bg-black/40" />
         <div className="absolute left-[-8rem] top-16 h-80 w-80 rounded-full bg-brand-blue-200/70 blur-3xl" />
         <div className="absolute right-[-10rem] top-8 h-96 w-96 rounded-full bg-brand-coral/10 blur-3xl" />
         <div className="container relative z-10 mx-auto px-4 md:px-6">

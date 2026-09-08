@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
+import { isRemoteImage } from "@/lib/utils"
 
 export interface Winner {
   id: number
@@ -99,8 +100,10 @@ export function WinnersSliderClean({ winners }: WinnersSliderProps) {
                 {winner.image ? (
                   <Image
                     src={winner.image}
+                    unoptimized={isRemoteImage(winner.image)}
                     alt={`${winner.projectName} project image`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover rounded-lg"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

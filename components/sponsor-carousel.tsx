@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion, useAnimation, useInView } from "framer-motion"
+import { isRemoteImage } from "@/lib/utils"
 
 // No need to define sponsors here as we'll use the global sponsors from utils.ts
 
@@ -54,6 +55,7 @@ const SponsorCarousel = () => {
                 <div className="bg-canvas rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
                   <Image
                     src={sponsor.logo}
+                    unoptimized={isRemoteImage(sponsor.logo)}
                     alt={sponsor.name}
                     width={200}
                     height={100}
@@ -79,6 +81,7 @@ const SponsorCarousel = () => {
                 <div className="bg-canvas rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-56">
                   <Image
                     src={sponsor.logo}
+                    unoptimized={isRemoteImage(sponsor.logo)}
                     alt={sponsor.name}
                     width={200}
                     height={100}

@@ -14,6 +14,7 @@ import c4h2025 from "@/public/c4h25-cover.png";
 import c4hxdivergent from "@/public/c4hxdivergent.png";
 import c4h2026 from "@/public/c4h2026-cover.png";
 import impactx25Cover from "@/public/impactx25-cover.png";
+import { isRemoteImage } from "@/lib/utils"
 // --- DATA POPULATED WITH ACCURATE, DETAILED CONTENT ---
 const events = [
   {
@@ -255,6 +256,7 @@ function EventCard({ event, onLearnMore }: { event: EventType; onLearnMore: (eve
         <div className="flex-shrink-0 w-full md:w-52 h-48 md:h-52 relative bg-surface flex items-center justify-center">
           <Image
             src={event.logo}
+            unoptimized={isRemoteImage(event.logo)}
             alt={`${event.name} logo`}
             width={200}
             height={200}
@@ -452,6 +454,7 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                             <div key={j.name} className="flex items-center gap-3">
                                                 <Image
                                                     src={j.image}
+                                                    unoptimized={isRemoteImage(j.image)}
                                                     alt={j.name}
                                                     width={36}
                                                     height={36}
@@ -475,8 +478,10 @@ function EventDetailModal({ event, onClose }: { event: EventType | null; onClose
                                             <div key={s.name} className="relative w-8 h-8 md:w-10 md:h-10">
                                                 <Image
                                                     src={s.logo}
+                                                    unoptimized={isRemoteImage(s.logo)}
                                                     alt={s.name}
                                                     fill
+                                                    sizes="40px"
                                                     title={s.name}
                                                     className="object-contain"
                                                 />

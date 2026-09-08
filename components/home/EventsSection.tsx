@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { LocationIcon } from "@/components/icons";
 import { upcomingEvents } from "@/lib/data/home-data";
+import { isRemoteImage } from "@/lib/utils"
 
 export function EventsSection() {
   return (
@@ -45,6 +46,7 @@ export function EventsSection() {
                     <div className="aspect-[4/3] overflow-hidden">
                       <Image
                         src={event.image}
+                        unoptimized={isRemoteImage(event.image)}
                         alt={event.title}
                         width={320}
                         height={240}

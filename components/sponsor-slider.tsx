@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
+import { isRemoteImage } from "@/lib/utils"
 
 interface Sponsor {
   name: string
@@ -84,6 +85,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
               <div>
                 <Image
                   src={sponsors[getImages(false, 1)].logo}
+                  unoptimized={isRemoteImage(sponsors[getImages(false, 1)].logo)}
                   alt={`${sponsors[getImages(false, 1)].name} logo`}
                   width={400}
                   height={400}
@@ -91,6 +93,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
                 />
                 <Image
                   src={sponsors[currentIndex].logo}
+                  unoptimized={isRemoteImage(sponsors[currentIndex].logo)}
                   alt={`${sponsors[currentIndex].name} logo`}
                   width={400}
                   height={400}
@@ -98,6 +101,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
                 />
                 <Image
                   src={sponsors[getImages(true, 1)].logo}
+                  unoptimized={isRemoteImage(sponsors[getImages(true, 1)].logo)}
                   alt={`${sponsors[getImages(true, 1)].name} logo`}
                   width={400}
                   height={400}
@@ -105,6 +109,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
                 />
                 <Image
                   src={sponsors[getImages(true, 2)].logo}
+                  unoptimized={isRemoteImage(sponsors[getImages(true, 2)].logo)}
                   alt={`${sponsors[getImages(true, 2)].name} logo`}
                   width={400}
                   height={400}
@@ -114,6 +119,7 @@ export function SponsorSlider({ sponsors, multiImage }: SponsorSliderProps) {
             ) : (
               <Image
                 src={sponsors[currentIndex].logo}
+                unoptimized={isRemoteImage(sponsors[currentIndex].logo)}
                 alt={`${sponsors[currentIndex].name} logo`}
                 width={400}
                 height={400}

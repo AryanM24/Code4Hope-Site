@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Sample images - replace with your own
   const images = [
-    '/story1.JPG?w=400&h=400&fit=crop',
-    '/story2.JPG?w=400&h=400&fit=crop',
-    '/story3.JPG?w=400&h=400&fit=crop',
-    '/story4.JPG?w=400&h=400&fit=crop',
-    '/story5.JPG?w=400&h=400&fit=crop'
+    '/story1.JPG',
+    '/story2.JPG',
+    '/story3.JPG',
+    '/story4.JPG',
+    '/story5.JPG'
   ];
 
   const goToSlide = (index: number) => {
@@ -84,9 +84,13 @@ const ImageCarousel = () => {
             style={getImageStyle(index)}
             onClick={goToNext}
           >
-            <img
+            <Image
               src={image}
               alt={`Slide ${index + 1}`}
+              width={384}
+              height={384}
+              sizes="384px"
+              priority={index === 0}
               className="w-full h-full object-cover rounded-lg shadow-2xl"
               draggable={false}
             />

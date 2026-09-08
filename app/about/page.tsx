@@ -198,9 +198,10 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden">
                     <Image
-                      src="/c4h@hackjps25/c4h@hackjps15.jpeg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps15.jpeg"
                       alt="Students collaborating at a hackathon"
                       fill
+                      sizes="(max-width: 768px) 100vw, 800px"
                       className="object-cover"
                     />
                   </div>
@@ -228,9 +229,10 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden">
                     <Image
-                      src="/c4h@hackjps25/c4h@hackjps14.jpeg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps14.jpeg"
                       alt="Code4Hope team members"
                       fill
+                      sizes="(max-width: 768px) 100vw, 800px"
                       className="object-cover"
                     />
                   </div>
@@ -259,9 +261,10 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden mb-6">
                     <Image
-                      src="/c4h@hackjps25/c4h@hackjps2.jpeg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps2.jpeg"
                       alt="Students working on hackathon projects"
                       fill
+                      sizes="(max-width: 768px) 100vw, 800px"
                       className="object-cover"
                     />
                   </div>
@@ -298,9 +301,10 @@ export default function AboutPage() {
                   </p>
                   <div className="aspect-video relative rounded-xl overflow-hidden">
                     <Image
-                      src="/c4h@hackjps25/c4h@hackjps5.jpeg?height=720&width=1280"
+                      src="/c4h@hackjps25/c4h@hackjps5.jpeg"
                       alt="Code4Hope outreach event"
                       fill
+                      sizes="(max-width: 768px) 100vw, 800px"
                       className="object-cover"
                     />
                   </div>

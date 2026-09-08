@@ -18,7 +18,7 @@ type GalleryImage = {
 const rawGalleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "/c4h@hackjps25/c4h@hackjps1.jpeg?height=400&width=600",
+    src: "/c4h@hackjps25/c4h@hackjps1.jpeg",
     alt: "Code4Hope Workshop at HackJPS",
     category: "workshop",
     description: "At JPS Robotics Team 2554's Annual Hackathon, HackJPS, we hosted a 30-minute lecture on turning hackathon projects into real-world startups, guiding students through the process of validating ideas, building MVPs, and pitching to investors. We shared actionable strategies for identifying target users, collecting feedback, and leveraging free tools to scale early-stage products. By using examples from successful high school-led ventures and highlighting common pitfalls, we aimed to inspire attendees to take their projects beyond the weekend and continue innovating. ",
@@ -26,7 +26,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 2,
-    src: "/c4h@c4h.JPG?height=400&width=600",
+    src: "/c4h@c4h.JPG",
     alt: "Code4Hope Workshop on Entrepenuership at Code4Hope '25",
     category: "workshop",
     description: "At our summer event, Code4Hope'25 or Code4Hope's 2025 STEM Hackathon, we hosted a workshop on entrepreneurship that empowered students to think beyond coding and explore the fundamentals of building a startup. To make the session engaging and hands-on, we led an interactive segment where participants were given a humorous yet relatable problem—“melting ice cream”—and challenged to come up with a one-minute startup pitch. One team applied real science by proposing a solution based on endothermic phase change materials to keep the ice cream cool using thermal regulation, while another team embraced the issue by turning melted ice cream into a trendy dessert drink, pitching it as a nostalgic, sweet beverage. The creative range of ideas sparked both laughter and insightful discussion, showing students how even the silliest problems can inspire real entrepreneurial thinking.",
@@ -34,7 +34,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 3,
-    src: "/angel@c4h.JPG?height=400&width=600",
+    src: "/angel@c4h.JPG",
     alt: "Angel Rodriguez at Code4Hope '25",
     category: "workshop",
     description: "College Professor and Microsoft Technology Strategist Abel Angel Rodriguez hosted a workshop on DevOps and Cloud Computing that introduced students to the tools and practices used in modern software development. Instead of a traditional lecture, he led a discussion-style session that participants really enjoyed, encouraging questions and real-time interaction. The workshop gave attendees a clear, practical understanding of how professional developers streamline deployment and maintain reliability in real-world projects.",
@@ -42,7 +42,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 4,
-    src: "/c4h2025round2.JPG?height=400&width=600",
+    src: "/c4h2025round2.JPG",
     alt: "A Room Full of Innovators",
     category: "hackathon",
     description: "About 40 finalists joined us in-person and online for the second round of Code4Hope '25 (Code4Hope's 2025 STEM Hackathon), where they presented their innovative solutions to real-world challenges in health, sustainability, education, and finance. Each team delivered a 10-minute pitch to judges, showcasing their prototypes, research, and impact. The energy was high, the ideas were bold, and the presentations reflected weeks of hard work, creativity, and collaboration.",
@@ -50,7 +50,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 5,
-    src: "/ProjectCARE@c4h25.JPG?height=400&width=600",
+    src: "/ProjectCARE@c4h25.JPG",
     alt: "Exploring Health and Wellness with Project CARE",
     category: "community",
     description: "At Code4Hope '25, Project CARE hosted a heartwarming workshop that began with an overview of their mission to support children battling cancer through acts of kindness and community engagement. After sharing their story and impact, the session transitioned into an interactive segment where participants created handmade cards filled with encouraging messages and colorful designs for kids undergoing treatment. The activity brought a powerful sense of empathy and purpose to the event, reminding everyone that technology and compassion can go hand in hand.",
@@ -58,7 +58,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 6,
-    src: "/limitdigital@c4h25.JPG?height=400&width=600",
+    src: "/limitdigital@c4h25.JPG",
     alt: "Learning about healthy digital habits with Limit Digital",
     category: "Community",
     description: "At Code4Hope '25, Limit Digital led a thoughtful workshop focused on promoting healthy digital habits among youth. They began by sharing their mission to help students build a balanced relationship with technology, emphasizing the importance of mindfulness, screen time awareness, and mental wellness. The interactive discussion encouraged participants to reflect on their own tech usage and left them with practical strategies for creating a healthier digital lifestyle.",
@@ -66,7 +66,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 7,
-    src: "/c4hxdivergent-team.JPG?height=400&width=600&fit=crop&crop=focalpoint&fp-x=1",
+    src: "/c4hxdivergent-team.JPG",
     alt: "Code4Hope x Divergent Teams 2025",
     category: "hackathon",
     description: "Landing back in New York for Code4Hope and Divergent Teams 2025 felt like a homecoming for our team. The energy inside Microsoft's Times Square office was unmistakable—nearly 60 students dove into a one-day sprint hackathon, building products and pitches at lightning speed before presenting to a panel of Microsoft judges. The format rewarded urgency and clarity; teams had just hours to form ideas, gather feedback from mentors, and show how technology could turn community challenges into working impact.",
@@ -74,7 +74,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 8,
-    src: "/c4hxdivergent-speech.JPG?height=400&width=600",
+    src: "/c4hxdivergent-speech.JPG",
     alt: "Code4Hope's Send-off at C4H x Divergent 2025",
     category: "community",
     description: "Before the judging window opened, Code4Hope took the stage to set the tone for the day. Founder Aryan Mittal and the Code4Hope executive board got the crowd hype for a day full of fun and building with an electric speech.",
@@ -82,7 +82,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 9,
-    src: "/c4hxdivergent-workshop.JPG?height=400&width=600",
+    src: "/c4hxdivergent-workshop.JPG",
     alt: "\"Hack to Business\" Workshop at C4H x Divergent 2025",
     category: "workshop",
     description: "Our \"Hack to Business\" workshop returned for an encore after its debut at C4H'25, this time adapted for Divergent Teams. Participants, judges, and even volunteers pulled chairs into a tight circle while we explored how to validate users, prototype fast, and pitch like founders. The live prompt was familiar—take a playful problem and craft a market-ready fix in minutes—but the dialogue felt new. Students and volunteers worked together and rushed to find creative ideas before presenting in front of our board, who gave them feedback and advice on their product.",
@@ -90,7 +90,7 @@ const rawGalleryImages: GalleryImage[] = [
   },
   {
     id: 10,
-    src: "/c4hworkshophackjps.jpeg?height=400&width=600",
+    src: "/c4hworkshophackjps.jpeg",
     alt: "Code4Hope Workshop at HackJPS",
     category: "workshop",
     description: "At JPS Robotics Team 2554's Annual Hackathon, HackJPS, we hosted a 30-minute lecture on turning hackathon projects into real-world startups, guiding students through the process of validating ideas, building MVPs, and pitching to investors. We shared actionable strategies for identifying target users, collecting feedback, and leveraging free tools to scale early-stage products. By using examples from successful high school-led ventures and highlighting common pitfalls, we aimed to inspire attendees to take their projects beyond the weekend and continue innovating.",
@@ -304,6 +304,7 @@ export default function GalleryPage() {
                         src={image.src || "/placeholder.svg"}
                         alt={image.alt}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 md:p-4 flex flex-col justify-end">
@@ -333,6 +334,7 @@ export default function GalleryPage() {
                         src={image.src || "/placeholder.svg"}
                         alt={image.alt}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
@@ -366,6 +368,7 @@ export default function GalleryPage() {
                   src={selectedImage.src || "/placeholder.svg"}
                   alt={selectedImage.alt}
                   fill
+                  sizes="100vw"
                   className="object-contain"
                 />
               </div>

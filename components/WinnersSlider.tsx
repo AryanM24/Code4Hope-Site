@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button"; // Assuming Button is in this path
+import { isRemoteImage } from "@/lib/utils"
 
 // Icon components (UserIcon, TrophyIcon) - these should also be in a shared location or passed as props if they vary
 // For simplicity, I'm including them here. Ideally, move them to a shared icons file.
@@ -209,6 +210,7 @@ export default function WinnersSlider({ winners }: WinnersSliderProps) {
                       <div className="relative w-full h-48 flex-shrink-0">
                         <Image
                           src={winner.image}
+                          unoptimized={isRemoteImage(winner.image)}
                           alt={winner.projectName}
                           fill
                           className="object-cover"

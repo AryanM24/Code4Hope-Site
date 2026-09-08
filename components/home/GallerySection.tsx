@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { galleryImages } from "@/lib/data/home-data";
+import { isRemoteImage } from "@/lib/utils"
 
 export function GallerySection() {
   return (
@@ -37,8 +38,10 @@ export function GallerySection() {
                 <div className="aspect-[3/4] relative">
                   <Image
                     src={image.src || "https://placehold.co/400x400/CCCCCC/FFFFFF?text=Image+Missing"}
+                    unoptimized={isRemoteImage(image.src)}
                     alt={image.alt}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

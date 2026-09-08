@@ -4,6 +4,13 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+// Remote images are served straight from their origin rather than through the
+// Next image optimizer: several of the third-party hosts we use block
+// server-side fetches, which would turn those logos into broken images.
+export function isRemoteImage(src?: unknown) {
+  return typeof src === "string" && /^https?:\/\//.test(src)
+}
 declare  global {
   var sponsors: Array<{
     name: string;
@@ -108,7 +115,7 @@ globalThis.sponsors = [
   {
     name: "Codecrafters.io",
     description: "Hands-on coding challenges where you build real-world systems from scratch, like Docker, Git, or Redis.",
-    logo: "https://bookface-images.s3.amazonaws.com/logos/8d0d5fa65a7f2cdfcab0e0aad44ae0008b65342a.png?1676875965",
+    logo: "/codecrafters.png",
     devpostLink: "https://codecrafters.io/",
   },
 ];

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { isRemoteImage } from "@/lib/utils"
 
 interface TeamMemberCardProps {
   name: string
@@ -63,8 +64,10 @@ export function TeamMemberCard({ name, title, image, socials }: TeamMemberCardPr
       <div className="relative aspect-square overflow-hidden">
         <Image
           src={image || "/placeholder.svg"}
+          unoptimized={isRemoteImage(image)}
           alt={name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
           className="object-cover transition-transform duration-300 hover:scale-105"
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black/60 transition-opacity duration-300 hover:opacity-100">
