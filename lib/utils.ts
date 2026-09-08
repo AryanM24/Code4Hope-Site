@@ -100,18 +100,6 @@ globalThis.sponsors = [
     devpostLink: "https://open.spotify.com/show/3XUlgjWF9rx9WwsLVRn32j?si=ff2b81eb52f44ff9",
   },
   {
-    name: "Interview Buddy",
-    description: "A platform that offers mock interviews with experts to help candidates ace job interviews.",
-    logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/935/highres/g30.png",
-    devpostLink: "https://interviewbuddy.net/",
-  },
-  {
-    name: "The Python Lab",
-    description: "A community-driven platform for Python learners, offering tutorials and projects.",
-    logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/038/291/highres/DALL%C2%B7E_2024-12-04_16.13.32_-_A_modern_and_professional_logo_for_'The_Python_Lab'_incorporating_the_Python_logo_%28a_snake_coiled_into_the_shape_of_a_'P'%29._The_design_features_a_slee.png",
-    devpostLink: "https://aryanm24.github.io/The-Python-Lab/",
-  },
-  {
     name: ".XYZ",
     description: "A leading domain provider offering modern and innovative domain names for developers and businesses.",
     logo: "https://s3.amazonaws.com/challengepost/sponsors/logos/000/037/636/highres/xyz-logo-color.png",
