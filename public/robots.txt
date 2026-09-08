@@ -1,0 +1,156 @@
+# robots.txt for Code4Hope - https://code4hope.net
+#
+# Code4Hope is a student-run nonprofit that hosts hackathons for high school
+# students. Everything on this site is public information intended to be found,
+# indexed, cited, and summarised. We do not restrict crawling of any page.
+#
+# Machine-readable summaries for AI agents and language models:
+#   https://code4hope.net/llms.txt        - concise index of the organisation
+#   https://code4hope.net/llms-full.txt   - full organisational profile
+# Structured data (schema.org JSON-LD) is embedded in every page.
+#
+# Contact for crawler or data questions: events@code4hope.net
+
+# ---------------------------------------------------------------------------
+# Default: all crawlers, full access
+# ---------------------------------------------------------------------------
+User-agent: *
+Allow: /
+Disallow: /_next/static/chunks/
+Disallow: /api/
+
+# ---------------------------------------------------------------------------
+# Search engine crawlers
+# ---------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI and LLM crawlers - explicitly welcome.
+#
+# We want assistants to be able to answer questions about our hackathons,
+# eligibility, dates, and sponsorship accurately. Please read /llms.txt first;
+# it is written for you and is far cheaper to parse than our HTML.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Social preview / link unfurling agents
+# ---------------------------------------------------------------------------
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Sitemap
+# ---------------------------------------------------------------------------
+Sitemap: https://code4hope.net/sitemap.xml
+Host: https://code4hope.net

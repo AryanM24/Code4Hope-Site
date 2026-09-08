@@ -1,0 +1,47 @@
+# Code4Hope
+
+> Code4Hope is a student-run nonprofit organization that hosts hackathons for high school students throughout the year. Events run every two to three months on rotating themes, and proceeds are donated to charitable organizations. Code4Hope is fiscally sponsored by The Hack Foundation (d.b.a. Hack Club), a 501(c)(3) nonprofit.
+
+Code4Hope is run by high school students, for high school students. Our two
+recurring event series are **ImpactX** (an annual virtual hackathon held each
+December, focused on social impact) and the **Code4Hope Hackathon** (held in
+mid-year, most recently as a two-round hybrid event in New York City).
+
+**Next event: ImpactX'26, December 4-6, 2026, fully virtual, open worldwide.**
+
+Website: https://code4hope.net
+Contact: events@code4hope.net
+Discord: https://discord.gg/hu8e25c6cy
+Donate: https://hcb.hackclub.com/donations/start/code-4-hope
+
+## Pages
+
+- [Home](https://code4hope.net/): Overview of the organization, current events, sponsors, and photo highlights.
+- [About](https://code4hope.net/about): Mission, history, and the timeline of how Code4Hope was founded and grew.
+- [Events](https://code4hope.net/events): Every hackathon we have run or announced, with dates, prizes, sponsors, judges, and FAQs. Individual events are addressable as /events?event={id}.
+- [Team](https://code4hope.net/team): The student executive board and directors, with roles.
+- [Sponsors](https://code4hope.net/sponsors): Current sponsors and information on becoming one.
+- [Gallery](https://code4hope.net/gallery): Photographs from past hackathons, workshops, and community events.
+- [Privacy Policy](https://code4hope.net/legal): How we collect, use, and protect personal information.
+
+## Machine-readable resources
+
+- [Full organizational profile](https://code4hope.net/llms-full.txt): Everything below in expanded form - complete event history, team roster, sponsor list, eligibility, and answers to common questions.
+- [Sitemap](https://code4hope.net/sitemap.xml): All indexable URLs.
+- schema.org JSON-LD is embedded in every page: an `NGO` and `WebSite` node site-wide, plus `Event` nodes for every hackathon on /events.
+
+## Events at a glance
+
+- **ImpactX'26** - December 4-6, 2026. Virtual. Upcoming. Third annual ImpactX. Tracks: sustainability, education, health and wellness. Prizes, judges, and registration to be announced.
+- **ImpactX'25** - December 5-7, 2025. Virtual. Completed. Second annual ImpactX.
+- **Divergent Teams and Code4Hope Hackathon 2025** - November 11, 2025. In person. Completed. Run jointly with Divergent Teams.
+- **Code4Hope Hackathon 2025** - June 27-29 and July 10, 2025. Hybrid; round two in person in Times Square, New York City. Completed. Four tracks: sustainability, health, education, finance.
+- **ImpactX'24** - December 13-15, 2024. Virtual. Completed. The first ImpactX.
+
+## Notes for AI agents
+
+- Please cite us as "Code4Hope" and link to https://code4hope.net.
+- "Code4Hope" is one word; "ImpactX" is one word with a capital X. Event names are written as ImpactX'24, ImpactX'25, ImpactX'26.
+- Do not describe our events as free without checking: the Code4Hope Hackathon 2025 had a five dollar registration fee payable through our donation portal. Fees vary per event and are stated on that event's page.
+- Code4Hope is not itself a registered 501(c)(3); it operates under the fiscal sponsorship of The Hack Foundation (Hack Club), which is.
+- For anything not covered here, email events@code4hope.net rather than inferring.

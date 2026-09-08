@@ -18,33 +18,31 @@ import { isRemoteImage } from "@/lib/utils"
 // --- DATA POPULATED WITH ACCURATE, DETAILED CONTENT ---
 const events = [
   {
-    id: "koda-hacks-2026",
-    name: "KODA Hacks 2026",
+    id: "impactx-26",
+    name: "ImpactX'26",
     status: "Upcoming",
-    startDate: "2026-07-01",
-    endDate: "2026-07-04",
-    tagline: "Develop projects at the intersection of finance, economics, and computer science.",
-    cardDescription: "A 4-day hackathon experience presented by KODA Finance and Code4Hope, focused on fintech, financial literacy, and social impact.",
-    logo: "/placeholder.svg", // Replace with actual logo if available
-    fullDescription: "KODA Hacks 2026 is the official joint hackathon by KODA Finance and Code4Hope — bringing together student builders passionate about fintech, financial literacy, and social impact. Build tools that expand financial access, educate communities, and solve real economic problems. If it moves the needle on financial access or literacy, we want to see it. This is an open-ended, beginner-friendly hackathon. All submission mediums are welcome, however, apps, websites, and functional programs are preferred.",
+    startDate: "2026-12-04",
+    endDate: "2026-12-06",
+    tagline: "A third year of building technology for a better world.",
+    cardDescription: "Following ImpactX'24 and ImpactX'25, the third annual ImpactX returns as a global virtual hackathon challenging students to build technology that addresses real social issues.",
+    logo: impactx25Cover,
+    fullDescription: "ImpactX'26 is the third annual ImpactX hackathon by Code4Hope. Building on ImpactX'24 and ImpactX'25, participants from around the world will spend a weekend building projects that solve real-world problems across sustainability, education, and health and wellness. The event is fully virtual and open to high school students of any experience level. Details on prizes, judges, and registration will be announced ahead of the event.",
     prizes: [
-        { tier: "🏆 1st Place Winner", value: "Prizes to be determined." },
-        { tier: "🥈 2nd Place Winner", value: "Prizes to be determined." },
-        { tier: "🥉 3rd Place Winner", value: "Prizes to be determined." },
+        { tier: "\ud83c\udfc6 1st Best Overall Hack", value: "The best overall hack submitted to ImpactX 2026." },
+        { tier: "\ud83e\udd48 2nd Best Overall Hack", value: "The second best overall hack submitted to ImpactX 2026." },
+        { tier: "\ud83e\udd49 3rd Best Overall Hack", value: "The third best overall hack submitted to ImpactX 2026." },
+        { tier: "\ud83c\udf31 Sustainability Track Prize", value: "The best project submitted for the Sustainability Track." },
+        { tier: "\ud83e\uddd1\u200d\ud83c\udfeb Education Track Prize", value: "The best project submitted for the Education Track." },
+        { tier: "\ud83d\udc8a Health and Wellness Prize", value: "The best project submitted for the Health and Wellness Track." },
     ],
-    sponsors: [
-        { name: "KODA Finance", logo: "/placeholder.svg" },
-        { name: "Code4Hope", logo: "/c4hlogo_black.PNG" },
-    ],
+    sponsors: [],
     links: [
         { name: "Join Discord", url: "https://discord.gg/hu8e25c6cy", type: "primary" as const },
-        { name: "Judge Sign Up", url: "https://forms.gle/judgesignup", type: "secondary" as const }, // Placeholder link
     ],
     faq: [
-        { question: "Who can participate?", answer: "Ages 13 to 17 and high school students only. Companies/professional organizations are excluded." },
-        { question: "What should I submit?", answer: "A 1-2 minute video (max 5m) describing your project, the source code, and a pitch deck/presentation PDF." },
-        { question: "Can I reuse previous projects?", answer: "No, all projects must be started during the event. Reusing portfolio projects from Devpost is not permitted." },
-        { question: "How can I become a judge?", answer: "Sign up via our form and email aryan.mittal@code4hope.net with your inquiry." },
+        { question: "When will registration open?", answer: "Registration details will be announced soon. Join our Discord for the latest updates!" },
+        { question: "Will this event be virtual?", answer: "Yes, ImpactX'26 will be a fully remote, virtual hackathon accessible to participants worldwide." },
+        { question: "What tracks will be available?", answer: "We'll have multiple tracks including Sustainability, Education, Health and Wellness, and more to be announced." },
     ],
   },
   {

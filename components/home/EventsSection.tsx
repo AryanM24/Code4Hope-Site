@@ -8,7 +8,25 @@ import { LocationIcon } from "@/components/icons";
 import { upcomingEvents } from "@/lib/data/home-data";
 import { isRemoteImage } from "@/lib/utils"
 
+// Layout adapts to how many events we actually have, so a single event is
+// centred rather than stranded in the left third of a 3-column grid.
+const GRID_BY_COUNT: Record<number, string> = {
+  1: "md:grid-cols-1 max-w-sm",
+  2: "md:grid-cols-2 max-w-3xl",
+  3: "md:grid-cols-3 max-w-none",
+};
+
 export function EventsSection() {
+  // Show only the three most recent events of the current calendar year. The
+  // year is read off startDate as a string so it never shifts by timezone.
+  const currentYear = new Date().getFullYear();
+  const events = upcomingEvents
+    .filter((event) => Number(event.startDate.slice(0, 4)) === currentYear)
+    .sort((a, b) => a.startDate.localeCompare(b.startDate))
+    .slice(-3);
+
+  if (events.length === 0) return null;
+
   return (
     <ScrollReveal>
       <section id="events" className="w-full py-12 md:py-16 lg:py-20">
@@ -33,14 +51,13 @@ export function EventsSection() {
             </motion.div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-            {upcomingEvents.map((event, index) => (
-              <div
-                key={index}
-                className={`flex flex-col h-full ${
-                  (event.isOver) ? 'hidden md:flex' : ''
-                }`}
-              >
+          <div
+            className={`grid grid-cols-1 gap-8 mt-6 mx-auto ${
+              GRID_BY_COUNT[events.length] ?? GRID_BY_COUNT[3]
+            }`}
+          >
+            {events.map((event, index) => (
+              <div key={index} className="flex flex-col h-full">
                 <div className="card rounded-lg overflow-hidden h-full shadow-md bg-canvas">
                   <div className="relative">
                     <div className="aspect-[4/3] overflow-hidden">

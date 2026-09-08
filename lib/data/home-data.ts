@@ -11,7 +11,10 @@ export interface GalleryImage {
 export interface EventData {
   image: string | StaticImageData;
   title: string;
+  /** Human-readable date shown on the card. */
   date: string;
+  /** ISO start date (YYYY-MM-DD). Drives which events the homepage shows. */
+  startDate: string;
   location: string;
   description: string;
   link: string;
@@ -115,27 +118,30 @@ export const upcomingEvents: EventData[] = [
     image: c4h2025,
     title: "Code4Hope '25",
     date: "June 27-29, 2025 and July 10, 2025",
+    startDate: "2025-06-27",
     location: "Times Square, New York City, NY",
     description: "Structured similarly to many entrepreneurship competitions, in this two-round hackathon, participants will work with their teams to develop a solution to a critical issue of a fictional company of random assignment. Their solution will be within four global challenge tracks: sustainability, health, education, or finance.",
     link: "https://code4hope.net/events?event=c4h-2025",
     isOver: true,
   },
   {
-    image: "/placeholder.svg",
-    title: "KODA Hacks 2026",
-    date: "Jul 1-4, 2026",
-    location: "Online",
-    description: "Develop projects at the intersection of finance, economics, and computer science in a 4-day hackathon experience. Presented by KODA Finance and Code4Hope.",
-    link: "/events?event=koda-hacks-2026",
-    isOver: false,
-  },
-  {
     image: "/impactx25-thumbnail.png",
     title: "ImpactX '25",
     date: "Dec 5-7, 2025",
+    startDate: "2025-12-05",
     location: "Virtual Event",
-    description: "In the second annual ImpactX by Code4Hope, build projects for a better world by solving real-world problems—whether they be health, wellness, and education—where your ideas today shape a brighter, more sustainable tomorrow.",
+    description: "In the second annual ImpactX by Code4Hope, build projects for a better world by solving real-world problems\u2014whether they be health, wellness, and education\u2014where your ideas today shape a brighter, more sustainable tomorrow.",
     link: "https://impactx2025.devpost.com/",
     isOver: true,
+  },
+  {
+    image: "/impactx25-thumbnail.png",
+    title: "ImpactX '26",
+    date: "Dec 4-6, 2026",
+    startDate: "2026-12-04",
+    location: "Virtual Event",
+    description: "The third annual ImpactX by Code4Hope. Build projects for a better world across sustainability, education, and health and wellness in a fully virtual weekend hackathon open to students worldwide.",
+    link: "/events?event=impactx-26",
+    isOver: false,
   },
 ];

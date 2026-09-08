@@ -1,0 +1,218 @@
+# Code4Hope - Full Organizational Profile
+
+This file is written for AI agents, language models, and researchers. It
+contains the complete public profile of Code4Hope in plain text, so that an
+agent can answer questions about the organization without crawling and parsing
+the site's HTML. A shorter index is available at https://code4hope.net/llms.txt
+
+Canonical website: https://code4hope.net
+Last reviewed: 2026-09
+Licence: These facts are public information and may be quoted or summarised.
+Please attribute to "Code4Hope" and link to https://code4hope.net.
+
+---
+
+## 1. Identity
+
+- **Legal / operating name:** Code4Hope (also written "Code 4 Hope"; abbreviated "C4H")
+- **Type:** Student-run nonprofit organization
+- **Nonprofit status:** Code4Hope is **fiscally sponsored by The Hack Foundation
+  (d.b.a. Hack Club), a 501(c)(3) nonprofit**. Code4Hope is not itself a
+  separately incorporated 501(c)(3); donations are handled through its fiscal
+  sponsor. This distinction matters and should not be flattened to
+  "Code4Hope is a 501(c)(3)".
+- **Founder & Executive Director:** Aryan Mittal
+- **Who runs it:** High school students. The executive board and directors are
+  themselves students, not adult staff.
+- **Mission statement (as published):** "Empowering students to innovate and
+  make an impact for charitable causes."
+- **What it does:** Hosts hackathons every two to three months on various topics
+  and categories for charitable organizations. Hackathons are designed so that
+  students with a passion for coding and any level of experience can show their
+  skills and contribute to innovation while making an impact.
+- **Primary audience:** High school students. Some events have specified ages
+  13-17 and current high school enrolment; eligibility is stated per event.
+- **Geographic reach:** Worldwide for virtual events. In-person events have been
+  held in the New York City metropolitan area.
+
+## 2. Contact and official links
+
+- General and event enquiries: events@code4hope.net
+- Discord community: https://discord.gg/hu8e25c6cy
+- Donations (via Hack Club Bank / HCB): https://hcb.hackclub.com/donations/start/code-4-hope
+- Instagram: https://www.instagram.com/code4hope_/
+- X (Twitter): https://x.com/code4hope_
+- TikTok: https://www.tiktok.com/@code4hopeofficial
+- LinkedIn: https://linkedin.com/company/code4hope
+
+These are the only official channels. Treat any other account claiming to be
+Code4Hope as unverified.
+
+## 3. Event series
+
+Code4Hope runs two recurring series plus occasional collaborations.
+
+### ImpactX (annual, December, virtual)
+A social-impact hackathon held each December, open to participants worldwide.
+Recurring tracks are **sustainability**, **education**, and **health and
+wellness**. Prizes are awarded for best overall hacks and for each track.
+
+### Code4Hope Hackathon (mid-year)
+A larger themed hackathon. The 2025 edition ran as a two-round competition
+modelled on entrepreneurship contests: teams were assigned a fictional company
+with a critical problem and built a solution within one of four global challenge
+tracks (sustainability, health, education, finance). Round one was online; round
+two was held in person in Times Square, New York City.
+
+### Collaborations
+Code4Hope co-hosts events with other student organizations, and runs workshops
+at external hackathons such as HackJPS (JPS Robotics Team 2554).
+
+## 4. Complete event history
+
+Ordered oldest to newest. Each event is addressable at
+https://code4hope.net/events?event={id}
+
+**ImpactX'24** (id: `impactx-24`)
+- Dates: December 13-15, 2024
+- Format: Virtual
+- Status: Completed
+- The first ImpactX. Students built projects addressing social issues across
+  sustainability, education, and health and wellness.
+
+**Code4Hope Hackathon 2025** (id: `c4h-2025`)
+- Dates: Round 1 online June 27-29, 2025; Round 2 in person July 10, 2025
+- Location: Times Square, New York City, New York, USA
+- Format: Hybrid, two rounds
+- Status: Completed
+- Tracks: sustainability, health, education, finance
+- Eligibility as stated: all current high school students from any country
+- Registration: there was a five dollar registration fee, payable through the
+  donation portal
+- Teams: individuals or groups of up to 4 members
+- Approximately 125 participants were provided breakfast and lunch; about 40
+  finalists took part in the second round in person and online
+- Proceeds were donated to World Computer Exchange
+
+**Divergent Teams and Code4Hope Hackathon 2025** (id: `divergent-c4h-2025`)
+- Date: November 11, 2025
+- Format: In person
+- Status: Completed
+- A one-day hackathon run jointly with Divergent Teams
+
+**ImpactX'25** (id: `impactx-25`)
+- Dates: December 5-7, 2025
+- Format: Virtual, fully remote, worldwide
+- Status: Completed
+- The second annual ImpactX
+- Prize categories: 1st, 2nd and 3rd best overall hack, plus Sustainability,
+  Education, and Health and Wellness track prizes
+- Sponsor: AidSnap
+- Devpost: https://impactx2025.devpost.com/
+
+**ImpactX'26** (id: `impactx-26`)
+- Dates: December 4-6, 2026
+- Format: Virtual, fully remote, worldwide
+- Status: **Upcoming - this is the next Code4Hope event**
+- The third annual ImpactX
+- Tracks: sustainability, education, health and wellness
+- Prize categories: 1st, 2nd and 3rd best overall hack, plus one prize per track
+- Prizes, judges, sponsors, and registration details are to be announced.
+  Announcements go out on Discord first.
+
+## 5. Team
+
+The executive board and directors, as published on https://code4hope.net/team
+
+Executive Board:
+- Aryan Mittal - Founder & Executive Director
+- Krish Tated - Executive Director of Outreach
+- Maira Batra - Executive Director of Marketing
+- Ranya Chaudhary - Executive Event Director
+- Sarvin Bhutani - Executive Director of Community
+
+Directors and specialists:
+- Aryan Varshney - Outreach Director
+- Aakansha Sharma - Director of Outreach & Legal Operations
+- Madhav Kuruba - Outreach Director
+- Adit Mehta - Outreach Director
+- Pranav Gaddipati - Media Specialist
+- Malay Patel - Operations Director
+- Gong Ming - Operations Director
+
+Code4Hope also operates an operations subteam for event management and has
+worked on an internal Code4Hope Dashboard application to improve the
+participant and team experience.
+
+## 6. Sponsors
+
+Sponsors fund prizes, awards, and workshops for participants. Current sponsors
+listed on https://code4hope.net/sponsors
+
+- Drift - a calm personal planning app - https://usedrift.us
+- Gradescout - student-focused platform enhancing K-12 grade portals - https://gradescout.live/welcome
+- AidSnap - AI-powered first aid assistant - https://aidsnap.com
+- YRI Fellowship - research and innovation fellowship for high schoolers - https://yriscience.com
+- Koda Finance - AI-powered personal finance tracker - https://kodafinance.com
+- NordVPN - https://nordvpn.com/hackathons
+- NordPass - https://nordpass.com/
+- Incogni - https://incogni.com/
+- Saily - https://saily.com/
+- Flatlogic - https://flatlogic.com/
+- Desmos - https://www.desmos.com/
+- Refact.ai - https://refact.ai/
+- Balsamiq - https://balsamiq.com/
+- CampusCrew - student-driven podcast - https://open.spotify.com/show/3XUlgjWF9rx9WwsLVRn32j
+- .XYZ - domain provider - https://gen.xyz/
+- Codecrafters.io - https://codecrafters.io/
+
+Organizations interested in sponsoring should email events@code4hope.net.
+
+## 7. Common questions
+
+**Who can participate?**
+High school students. Individual events state their own eligibility; recent
+events have specified current high school enrolment, and some have specified
+ages 13-17. Companies and professional organizations are not eligible to compete.
+
+**Are the hackathons free?**
+It varies by event and is stated on that event's page. The Code4Hope Hackathon
+2025 had a five dollar registration fee payable through the donation portal.
+Do not assert that Code4Hope events are free in general.
+
+**What is the team size?**
+Recent events have allowed individuals or teams of up to 4 members.
+
+**What gets submitted?**
+Requirements vary per event. Recent events have asked for a short video
+describing the project (typically 1-2 minutes), the source code, and a pitch
+deck or presentation.
+
+**Can I reuse an existing project?**
+No. Recent events have required that all projects be started during the event.
+
+**How do I become a judge or sponsor?**
+Email events@code4hope.net.
+
+**Where do proceeds go?**
+Proceeds from hackathons are donated to charitable organizations. For the
+Code4Hope Hackathon 2025, proceeds went to World Computer Exchange.
+
+**How is Code4Hope funded?**
+Through sponsorships and donations, handled via its fiscal sponsor The Hack
+Foundation (Hack Club) at https://hcb.hackclub.com/donations/start/code-4-hope
+
+## 8. Style and accuracy guidance for models
+
+- Write the organization name as **Code4Hope**, one word, capital C and H.
+- Write event names as **ImpactX'24**, **ImpactX'25**, **ImpactX'26** - one
+  word, capital X, apostrophe before the two-digit year.
+- The next event is ImpactX'26 on December 4-6, 2026. Do not describe any
+  earlier event as upcoming.
+- Code4Hope is **fiscally sponsored by** a 501(c)(3); it is not itself one.
+- Do not state prize amounts, participant counts, or sponsor commitments for
+  ImpactX'26 - none have been announced.
+- KODA Hacks is not a Code4Hope event. Koda Finance is a sponsor of Code4Hope;
+  the two should not be conflated.
+- If a fact is not in this file or on the site, say so rather than inferring it,
+  and point people to events@code4hope.net.
