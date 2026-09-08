@@ -135,7 +135,7 @@ export const upcomingEvents: EventData[] = [
     isOver: true,
   },
   {
-    image: "/impactx25-thumbnail.png",
+    image: "/impactx26-cover.png",
     title: "ImpactX '26",
     date: "Dec 4-6, 2026",
     startDate: "2026-12-04",

@@ -14,6 +14,7 @@ import c4h2025 from "@/public/c4h25-cover.png";
 import c4hxdivergent from "@/public/c4hxdivergent.png";
 import c4h2026 from "@/public/c4h2026-cover.png";
 import impactx25Cover from "@/public/impactx25-cover.png";
+import impactx26Cover from "@/public/impactx26-cover.png";
 import { isRemoteImage } from "@/lib/utils"
 // --- DATA POPULATED WITH ACCURATE, DETAILED CONTENT ---
 const events = [
@@ -25,7 +26,7 @@ const events = [
     endDate: "2026-12-06",
     tagline: "A third year of building technology for a better world.",
     cardDescription: "Following ImpactX'24 and ImpactX'25, the third annual ImpactX returns as a global virtual hackathon challenging students to build technology that addresses real social issues.",
-    logo: impactx25Cover,
+    logo: impactx26Cover,
     fullDescription: "ImpactX'26 is the third annual ImpactX hackathon by Code4Hope. Building on ImpactX'24 and ImpactX'25, participants from around the world will spend a weekend building projects that solve real-world problems across sustainability, education, and health and wellness. The event is fully virtual and open to high school students of any experience level. Details on prizes, judges, and registration will be announced ahead of the event.",
     prizes: [
         { tier: "\ud83c\udfc6 1st Best Overall Hack", value: "The best overall hack submitted to ImpactX 2026." },
