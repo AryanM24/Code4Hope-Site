@@ -221,3 +221,14 @@ button,
   background: hsl(var(--brand-blue-200));
   color: hsl(var(--ink));
 }
+
+/* Horizontal card scrollers (e.g. the mobile gallery) are swiped, not dragged
+   by a scrollbar, so hide the bar while keeping the element scrollable. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

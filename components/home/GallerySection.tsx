@@ -24,7 +24,10 @@ export function GallerySection() {
             <p className="text-slate">Glimpses of our work and the students we serve</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
+          {/* Mobile: a horizontally swiped, snapping row that bleeds to the
+              screen edges, with the next card peeking so the affordance is
+              obvious without arrows. From sm up it is the usual grid. */}
+          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-4 px-4 no-scrollbar sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 lg:grid-cols-4">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -33,7 +36,7 @@ export function GallerySection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="relative overflow-hidden rounded-lg shadow-md group"
+                className="relative w-[78%] shrink-0 snap-start overflow-hidden rounded-lg shadow-md group sm:w-auto sm:shrink"
               >
                 <div className="aspect-[3/4] relative">
                   <Image
@@ -41,7 +44,7 @@ export function GallerySection() {
                     unoptimized={isRemoteImage(image.src)}
                     alt={image.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 78vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

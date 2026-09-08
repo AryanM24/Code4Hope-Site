@@ -70,7 +70,7 @@ export function AboutSection() {
             </motion.div>
 
             <motion.div
-              className="lg:col-span-5 space-y-6"
+              className="hidden md:block lg:col-span-5 space-y-6"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
