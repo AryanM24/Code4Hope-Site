@@ -99,16 +99,6 @@ export default function TeamPage() {
         instagram: "#",
         tiktok: "#"
       }
-    },
-    {
-      name: "Pranav Gaddipati",
-      title: "Media Specialist",
-      image: "/pranav.jpeg",
-      socials: {
-        linkedin: "#",
-        instagram: "#",
-        tiktok: "#"
-      }
     }
   ]
 
