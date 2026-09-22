@@ -76,6 +76,7 @@ const events = [
         { question: "Will this event be virtual?", answer: "Yes, ImpactX'25 will be a fully remote, virtual hackathon accessible to participants worldwide." },
         { question: "What tracks will be available?", answer: "We'll have multiple tracks including Sustainability, Education, Health and Wellness, and more to be announced." },
     ],
+    videoEmbed: "https://www.youtube.com/embed/IOVV4TnVN-Y",
   },
   {
     id: "divergent-c4h-2025",
